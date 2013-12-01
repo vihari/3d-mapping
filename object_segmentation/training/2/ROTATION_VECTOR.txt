@@ -1,0 +1,7 @@
+unitless
+The rotation vector represents the orientation of the device as a combination of an angle and an axis, in which the device has rotated through an angle Theta around an axis <x, y, z>.
+The three elements of the rotation vector are <x*sin(Theta/2), y*sin(Theta/2), z*sin(Theta/2)>, such that the magnitude of the rotation vector is equal to sin(Theta/2), and the direction of the rotation vector is equal to the direction of the axis of rotation.
+The three elements of the rotation vector are equal to the last three components of a unit quaternion <cos(Theta/2), x*sin(Theta/2), y*sin(Theta/2), z*sin(Theta/2)>.
+Elements of the rotation vector are unitless. The x,y, and z axis are defined in the same way as the acceleration sensor.
+
+Timestamp;x*sin(Theta/2);y*sin(Theta/2);z*sin(Theta/2);cos(Theta/2);

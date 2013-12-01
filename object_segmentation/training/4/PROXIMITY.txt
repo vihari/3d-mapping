@@ -1,0 +1,2 @@
+Proximity sensor distance measured in centimeters 
+Timestamp;centimeter;

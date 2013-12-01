@@ -1,0 +1,2 @@
+Timestamp;Time;Longitude;Latitude;Altitude;Accuracy;Speed (m/s);Speed (km/h);Speed (mph);Speed (kts);
+0.0;12:40:55;145.0484680943191;-37.95713385567069;48.0;5.0;0.0;0.0;0.0;0.0;

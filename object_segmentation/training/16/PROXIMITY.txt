@@ -1,0 +1,6 @@
+Proximity sensor distance measured in centimeters 
+Timestamp;centimeter;
+153.09108;0.0;
+154.11676;8.0;
+162.84679;0.0;
+162.93892;8.0;
