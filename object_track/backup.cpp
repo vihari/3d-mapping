@@ -93,7 +93,7 @@ int object_track(Mat mask){
     points[0].resize(k);
     points[1].resize(k);
     
-    Mat t = estimateRigidTransform(points[0], points[1], false);
+    Mat t = estimateRigidTransform(points[0], points[1], true);
     cout << "**********************" << endl;
     cout << t << endl;
     
