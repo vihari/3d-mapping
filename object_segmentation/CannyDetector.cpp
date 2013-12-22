@@ -1,7 +1,7 @@
 /**
- * @file CannyDetector_Demo.cpp
- * @brief Sample code showing how to detect edges using the Canny Detector
- * @author OpenCV team
+ * @file CannyDetector.cpp
+ * @brief detects, interacts with user and tries to segment and hence mask the image.
+ * @author Vihari Piratla
  */
 
 #include "cv.h"
@@ -32,12 +32,12 @@ bool g_press = false;
 Point pt1,pt2;
 
 /*
-  @@args: the first 3 arguments are for rectangle specification and value to be filled in the rectangle.
+  @@args: the last 3 arguments are for rectangle specification and value to be filled in the rectangle.
 */
-void fill(Point pt, int width, int height, int value){
+void fill(Mat img, Point pt, int width, int height, int value){
   for(int y = pt.y; y < (pt.y+height); y++)
     for(int x = pt.x; x < (pt.x+width); x++)
-      dst.at<unsigned char>(y, x) = value;
+      img.at<unsigned char>(y, x) = value;
 }
 
 /*
@@ -74,6 +74,10 @@ void SegmentObject(Point pt1, Point pt2){
 
   std::vector<Point> regions;
   regions.push_back(pt1);
+  //Initially classifying all to be background.
+  //dst = Scalar::all(GC_BGD);
+  //Mat tmp(dst.size(), CV_8U, GC_BGD);
+  Mat tmp = Mat::ones(dst.size(), CV_8U) * GC_BGD;
   while(!regions.empty()){
     Point pt = regions.back();
     //printf("%d %d\n",pt.x,pt.y);
@@ -89,13 +93,24 @@ void SegmentObject(Point pt1, Point pt2){
 	Point new_pt = Point(pt.x, pt.y+height);
 	regions.push_back(new_pt);
       }
-      fill(pt, width, height, 255);
+      //Sure a Foreground pixels
+      //fill(tmp, pt, width, height, GC_PR_FGD);
+      Rect area;
+      area.x=pt.x;  area.y=pt.y;
+      area.width=width; area.height=height;
+      rectangle(tmp, area , cv::Scalar(cv::GC_PR_FGD),-1,8,0);
     }
     else{
-      //fill with max_values
+      Rect area;
+      area.x=pt.x;  area.y=pt.y;
+      area.width=width; area.height=height;
+      //Probable FGD
+      //fill(tmp, pt, width, height, GC_PR_FGD);
+      rectangle(tmp, area , cv::Scalar(cv::GC_PR_BGD),-1,8,0);
     }
-    //fill(pt, width, height, 255);
+    //fill(tmp, pt, width, height, 255);
   }
+  dst = tmp.clone();
   imshow(window_name, dst);
 }
 
@@ -127,7 +142,6 @@ void CallbackFunc(int event, int x, int y, int flags, void* param){
 	rect.height *= -1;
       }
 
-      ////By this statement, I want to fill the final rectangle and hold it in the window. I examined it for several times and I did not find mistakes. I just want to know the reason.
       Mat tmp = dst.clone();
       rectangle(tmp, Point(rect.x, rect.y), Point(rect.x+rect.width, rect.y+rect.height), CV_RGB(100,0,100), 1/*CV_FILLED*/);
       imshow(window_name, tmp);
@@ -151,7 +165,7 @@ static void CannyThreshold(int, void*){
   /// Canny detector
   Canny( detected_edges, detected_edges, lowThreshold, lowThreshold*ratio, kernel_size );
   
-  /// Using Canny's output as a mask, we display our result
+  /// Using Canny's output as a mask, we display result
   dst = Scalar::all(0);
 
   src_gray.copyTo( dst, detected_edges);
@@ -161,7 +175,10 @@ static void CannyThreshold(int, void*){
 
 
 /**
- * @function main
+ * @function EdgeDetector
+ * @brief Dtects edges and segments image with right threshold
+ * @input depth map 8bit and dummy threshold variable which gets filled with right threshold.
+ * @output Masked image
  */
 Mat EdgeDetector( Mat flow_map ){
   

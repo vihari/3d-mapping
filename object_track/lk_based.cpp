@@ -6,8 +6,7 @@
   2. These features are tracked with lk and 
   3. affine transformation is calculated.
   4. This affine transformation is used to redefine the image.
-  5. The mask is redefined and expanded or contracted based on the color 
-     based patch propagation. 
+  5. The mask is redefined with one-shot grab-cut i.e. similar to [boykov and jolly et.al.]  
   
   Bug revision: 10th Jan 2013.
   Bugs: 
@@ -19,6 +18,7 @@
      2. Other possible approach can be rectify mask after few frames or after every frame. Try expanding mask or contract until there is an edge, 
         this seems to be lucrative solution at the expense of extra computation. 
 */
+
 #include <vector>
 #include <iostream>
 #include <string>
@@ -26,12 +26,19 @@
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/video/tracking.hpp"
+#include "../grabcut/grabcut.cpp"
 
 #define _USE_MATH_DEFINES
 #define MIN_INDEX 1
 #define MAX_INDEX 200
 #define FRAME_RATE 25
-#define GLOBAL_OPTIMISE 3
+#define LARGE_NUMBER 1000000
+#define GLOBAL_OPTIMISE LARGE_NUMBER
+#define MASK_TWEAK 1
+#define EROSION_ELEM 0
+#define EROSION_SIZE 10
+#define DILATION_ELEM 0
+#define DILATION_SIZE 10
 
 using namespace cv;
 using namespace std; 
@@ -39,9 +46,68 @@ using namespace std;
 const char pattern[] = "../data/frames/image-%03d.png";
 FILE* orientation_file;
 
+/** @function Erosion*/
+Mat Erosion( Mat src ){
+  int erosion_type;
+  int erosion_elem = EROSION_ELEM;
+  int erosion_size = EROSION_SIZE;
+  if( erosion_elem == 0 ){ erosion_type = MORPH_RECT; }
+  else if( erosion_elem == 1 ){ erosion_type = MORPH_CROSS; }
+  else if( erosion_elem == 2) { erosion_type = MORPH_ELLIPSE; }
+
+  Mat element = getStructuringElement( erosion_type,
+                                       Size( 2*erosion_size + 1, 2*erosion_size+1 ),
+                                       Point( erosion_size, erosion_size ) );
+
+  Mat erosion_dst;
+  /// Apply the erosion operation
+  erode( src, erosion_dst, element );
+  return (erosion_dst);
+}
+
+/** @function Dilation */
+Mat Dilation( Mat src )
+{
+  int dilation_type;
+  int dilation_elem = DILATION_ELEM;
+  int dilation_size = DILATION_SIZE;
+  if( dilation_elem == 0 ){ dilation_type = MORPH_RECT; }
+  else if( dilation_elem == 1 ){ dilation_type = MORPH_CROSS; }
+  else if( dilation_elem == 2) { dilation_type = MORPH_ELLIPSE; }
+
+  Mat element = getStructuringElement( dilation_type,
+                                       Size( 2*dilation_size + 1, 2*dilation_size+1 ),
+				       Point( dilation_size, dilation_size ) );
+  Mat dilation_dst;
+  /// Apply the dilation operation
+  dilate( src, dilation_dst, element );
+  return (dilation_dst);
+}
+
+/* 
+ *  @function Edge Detect - to detect edges in the source image
+ *  @input the src, dst and lowerthreshold for canny edge detection.
+ *  @output in Mat dst 
+*/
+void EdgeDetect(Mat src_gray, Mat dst, int lowThreshold){
+  int ratio = 3;
+  int kernel_size = 3;
+  Mat detected_edges; 
+  /// Reduce noise with a kernel 3x3
+  blur( src_gray, detected_edges, Size(3,3) );
+  
+  /// Canny detector
+  Canny( detected_edges, detected_edges, lowThreshold, lowThreshold*ratio, kernel_size );
+  
+  /// Using Canny's output as a mask, we display our result
+  dst = Scalar::all(0);
+
+  src_gray.copyTo( dst, detected_edges);
+}
+
 /*
-  Reads the file to a desired time
-  and returns the value at the end of particular time.
+ * Reads the file to a desired time
+ * and returns the value at the end of particular time.
 */
 Point3f readFileTill(float time){
   float timestamp = 0;
@@ -73,20 +139,15 @@ Mat MultiplyAffineTransformation(Mat a, Mat b){
   
   r = x * y;
 
-  //cout << "a:" <<endl;
-  //cout << a << endl; cout << b << endl;
-  //cout << x << endl; cout << y << endl;
-
   result.at<double>(0,2) = a.at<double>(0,2) + b.at<double>(0,2);
   result.at<double>(1,2) = a.at<double>(1,2) + b.at<double>(1,2);
-  //result.at<double>(2,0) = a.at<double>(2,0) + b.at<double>(2,0);
-  //result.at<double>(2,1) = a.at<double>(2,1) + b.at<double>(2,1);
+  
   for(int i=0;i<2; i++)
     for(int j=0; j<2; j++)
       result.at<double>(i,j) = r.at<double>(i,j);
   
-  cout << "Result:" << endl;
-  cout << result << endl;
+  //cout << "Result:" << endl;
+  //cout << result << endl;
   return (result);
 }
 
@@ -136,6 +197,7 @@ int object_track(Mat mask){
   imshow("Mask", currImage); 
   waitKey();
 
+  Mat fgdModel, bgdModel;
   for(int i=MIN_INDEX; i<MAX_INDEX; i += 2){
     time += 2*1/FRAME_RATE;
     points[0] = points[1];
@@ -145,7 +207,11 @@ int object_track(Mat mask){
     cout<<imageName<<endl;
     currImage = imread(imageName, 1);
     cvtColor(currImage, currGray, CV_BGR2GRAY);
-    
+
+    //namedWindow("test1", 1);
+    //namedWindow("test2", 1);
+    //imshow("test1", currImage);
+    //imshow("test2", prevImage);
     //Re-initialise the features after 20 frames
     if((i - MIN_INDEX)%10 == 0){
       goodFeaturesToTrack(currGray, points[1], MAX_COUNT, 0.01, 1, maskImage, 3, 0, 0.04);
@@ -175,10 +241,10 @@ int object_track(Mat mask){
     points[1].resize(k);
     
     Mat t = estimateRigidTransform(points[0], points[1], false);
-    cout << "**********************" << endl;
-    cout << t << endl;
+    //cout << "**********************" << endl;
+    //cout << t << endl;
     double x = t.at<double>(0,0); double y = t.at<double>(1,0);
-    printf("norm: %f\n", x*x+y*y);
+    //printf("norm: %f\n", x*x+y*y);
 
     Mat tmp = Mat::zeros(maskImage.rows, maskImage.cols, maskImage.type());
     
@@ -208,7 +274,47 @@ int object_track(Mat mask){
     merge(tmp2, 3, mask3c);
     
     tmp = currImage & mask3c;
-    imshow("Mask", tmp);
+    //imshow("Mask", tmp);
+    
+    if( (i != MIN_INDEX) && ((i - MIN_INDEX)%MASK_TWEAK == 0) ){
+      Mat erode,dilate,result;
+      result.create(currImage.size(), CV_8UC1);
+      result.setTo(Scalar(GC_BGD));
+      erode = Erosion(maskImage);
+      dilate = Dilation(maskImage);
+      for(int y=0;y<tmp.rows;y++)
+	for(int x=0;x<tmp.cols;x++)
+	  if(dilate.at<unsigned char>(y,x) > 0)
+	    result.at<unsigned char>(y,x) = GC_PR_FGD;
+      for(int y=0;y<tmp.rows;y++)
+	for(int x=0;x<tmp.cols;x++)
+	  if(erode.at<unsigned char>(y,x) > 0)
+	    result.at<unsigned char>(y,x) = GC_FGD;
+            
+      Rect rect;
+      if(bgdModel.cols>0)
+	grabCut( currImage, result, rect, bgdModel, fgdModel, 2, GC_EVAL);
+      else
+	grabCut( currImage, result, rect, bgdModel, fgdModel, 20, GC_INIT_WITH_MASK);
+      imshow("Mask", erode);
+      namedWindow("Dilated image", 1);
+      imshow("Dilated image", dilate);
+      
+      Mat tmp,ms;
+      Mat foreground(currImage.size(),CV_8UC3,cv::Scalar(0,0,0));
+      Mat dummy(currImage.size(),CV_8UC1,cv::Scalar(255));
+      compare(result,GC_PR_FGD,tmp,CMP_EQ);
+      currImage.copyTo(foreground,tmp);
+      dummy.copyTo(ms,tmp);
+      compare(result,GC_FGD,tmp,CMP_EQ);
+      currImage.copyTo(foreground,tmp);
+      dummy.copyTo(ms,tmp);
+      imshow("Mask", foreground);
+      //Mat edges;
+      //EdgeDetect(imread(imageName, 1), edges, 95);
+      maskImage = ms.clone();
+    }
+
     waitKey();
   }
 }

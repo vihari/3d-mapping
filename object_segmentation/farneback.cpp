@@ -1,23 +1,79 @@
+/*
+ * @file farneback.cpp
+ * @brief Segments image from dense optical flow, edge detections and grab cut.
+ * @author Vihari Piratla
+ */
 #include "cv.h"
 #include "highgui.h"
+#include "opencv2/opencv.hpp"
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
 #include <math.h>
+#include <iostream>
 
 #include "CannyDetector.cpp"
+#include "../grabcut/grabcut.cpp"
 //#include "../object_track/lk_based.cpp"
 #define max(a,b) a>b?a:b
 #define TOLERANCE 0.1
 #define DEBUG false
+#define MASK_DEFINE false
 
 using namespace cv;
+using namespace std;
 
 int histSize = 256;
 Mat flow_vector;
 float max_distance = -1;
 float lmean;
+//foreground model and background model; outputs of grabcut, used as inputs to segmentation in successive frames.
+Mat fgdModel;
+Mat bgdModel;
+Mat frame1, frame2;
 
-void CallBackFunc(int event, int x, int y, int flags, void* userdata)
+void GrabCut(Rect);
+
+void CallbackROI(int event, int x, int y, int flags, void* param){
+  switch(event){
+  case CV_EVENT_MOUSEMOVE:
+    {
+      if(g_press == true){
+	rect.width = x - rect.x;
+	rect.height = y - rect.y;
+      }
+    }break;
+  case CV_EVENT_LBUTTONDOWN:
+    {
+      g_press = true;
+      rect.x = x;
+      rect.y = y;
+      rect.height = rect.width = 0;
+    }break;
+  case CV_EVENT_LBUTTONUP:
+    {
+      g_press = false;
+      if(rect.width < 0){
+	rect.x += rect.width;
+	rect.width *= -1;
+      }
+      if(rect.height <0){
+	rect.y += rect.height;
+	rect.height *= -1;
+      }
+
+      Mat tmp = frame1.clone();
+      rectangle(tmp, Point(rect.x, rect.y), Point(rect.x+rect.width, rect.y+rect.height), CV_RGB(100,0,100), 1/*CV_FILLED*/);
+      imshow("Original Image", tmp);
+      Point pt1 = Point(rect.x, rect.y);
+      Point pt2 = Point(rect.x+rect.width, rect.y+rect.height);
+      
+      //Now we call the function to segment the object
+      GrabCut(rect);
+    }break;
+  }
+}
+
+void CallbackPrintData(int event, int x, int y, int flags, void* userdata)
 {
   if  ( event == EVENT_LBUTTONDOWN )
     {
@@ -67,6 +123,92 @@ void print_help(){
   printf("*****[exe] <Image1> <Image2>\n");
 }
 
+/*
+  @function: GrabCut(Point, Point);
+  @brief: two points that define the ROI of the mask for grabcut segmentation
+*/
+void GrabCut(Rect rect){
+  Mat tmp, mask; 
+  Mat result = cv::Mat::ones(frame1.size(), CV_8U) * cv::GC_BGD;
+  Mat white = cv::Mat::ones(frame1.size(), CV_8U) * 255;
+
+  //cv::Rect rectangle(50,70,frame1.cols-150,frame1.rows-180);
+  grabCut( frame1, result, rect, bgdModel, fgdModel, 20, GC_INIT_WITH_RECT );
+  cout<<bgdModel<<endl;
+  cout<<fgdModel<<endl;
+  //frame1 = frame1 & mask;
+  cout << rect<< endl;
+  
+  compare(result,GC_FGD,tmp,CMP_EQ);
+
+  //Generate output image
+  Mat foreground(frame1.size(),CV_8UC3,cv::Scalar(0,0,0));
+  frame1.copyTo(foreground, tmp);
+  white.copyTo(mask, tmp);
+  compare(result,GC_PR_FGD,tmp,CMP_EQ);  
+  frame1.copyTo(foreground, tmp);
+  white.copyTo(mask, tmp);
+
+  // draw rectangle on original image
+  rectangle(frame1, rect, cv::Scalar(255,255,255),1);
+  cv::namedWindow("Image");
+  cv::imshow("Image",frame1);
+
+  // display result
+  namedWindow("Segmented Image");
+  imshow("Segmented Image",foreground);
+
+  waitKey();
+  imwrite("mask.png", mask);
+}
+
+void GrabCut(Mat result){
+  Mat tmp;
+  /*  compare(result,GC_FGD,tmp,CMP_EQ);
+  //compare(result,GC_FGD,tmp,CMP_EQ);
+  
+  //Generate output image
+  Mat mask(frame2.size(),CV_8UC3,cv::Scalar(0,0,0));
+  frame2.copyTo(mask, tmp); // bg pixels not copied
+  compare(result,GC_PR_FGD,tmp,CMP_EQ);
+  frame2.copyTo(mask, tmp);
+  */
+
+  /*result = cv::Mat::ones(frame2.size(), CV_8U) * cv::GC_BGD;
+
+  Rect area;
+  area.x=10;  area.y=10;
+  area.width=250; area.height=250;
+  rectangle(result, area , cv::Scalar(cv::GC_PR_FGD),-1,8,0);
+
+  //Fill a smaller rectangle with the foreground value.
+  area.x=50;  area.y=50;
+  area.width=20;  area.height=20;
+  rectangle(result, area , cv::Scalar(cv::GC_FGD),-1,8,0);
+  */
+
+  cv::Rect rect;
+  grabCut( frame2, result, rect, bgdModel, fgdModel, 5, GC_INIT_WITH_MASK );
+  cout<<bgdModel<<endl;
+  cout<<fgdModel<<endl;
+      
+  Mat foreground(frame2.size(),CV_8UC3,cv::Scalar(0,0,0));
+  compare(result,GC_PR_FGD,tmp,CMP_EQ);
+  frame2.copyTo(foreground,tmp);
+  compare(result,GC_FGD,tmp,CMP_EQ);
+  frame2.copyTo(foreground,tmp);
+  
+  // display result
+  namedWindow("Segmented Image");
+  imshow("Segmented Image", foreground);
+  
+  //namedWindow("Initial Mask");
+  //  imshow("Initial Mask", mask);
+
+  waitKey();
+}
+
+
 int main(int argc, char** argv)
 {
   //VideoCapture cap(0);
@@ -74,7 +216,7 @@ int main(int argc, char** argv)
   //if( !cap.isOpened() )
   //return -1;
     
-  Mat prevgray, gray, flow, cflow, frame1, frame2, hist;
+  Mat prevgray, gray, flow, cflow, hist;
   namedWindow("flow", 0);
     
   if(argc < 3){
@@ -173,21 +315,32 @@ int main(int argc, char** argv)
     imshow("hist", histImage);
     imshow("second", flow_vector);
     
-    setMouseCallback("second", CallBackFunc, NULL);
+    setMouseCallback("second", CallbackPrintData, NULL);
   }
 
   Mat mask = Mat(frame1.size(), frame1.type());
-  mask = EdgeDetector(flow_vector);
 
-  Mat mask3c;
+  if(MASK_DEFINE){
+    //This function is available in cannydetector.cpp
+    mask = EdgeDetector(flow_vector);
+    GrabCut(mask);
+  }
+  else{
+    namedWindow("Original Image", 1);
+    imshow("Original Image", frame1);
+    setMouseCallback("Original Image", CallbackROI, NULL);
+    waitKey();
+  }
+
+  /*Mat mask3c;
   Mat tmp[] = {mask,mask,mask};
 
   merge(tmp, 3, mask3c);
   
-  frame1 = frame1 & mask3c;
+  frame1 = frame2 & mask3c;
   imshow("first", frame1);
   //imshow("second", mask3c);
-  waitKey();
+  waitKey();*/
 
   //object_track(mask);
 
