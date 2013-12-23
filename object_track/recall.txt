@@ -1,0 +1,5 @@
+by: Vihari Piratla
+I left it at modifying grabcut.cpp
+I was trying to reduce the complexity of fg extraction through a video with grabcut.
+I wrote a class structure for grabcut in a hope to reuse the models and also some graph structures, as it takes very long to construct graph.
+Stuck in some errors arised in class structure that rooted in my poor C++ knowledge.

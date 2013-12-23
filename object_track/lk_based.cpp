@@ -39,6 +39,7 @@
 #define EROSION_SIZE 10
 #define DILATION_ELEM 0
 #define DILATION_SIZE 10
+#define DILATION_LARGER_SIZE 20
 
 using namespace cv;
 using namespace std; 
@@ -47,10 +48,9 @@ const char pattern[] = "../data/frames/image-%03d.png";
 FILE* orientation_file;
 
 /** @function Erosion*/
-Mat Erosion( Mat src ){
+Mat Erosion( Mat src , int erosion_size){
   int erosion_type;
   int erosion_elem = EROSION_ELEM;
-  int erosion_size = EROSION_SIZE;
   if( erosion_elem == 0 ){ erosion_type = MORPH_RECT; }
   else if( erosion_elem == 1 ){ erosion_type = MORPH_CROSS; }
   else if( erosion_elem == 2) { erosion_type = MORPH_ELLIPSE; }
@@ -66,7 +66,7 @@ Mat Erosion( Mat src ){
 }
 
 /** @function Dilation */
-Mat Dilation( Mat src )
+Mat Dilation( Mat src, int erosion_size )
 {
   int dilation_type;
   int dilation_elem = DILATION_ELEM;
@@ -277,11 +277,17 @@ int object_track(Mat mask){
     //imshow("Mask", tmp);
     
     if( (i != MIN_INDEX) && ((i - MIN_INDEX)%MASK_TWEAK == 0) ){
-      Mat erode,dilate,result;
+      Mat erode,dilate,dilateLarger,result;
       result.create(currImage.size(), CV_8UC1);
       result.setTo(Scalar(GC_BGD));
-      erode = Erosion(maskImage);
-      dilate = Dilation(maskImage);
+      erode = Erosion(maskImage, EROSION_SIZE);
+      dilate = Dilation(maskImage, DILATION_SIZE);
+      dilateLarger = Dilation(maskImage, DILATION_LARGER_SIZE);
+      
+      for(int y=0;y<tmp.rows;y++)
+	for(int x=0;x<tmp.cols;x++)
+	  if(dilate.at<unsigned char>(y,x) > 0)
+	    result.at<unsigned char>(y,x) = GC_PR_BGD;
       for(int y=0;y<tmp.rows;y++)
 	for(int x=0;x<tmp.cols;x++)
 	  if(dilate.at<unsigned char>(y,x) > 0)
@@ -292,10 +298,13 @@ int object_track(Mat mask){
 	    result.at<unsigned char>(y,x) = GC_FGD;
             
       Rect rect;
-      if(bgdModel.cols>0)
-	grabCut( currImage, result, rect, bgdModel, fgdModel, 2, GC_EVAL);
-      else
-	grabCut( currImage, result, rect, bgdModel, fgdModel, 20, GC_INIT_WITH_MASK);
+      if(bgdModel.cols>0){
+	GrabCut segment( currImage, result, rect, bgdModel, fgdModel, 2, GC_EVAL);
+	//grabCut( currImage, result, rect, bgdModel, fgdModel, 2, GC_EVAL);
+      }      
+      else{
+	grabCut( currImage, result, rect, bgdModel, fgdModel, 1, GC_INIT_WITH_MASK);
+      }
       imshow("Mask", erode);
       namedWindow("Dilated image", 1);
       imshow("Dilated image", dilate);
