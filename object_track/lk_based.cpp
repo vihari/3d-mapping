@@ -20,6 +20,7 @@
  */
 /*
  * TODO: Dont make the corners on the image.
+ * TODO: Dilation and erosion sizes are very dependent on the size of the object under consideration, can we make these values more generic.
  */
 
 #include <vector>
@@ -33,17 +34,18 @@
 #include "opencv2/video/tracking.hpp"
 #include "../grabcut/grabcut.cpp"
 
+#define GC_EVAL 2
 #define _USE_MATH_DEFINES
 #define MIN_INDEX 1
 #define MAX_INDEX 200
 #define FRAME_RATE 25
 #define LARGE_NUMBER 1000000
 #define GLOBAL_OPTIMISE LARGE_NUMBER
-#define MASK_TWEAK 1
+#define MASK_TWEAK 10
 #define EROSION_ELEM 0
 #define EROSION_SIZE 5
 #define DILATION_ELEM 0
-#define DILATION_SIZE 10
+#define DILATION_SIZE 5
 #define DILATION_LARGER_SIZE 20
 
 using namespace cv;
@@ -312,7 +314,7 @@ int object_track(Mat mask) {
 
 			std::cout << bgd << " " << fgd << std::endl;
 			Rect rect;
-			//2 is GC_EVAL
+
 			GrabCut segment(currImage, result, rect, bgdModel, fgdModel, 2, GC_INIT_WITH_MASK);
 
 			Mat tmp, ms;

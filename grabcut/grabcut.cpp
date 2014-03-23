@@ -577,8 +577,11 @@ void GrabCut::assignGMMsComponents(const Mat& img, const Mat& mask,
 	for (p.y = 0; p.y < img.rows; p.y++) {
 		for (p.x = 0; p.x < img.cols; p.x++) {
 			int d = mask.at<unsigned char>(p.y, p.x);
-			if (!(d == GC_FGD || d == GC_PR_BGD))
+			//We dont want gmm to learn from the whole of the background.
+			if (!(d == GC_PR_FGD || d == GC_PR_BGD)){
+				compIdxs.at<int>(p) = -1;
 				continue;
+			}
 			Vec3d color = img.at<Vec3b>(p);
 			compIdxs.at<int>(p) =
 					mask.at<uchar>(p) == GC_BGD
@@ -594,17 +597,18 @@ void GrabCut::assignGMMsComponents(const Mat& img, const Mat& mask,
  */
 void GrabCut::learnGMMs(const Mat& img, const Mat& mask, const Mat& compIdxs,
 		GMM& bgdGMM, GMM& fgdGMM) {
-	bgdGMM.initLearning();
-	fgdGMM.initLearning();
+	//Init learning will nullify everything and makes it start from 0, we dont want that happening.
+	//bgdGMM.initLearning();
+	//fgdGMM.initLearning();
 	Point p;
 	for (int ci = 0; ci < GMM::componentsCount; ci++) {
 		for (p.y = 0; p.y < img.rows; p.y++) {
 			for (p.x = 0; p.x < img.cols; p.x++) {
 				if (compIdxs.at<int>(p) == ci) {
-					if ((mask.at<uchar>(p) == GC_PR_BGD)
+					if ((mask.at<uchar>(p) == GC_BGD)
 							|| (mask.at<uchar>(p) == GC_PR_BGD))
 						bgdGMM.addSample(ci, img.at<Vec3b>(p));
-					else if ((mask.at<uchar>(p) == GC_PR_FGD)
+					else if ((mask.at<uchar>(p) == GC_FGD)
 							|| (mask.at<uchar>(p) == GC_PR_FGD))
 						fgdGMM.addSample(ci, img.at<Vec3b>(p));
 				}
@@ -627,7 +631,7 @@ void GrabCut::constructGCGraph(const Mat& img, const Mat& mask,
 		for (p.x = 0; p.x < img.cols; p.x++) {
 			int d = mask.at<uchar>(p);
 			//if(!(d==GC_PR_FGD||GC_PR_BGD))
-			//continue;
+				//continue;
 			// add node
 			int vtxIdx = graph.addVtx();
 			Vec3b color = img.at<Vec3b>(p);
@@ -635,7 +639,7 @@ void GrabCut::constructGCGraph(const Mat& img, const Mat& mask,
 			// set t-weights
 			double fromSource, toSink;
 			if (mask.at<uchar>(p) == GC_PR_BGD
-					|| mask.at<uchar>(p) == GC_PR_BGD) {
+					|| mask.at<uchar>(p) == GC_PR_FGD) {
 				fromSource = -log(bgdGMM(color));
 				toSink = -log(fgdGMM(color));
 			} else if (mask.at<uchar>(p) == GC_BGD) {
@@ -647,7 +651,6 @@ void GrabCut::constructGCGraph(const Mat& img, const Mat& mask,
 				toSink = 0;
 			}
 			graph.addTermWeights(vtxIdx, fromSource, toSink);
-
 			// set n-weights
 			if (p.x > 0) {
 				double w = leftW.at<double>(p);
