@@ -7,24 +7,27 @@ MODULES=$(OS) $(OT) $(OD)
 BUILD=build
 
 all: OS OT OD
+all1: create OS OT OD
 
+create:
+	mkdir build && cp $(OT)/mask.png $(BUILD)
 OS: 	OS.o
-	$(CC) $(CCFLAGS) OS.o -o $(BUILD)/OS
+	$(CC) $(CCFLAGS) $(BUILD)/OS.o -o $(BUILD)/OS
 
 OT: 	OT.o
-	$(CC) $(CCFLAGS) OT.cpp -o $(BUILD)/OT
+	$(CC) $(CCFLAGS) $(BUILD)/OT.o -o $(BUILD)/OT
 
 OD: 	OD.o
-	$(CC) $(CCFLAGS) OD.cpp -o $(BUILD)/OD
+	$(CC) $(CCFLAGS) $(BUILD)/OD.o -o $(BUILD)/OD
 
 OS.o: 	
-	$(CC) $(CCFLAGS) $(OS)/farneback.cpp -o $(BUILD)/OS.o
+	$(CC) -c $(CCFLAGS) $(OS)/farneback.cpp -o $(BUILD)/OS.o
 
 OT.o:
-	$(CC) $(CCFLAGS) $(OT)/lk_based.cpp -o $(BUILD)/OT.o	
+	$(CC) -c $(CCFLAGS) $(OT)/lk_based.cpp -o $(BUILD)/OT.o	
 
 OD.o:
-	$(CC) $(CCFLAGS) $(OD)/position.cpp -o $(BUILD)/OD.o
+	$(CC) -c $(CCFLAGS) $(OD)/position.cpp -o $(BUILD)/OD.o
 
 clean:
 	rm -rf build
