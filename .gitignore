@@ -52,3 +52,6 @@ Thumbs.db
 *.git
 *.gitigignore
 build/
+data/
+CMakeFiles/
+CMakeCache.txt

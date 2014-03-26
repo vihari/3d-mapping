@@ -1,0 +1,11 @@
+Had to write cmake file as it is too tough to make write make file for pcl.
+
+********Building with make file********
+(with the present make file doesnt work)
+Before building make sure that the opencv, pcl(1.6) and its dependencies are installed.
+Along with that also make sure that you set the PKG_CONFIG_PATH to include the pck_config
+folder of pcl installation.
+In my case it is export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local//lib/pkgconfig/
+
+In case if you wish to use a different vesion of pcl which is not recommended then change the
+makefile appropriately and make sure you dont commit the same. 

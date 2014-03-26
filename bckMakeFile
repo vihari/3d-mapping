@@ -1,0 +1,40 @@
+CC=g++
+CCFLAGS=`pkg-config --cflags --libs opencv`
+PCL_COMMON=`pkg-config --cflags --libs pcl_common-1.6`
+PCL_IO=`pkg-config --cflags --libs pcl_io-1.6`
+OS=object_segmentation
+OT=object_track
+OD=odometry
+MODULES=$(OS) $(OT) $(OD)
+BUILD=build
+
+all: OS OT OD reconstruction
+all1: create OS OT OD
+
+create:
+	mkdir build && cp $(OT)/mask.png $(BUILD)
+OS: 	OS.o
+	$(CC) $(CCFLAGS) $(BUILD)/OS.o -o $(BUILD)/OS
+
+OT: 	OT.o
+	$(CC) $(CCFLAGS) $(BUILD)/OT.o -o $(BUILD)/OT
+
+OD: 	OD.o
+	$(CC) $(CCFLAGS) $(BUILD)/OD.o -o $(BUILD)/OD
+
+OS.o: 	
+	$(CC) -c $(CCFLAGS) $(OS)/farneback.cpp -o $(BUILD)/OS.o
+
+OT.o:
+	$(CC) -c $(CCFLAGS) $(OT)/lk_based.cpp -o $(BUILD)/OT.o	
+
+OD.o:
+	$(CC) -c $(CCFLAGS) $(OD)/position.cpp -o $(BUILD)/OD.o
+
+reconstruction: test.o
+	$(CC) $(CCFLAGS) $(PCL_COMMON) $(PCL_IO) $(BUILD)/test.o -o $(BUILD)/test
+test.o: 
+	$(CC) -c $(CCFLAGS) $(PCL_COMMON) $(PCL_IO) reconstruction/test.cpp -o $(BUILD)/test.o
+
+clean:
+	rm -rf build
