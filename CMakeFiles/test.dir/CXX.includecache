@@ -27,6 +27,10 @@ pcl/registration/ia_ransac.h
 -
 pcl/visualization/pcl_visualizer.h
 -
+Eigen/Eigen
+-
+Eigen/Dense
+-
 opencv2/highgui/highgui.hpp
 /Users/viharipiratla/repos/btp/reconstruction/opencv2/highgui/highgui.hpp
 opencv2/imgproc/imgproc.hpp
@@ -15463,6 +15467,10 @@ Geometry
 /opt/local/include/eigen3/Eigen/Geometry
 Eigenvalues
 /opt/local/include/eigen3/Eigen/Eigenvalues
+
+/opt/local/include/eigen3/Eigen/Eigen
+Dense
+/opt/local/include/eigen3/Eigen/Dense
 
 /opt/local/include/eigen3/Eigen/Eigen2Support
 src/Core/util/DisableStupidWarnings.h

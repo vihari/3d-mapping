@@ -15,6 +15,8 @@
 #include <pcl/console/parse.h>
 #include <pcl/registration/ia_ransac.h>
 #include <pcl/visualization/pcl_visualizer.h>
+#include <Eigen/Eigen>
+#include <Eigen/Dense>
 
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
@@ -39,22 +41,25 @@ main (int argc, char** argv)
 		return 0;
 	}
 
-	const char silhouettes[] = "/Users/viharipiratla/repos/btp/data/bunny_data/silhouettes/%04d.pgm";
+	const char silhouettes[] = "/Users/viharipiratla/repos/btp/data/bunny_data/silhouettes/%04d.png";
 	const char projection[] = "/Users/viharipiratla/repos/btp/data/bunny_data/calib/%04d.txt";
 
 	int i = 0;
-	while(i<36){
+	boost::shared_ptr< pcl::PointCloud<pcl::PointXYZ> > cloud (new pcl::PointCloud<pcl::PointXYZ>());
+	//pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>());
+	//36
+	while(i<1){
 		char silhouette_file[100], projection_file[100];
 		printf("Hull: %d\n",i);
 		sprintf(silhouette_file,silhouettes,i);
 		sprintf(projection_file,projection,i);
 		printf("Reading image from: %s\n",silhouette_file);
 		printf("Reading projection from: %s\n",projection_file);
-		cv::Mat silhoeutte = cv::imread(silhouette_file,1);
+		cv::Mat silhoeutte = cv::imread(silhouette_file,0);
 		FILE* PROJ = fopen(projection_file,"r");
 		Eigen::MatrixXf proj(3,4);
 		fseek(PROJ,9,SEEK_SET);
-		std::cerr<<"spme\n";
+
 		for(int x=0;x<3;x++){
 			float x1,x2,x3,x4;
 			fscanf(PROJ,"%f %f %f %f", &x1,&x2,&x3,&x4);
@@ -64,29 +69,47 @@ main (int argc, char** argv)
 			proj(x,2) = x3;
 			proj(x,3) = x4;
 		}
-		std::cerr<<"Able to read\n";
-		Eigen::MatrixXf invProj(3,4);
-		invProj = proj.inverse();
-		boost::shared_ptr< pcl::PointCloud<pcl::PointXYZ> > cloud (new pcl::PointCloud<pcl::PointXYZ>());
-		for(int y=0;y<silhoeutte.cols;i++)
-			for(int x=0;x<silhoeutte.rows;x++)
-				if(silhoeutte.at<unsigned char>(y,x)==0){
-					Eigen::MatrixXf pointh(3,1);
-					pointh(0,0) = x;
-					pointh(1,0) = y;
-					pointh(2,0) = 1;
-					Eigen::Matrix3f point_3d = invProj*pointh;
-					point_3d(0,0) = floor(point_3d(0,0)/2);
-					point_3d(0,1) = floor(point_3d(0,1)/2);
-					point_3d(0,2) = floor(point_3d(0,2)/2);
 
-					pcl::PointXYZ some(point_3d(0,0),point_3d(1,0),point_3d(2,0));
-					cloud->push_back(some);
+		//Eigen::JacobiSVD<Eigen::MatrixXf> svd(proj);
+
+		int prev = 1000;
+		int darkPoints = 0;
+		for(int y=0;y<silhoeutte.cols;y++){
+			for(int x=0;x<silhoeutte.rows;x++){
+				int rows = silhoeutte.rows;
+				int cols = silhoeutte.cols;
+				int now = silhoeutte.data[y*rows+x];
+				prev=now;
+				if(silhoeutte.data[y*rows+cols]<10){
+					Eigen::VectorXf pointh(3,1);
+					pointh(0) = x;
+					pointh(1) = y;
+					pointh(2) = 1;
+					std::cerr<<x<<" "<<y<<" "<<std::endl;
+					Eigen::ColPivHouseholderQR<Eigen::MatrixXf> dec(proj);
+					Eigen::VectorXf point_homogeneous = dec.solve(pointh);
+
+					double norm = point_homogeneous(3);
+					//to avoid situations where norm is very close to zero
+					norm=1;
+					if(norm>0.1){
+						pcl::PointXYZ some(point_homogeneous(0)/norm,point_homogeneous(1)/norm,point_homogeneous(2)/norm);
+						pcl::PointXYZ some2(pointh(0),pointh(1),pointh(2));
+						cloud->push_back(some2);
+					}else{
+						pcl::PointXYZ some(point_homogeneous(0),point_homogeneous(1),point_homogeneous(2));
+						pcl::PointXYZ some2(pointh(0),pointh(1),pointh(2));
+						cloud->push_back(some2);
+					}
+					darkPoints++;
 				}
+			}
+		}
+		printf("The number of dark points are: %d\n",darkPoints);
 		i++;
 		fclose(PROJ);
-		std::string pcd_file = "final.pcd";
-		pcl::io::savePCDFileASCII("final.pcd", *cloud);
 	}
+	if(cloud->size()>0)
+		pcl::io::savePCDFileASCII("final.pcd", *cloud.get());
 	return 0;
 }

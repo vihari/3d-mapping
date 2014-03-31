@@ -1316,6 +1316,7 @@ CMakeFiles/test.dir/reconstruction/VisualHull.cpp.o
  /opt/local/include/eigen3/Eigen/Cholesky
  /opt/local/include/eigen3/Eigen/Core
  /opt/local/include/eigen3/Eigen/Dense
+ /opt/local/include/eigen3/Eigen/Eigen
  /opt/local/include/eigen3/Eigen/Eigen2Support
  /opt/local/include/eigen3/Eigen/Eigenvalues
  /opt/local/include/eigen3/Eigen/Geometry

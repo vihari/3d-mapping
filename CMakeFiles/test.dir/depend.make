@@ -1315,6 +1315,7 @@ CMakeFiles/test.dir/reconstruction/VisualHull.cpp.o: /opt/local/include/boost/we
 CMakeFiles/test.dir/reconstruction/VisualHull.cpp.o: /opt/local/include/eigen3/Eigen/Cholesky
 CMakeFiles/test.dir/reconstruction/VisualHull.cpp.o: /opt/local/include/eigen3/Eigen/Core
 CMakeFiles/test.dir/reconstruction/VisualHull.cpp.o: /opt/local/include/eigen3/Eigen/Dense
+CMakeFiles/test.dir/reconstruction/VisualHull.cpp.o: /opt/local/include/eigen3/Eigen/Eigen
 CMakeFiles/test.dir/reconstruction/VisualHull.cpp.o: /opt/local/include/eigen3/Eigen/Eigen2Support
 CMakeFiles/test.dir/reconstruction/VisualHull.cpp.o: /opt/local/include/eigen3/Eigen/Eigenvalues
 CMakeFiles/test.dir/reconstruction/VisualHull.cpp.o: /opt/local/include/eigen3/Eigen/Geometry

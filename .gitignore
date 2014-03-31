@@ -55,3 +55,4 @@ build/
 data/
 CMakeFiles/
 CMakeCache.txt
+*.pcd
