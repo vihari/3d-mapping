@@ -41,14 +41,14 @@ main (int argc, char** argv)
 		return 0;
 	}
 
-	const char silhouettes[] = "/Users/viharipiratla/repos/btp/data/bunny_data/silhouettes/%04d.png";
-	const char projection[] = "/Users/viharipiratla/repos/btp/data/bunny_data/calib/%04d.txt";
+	const char silhouettes[] = "/Users/viharipiratla/repos/btp/data/pig_data/silhouettes/%04d.pgm";
+	const char projection[] = "/Users/viharipiratla/repos/btp/data/pig_data/calib/%04d.txt";
 
-	int i = 0;
+	int i = 1;
 	boost::shared_ptr< pcl::PointCloud<pcl::PointXYZ> > cloud (new pcl::PointCloud<pcl::PointXYZ>());
 	//pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>());
 	//36
-	while(i<1){
+	while(i<3){
 		char silhouette_file[100], projection_file[100];
 		printf("Hull: %d\n",i);
 		sprintf(silhouette_file,silhouettes,i);
@@ -58,7 +58,7 @@ main (int argc, char** argv)
 		cv::Mat silhoeutte = cv::imread(silhouette_file,0);
 		FILE* PROJ = fopen(projection_file,"r");
 		Eigen::MatrixXf proj(3,4);
-		fseek(PROJ,9,SEEK_SET);
+		fseek(PROJ,8,SEEK_SET);
 
 		for(int x=0;x<3;x++){
 			float x1,x2,x3,x4;
@@ -69,37 +69,53 @@ main (int argc, char** argv)
 			proj(x,2) = x3;
 			proj(x,3) = x4;
 		}
-
+		Eigen::VectorXf residue(3);
+		residue(0) = proj(0,3);
+		residue(1) = proj(1,3);
+		residue(2) = proj(2,3);
+		Eigen::MatrixXf proj_mat(3,3);
+		for(int x=0;x<3;x++){
+			proj_mat(x,0) = proj(x,0);
+			proj_mat(x,1) = proj(x,1);
+			proj_mat(x,2) = proj(x,2);
+		}
+		std::cout<<proj_mat.inverse()<<std::endl;
 		//Eigen::JacobiSVD<Eigen::MatrixXf> svd(proj);
-
 		int prev = 1000;
 		int darkPoints = 0;
 		for(int y=0;y<silhoeutte.cols;y++){
 			for(int x=0;x<silhoeutte.rows;x++){
 				int rows = silhoeutte.rows;
 				int cols = silhoeutte.cols;
-				int now = silhoeutte.data[y*rows+x];
+				int now = silhoeutte.data[x*cols+y];
 				prev=now;
-				if(silhoeutte.data[y*rows+cols]<10){
+				if(silhoeutte.data[x*cols+y]<10){
 					Eigen::VectorXf pointh(3,1);
-					pointh(0) = x;
-					pointh(1) = y;
-					pointh(2) = 1;
-					std::cerr<<x<<" "<<y<<" "<<std::endl;
+					pointh(0) = (double)x;
+					pointh(1) = (double)y;
+					pointh(2) = (double)1;
+					//std::cerr<<x<<" "<<y<<" "<<std::endl;
 					Eigen::ColPivHouseholderQR<Eigen::MatrixXf> dec(proj);
-					Eigen::VectorXf point_homogeneous = dec.solve(pointh);
-
-					double norm = point_homogeneous(3);
-					//to avoid situations where norm is very close to zero
-					norm=1;
-					if(norm>0.1){
-						pcl::PointXYZ some(point_homogeneous(0)/norm,point_homogeneous(1)/norm,point_homogeneous(2)/norm);
-						pcl::PointXYZ some2(pointh(0),pointh(1),pointh(2));
-						cloud->push_back(some2);
+					Eigen::VectorXf point_homogeneous = (proj_mat.inverse())*(pointh-residue);//dec.solve(pointh);
+					if(point_homogeneous.rows()==3){
+						std::cout<<"The difference is: "<<std::endl;
+						std::cout<<(proj_mat*point_homogeneous+(residue-pointh))<<std::endl;
 					}else{
-						pcl::PointXYZ some(point_homogeneous(0),point_homogeneous(1),point_homogeneous(2));
-						pcl::PointXYZ some2(pointh(0),pointh(1),pointh(2));
-						cloud->push_back(some2);
+						Eigen::VectorXf test(3);
+						test(0) = point_homogeneous(0);
+						test(1) = point_homogeneous(1);
+						test(2) = point_homogeneous(2);
+
+						std::cout<<"The difference is: "<<std::endl;
+						std::cout<<(proj_mat*test+(residue-pointh))<<std::endl;
+					}
+					double norm = 1;
+					//to avoid situations where norm is very close to zero
+					if(norm>0){
+						pcl::PointXYZ some(point_homogeneous(0)/norm,point_homogeneous(1)/norm,point_homogeneous(2)/norm);
+						std::cout<<pointh;
+						std::cout<<some<<std::endl;
+						cloud->push_back(some);
 					}
 					darkPoints++;
 				}
