@@ -14,12 +14,13 @@
 #include <pcl/point_cloud.h>
 #include <pcl/console/parse.h>
 #include <pcl/registration/ia_ransac.h>
-#include <pcl/visualization/pcl_visualizer.h>
+//#include <pcl/visualization/pcl_visualizer.h>
 #include <Eigen/Eigen>
 #include <Eigen/Dense>
 
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
+#include <opencv2/core/eigen.hpp>
 
 // This function displays the help
 void
@@ -41,8 +42,8 @@ main (int argc, char** argv)
 		return 0;
 	}
 
-	const char silhouettes[] = "/Users/viharipiratla/repos/btp/data/pig_data/silhouettes/%04d.pgm";
-	const char projection[] = "/Users/viharipiratla/repos/btp/data/pig_data/calib/%04d.txt";
+	const char silhouettes[] = "/home/psyche/RiseNFall/BTP/Ground_0/3d-mapping/data/pig_data/silhouettes/%04d.pgm";
+	const char projection[] = "/home/psyche/RiseNFall/BTP/Ground_0/3d-mapping/data/pig_data/calib/%04d.txt";
 
 	int i = 1;
 	boost::shared_ptr< pcl::PointCloud<pcl::PointXYZ> > cloud (new pcl::PointCloud<pcl::PointXYZ>());
@@ -83,6 +84,15 @@ main (int argc, char** argv)
 		//Eigen::JacobiSVD<Eigen::MatrixXf> svd(proj);
 		int prev = 1000;
 		int darkPoints = 0;
+
+		cv::Mat invProjM;
+		cv::Mat projM;
+		cv::eigen2cv(proj, projM);
+		invProjM = projM.inv(cv::DECOMP_SVD);
+
+		Eigen::MatrixXf invProj;
+		cv::cv2eigen(invProjM, invProj);
+
 		for(int y=0;y<silhoeutte.cols;y++){
 			for(int x=0;x<silhoeutte.rows;x++){
 				int rows = silhoeutte.rows;
@@ -94,9 +104,8 @@ main (int argc, char** argv)
 					pointh(0) = (double)x;
 					pointh(1) = (double)y;
 					pointh(2) = (double)1;
-					//std::cerr<<x<<" "<<y<<" "<<std::endl;
-					Eigen::ColPivHouseholderQR<Eigen::MatrixXf> dec(proj);
-					Eigen::VectorXf point_homogeneous = (proj_mat.inverse())*(pointh-residue);//dec.solve(pointh);
+					//std::cerr<<x<<" "<<y<<" "<<std::end;
+					Eigen::VectorXf point_homogeneous = invProj*pointh;
 					if(point_homogeneous.rows()==3){
 						std::cout<<"The difference is: "<<std::endl;
 						std::cout<<(proj_mat*point_homogeneous+(residue-pointh))<<std::endl;
@@ -109,7 +118,7 @@ main (int argc, char** argv)
 						std::cout<<"The difference is: "<<std::endl;
 						std::cout<<(proj_mat*test+(residue-pointh))<<std::endl;
 					}
-					double norm = 1;
+					double norm = point_homogeneous(3);
 					//to avoid situations where norm is very close to zero
 					if(norm>0){
 						pcl::PointXYZ some(point_homogeneous(0)/norm,point_homogeneous(1)/norm,point_homogeneous(2)/norm);
