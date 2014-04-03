@@ -46,14 +46,20 @@ main (int argc, char** argv)
 		return 0;
 	}
 
-	const char silhouettes[] = "/Users/viharipiratla/repos/btp/data/pig_data/silhouettes/%04d.pgm";
-	const char projection[] = "/Users/viharipiratla/repos/btp/data/pig_data/calib/%04d.txt";
+	const char silhouettes[] = "/Users/viharipiratla/repos/btp/data/bunny_data/silhouettes/%04d.pgm";
+	const char projection[] = "/Users/viharipiratla/repos/btp/data/bunny_data/calib/%04d.txt";
 
 	int i = 0;
 	boost::shared_ptr< pcl::PointCloud<pcl::PointXYZI> > cloud (new pcl::PointCloud<pcl::PointXYZI>());
-	float xLims[] =  {-6, 6};
-	float yLims[] = {-6, 6};
-	float zLims[] =  {-6, 0};
+	//for pig_data
+	//float xLims[] =  {-6, 6};
+	//float yLims[] = {-6, 6};
+	//float zLims[] =  {-6, 0};
+	//for bunny
+	float xLims[] =  {-7.5, 7.5};
+	float yLims[] = {-10, 10};
+	float zLims[] =  {-7.5, 15};
+	
 	float step = 0.1;
 
 	for(float x=xLims[0];x<xLims[1];x+=step){
@@ -73,7 +79,7 @@ main (int argc, char** argv)
 
 	//pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>());
 	//36
-	while(i<4){
+	while(i<36){
 		char silhouette_file[100], projection_file[100];
 		printf("Hull: %d\n",i);
 		sprintf(silhouette_file,silhouettes,i);
@@ -94,18 +100,7 @@ main (int argc, char** argv)
 			proj(x,2) = x3;
 			proj(x,3) = x4;
 		}
-		Eigen::VectorXf residue(3);
-		residue(0) = proj(0,3);
-		residue(1) = proj(1,3);
-		residue(2) = proj(2,3);
-		Eigen::MatrixXf proj_mat(3,3);
-		for(int x=0;x<3;x++){
-			proj_mat(x,0) = proj(x,0);
-			proj_mat(x,1) = proj(x,1);
-			proj_mat(x,2) = proj(x,2);
-		}
-		//std::cout<<proj_mat.inverse()<<std::endl;
-		//Eigen::JacobiSVD<Eigen::MatrixXf> svd(proj);
+
 		int prev = 1000;
 		int darkPoints = 0;
 
@@ -116,43 +111,22 @@ main (int argc, char** argv)
 
 		Eigen::MatrixXf invProj;
 		cv::cv2eigen(invProjM, invProj);
-		//std::cout<<invProj*proj<<std::endl;
-		for(int y=0;y<silhoeutte.cols;y++){
-			for(int x=0;x<silhoeutte.rows;x++){
-				int rows = silhoeutte.rows;
-				int cols = silhoeutte.cols;
 
-				if(silhoeutte.data[x*cols+y]>100){
-					Eigen::VectorXf pointh(3,1);
-					pointh(0) = (double)x;
-					pointh(1) = (double)y;
-					pointh(2) = (double)1;
-					//std::cerr<<x<<" "<<y<<" "<<std::end;
-					Eigen::VectorXf point_homogeneous = invProj*pointh;
-					double norm = point_homogeneous(3);
-
-					int K = 5;
-					std::vector<int> pointIdxNKNSearch(K);
-					std::vector<float> pointNKNSquaredDistance(K);
-					//to avoid situations where norm is very close to zero
-					if(norm>0){
-						pcl::PointXYZI some;
-						some.x = point_homogeneous(0)/norm;
-						some.y = point_homogeneous(1)/norm;
-						some.z = point_homogeneous(2)/norm;
-						some.intensity = 1;
-						//std::cout<<pointh;
-						//std::cout<<some<<std::endl;
-						if(kdtree.nearestKSearch(some,K,pointIdxNKNSearch,pointNKNSquaredDistance)){
-							for(size_t s=0;s<pointIdxNKNSearch.size();s++){
-								cloud->points[pointIdxNKNSearch[i]].intensity = cloud->points[pointIdxNKNSearch[i]].intensity-(1.0/(float)K);
-							}
-						}
-					}
-					darkPoints++;
-				}
+		for(int ptIdx=0;ptIdx<cloud->size();ptIdx++){
+			Eigen::VectorXf point(4);
+			point(0) = cloud->points[ptIdx].x;
+			point(1) = cloud->points[ptIdx].y;
+			point(2) = cloud->points[ptIdx].z;
+			point(3) = 1;
+			Eigen::Vector3f pixel = proj*point;
+			float x = pixel(0)/pixel(2);
+			float y = pixel(1)/pixel(2);
+			if((x>=0)&&(x<silhoeutte.cols)&&(y>=0)&&(y<silhoeutte.rows)){
+				if(silhoeutte.data[silhoeutte.cols*((int)y)+(int)x]==255)
+					cloud->points[ptIdx].intensity-=0.3;
 			}
 		}
+
 		boost::shared_ptr< pcl::PointCloud<pcl::PointXYZI> > cloud_filtered (new pcl::PointCloud<pcl::PointXYZI>());
 		pcl::PassThrough<pcl::PointXYZI> pass;
 		pass.setInputCloud(cloud);
@@ -160,9 +134,7 @@ main (int argc, char** argv)
 		pass.setFilterLimits(0,1.0);
 		pass.filter(*cloud_filtered);
 		pcl::copyPointCloud(*cloud_filtered,*cloud);
-		//TODO: do this only if the cloud size decreased heavily
-		kdtree.setInputCloud(cloud_filtered);
-		//cloud->push_back(some);
+
 		printf("The number of dark points are: %d\n",darkPoints);
 		i++;
 		fclose(PROJ);
