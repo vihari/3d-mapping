@@ -4,16 +4,16 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/psyche/RiseNFall/BTP/Ground_0/3d-mapping/object_track/lk_based.cpp" "/home/psyche/RiseNFall/BTP/Ground_0/3d-mapping/CMakeFiles/OT.dir/object_track/lk_based.cpp.o"
+  "/Users/viharipiratla/repos/btp/object_track/lk_based.cpp" "/Users/viharipiratla/repos/btp/CMakeFiles/OT.dir/object_track/lk_based.cpp.o"
   )
-SET(CMAKE_CXX_COMPILER_ID "GNU")
+SET(CMAKE_CXX_COMPILER_ID "Clang")
 
 # Preprocessor definitions for this target.
 SET(CMAKE_TARGET_DEFINITIONS
-  "DISABLE_QHULL"
   "EIGEN_USE_NEW_STDVECTOR"
   "EIGEN_YES_I_KNOW_SPARSE_MODULE_IS_NOT_STABLE_YET"
   "FLANN_STATIC"
+  "qh_QHpointer"
   )
 
 # Targets to which this target links.
@@ -24,10 +24,12 @@ SET(CMAKE_TARGET_LINKED_INFO_FILES
 SET(CMAKE_C_TARGET_INCLUDE_PATH
   "/usr/local/include/opencv"
   "/usr/local/include"
-  "/usr/include/vtk-5.8"
+  "/opt/local/include/vtk-5.10"
   "/usr/local/include/pcl-1.6"
-  "/usr/include/eigen3"
-  "/usr/include/openni"
+  "/opt/local/include/eigen3"
+  "/opt/local/include"
+  "/usr/include/ni"
+  "/usr/local/include/qhull"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
 SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

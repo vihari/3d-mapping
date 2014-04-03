@@ -26,19 +26,22 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/bin/cmake
+CMAKE_COMMAND = /usr/local/Cellar/cmake/2.8.12/bin/cmake
 
 # The command to remove a file.
-RM = /usr/bin/cmake -E remove -f
+RM = /usr/local/Cellar/cmake/2.8.12/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /usr/local/Cellar/cmake/2.8.12/bin/ccmake
+
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/psyche/RiseNFall/BTP/Ground_0/3d-mapping
+CMAKE_SOURCE_DIR = /Users/viharipiratla/repos/btp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/psyche/RiseNFall/BTP/Ground_0/3d-mapping
+CMAKE_BINARY_DIR = /Users/viharipiratla/repos/btp
 
 # Include any dependencies generated for this target.
 include CMakeFiles/OT.dir/depend.make
@@ -51,17 +54,17 @@ include CMakeFiles/OT.dir/flags.make
 
 CMakeFiles/OT.dir/object_track/lk_based.cpp.o: CMakeFiles/OT.dir/flags.make
 CMakeFiles/OT.dir/object_track/lk_based.cpp.o: object_track/lk_based.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/psyche/RiseNFall/BTP/Ground_0/3d-mapping/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/viharipiratla/repos/btp/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/OT.dir/object_track/lk_based.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/OT.dir/object_track/lk_based.cpp.o -c /home/psyche/RiseNFall/BTP/Ground_0/3d-mapping/object_track/lk_based.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/OT.dir/object_track/lk_based.cpp.o -c /Users/viharipiratla/repos/btp/object_track/lk_based.cpp
 
 CMakeFiles/OT.dir/object_track/lk_based.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OT.dir/object_track/lk_based.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/psyche/RiseNFall/BTP/Ground_0/3d-mapping/object_track/lk_based.cpp > CMakeFiles/OT.dir/object_track/lk_based.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/viharipiratla/repos/btp/object_track/lk_based.cpp > CMakeFiles/OT.dir/object_track/lk_based.cpp.i
 
 CMakeFiles/OT.dir/object_track/lk_based.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OT.dir/object_track/lk_based.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/psyche/RiseNFall/BTP/Ground_0/3d-mapping/object_track/lk_based.cpp -o CMakeFiles/OT.dir/object_track/lk_based.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/viharipiratla/repos/btp/object_track/lk_based.cpp -o CMakeFiles/OT.dir/object_track/lk_based.cpp.s
 
 CMakeFiles/OT.dir/object_track/lk_based.cpp.o.requires:
 .PHONY : CMakeFiles/OT.dir/object_track/lk_based.cpp.o.requires
@@ -81,45 +84,39 @@ OT_EXTERNAL_OBJECTS =
 
 build/OT: CMakeFiles/OT.dir/object_track/lk_based.cpp.o
 build/OT: CMakeFiles/OT.dir/build.make
-build/OT: /usr/local/lib/libopencv_videostab.so.2.4.8
-build/OT: /usr/local/lib/libopencv_video.so.2.4.8
+build/OT: /usr/local/lib/libopencv_videostab.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_video.2.4.7.dylib
 build/OT: /usr/local/lib/libopencv_ts.a
-build/OT: /usr/local/lib/libopencv_superres.so.2.4.8
-build/OT: /usr/local/lib/libopencv_stitching.so.2.4.8
-build/OT: /usr/local/lib/libopencv_photo.so.2.4.8
-build/OT: /usr/local/lib/libopencv_ocl.so.2.4.8
-build/OT: /usr/local/lib/libopencv_objdetect.so.2.4.8
-build/OT: /usr/local/lib/libopencv_nonfree.so.2.4.8
-build/OT: /usr/local/lib/libopencv_ml.so.2.4.8
-build/OT: /usr/local/lib/libopencv_legacy.so.2.4.8
-build/OT: /usr/local/lib/libopencv_imgproc.so.2.4.8
-build/OT: /usr/local/lib/libopencv_highgui.so.2.4.8
-build/OT: /usr/local/lib/libopencv_gpu.so.2.4.8
-build/OT: /usr/local/lib/libopencv_flann.so.2.4.8
-build/OT: /usr/local/lib/libopencv_features2d.so.2.4.8
-build/OT: /usr/local/lib/libopencv_core.so.2.4.8
-build/OT: /usr/local/lib/libopencv_contrib.so.2.4.8
-build/OT: /usr/local/lib/libopencv_calib3d.so.2.4.8
-build/OT: /usr/lib/x86_64-linux-gnu/libGLU.so
-build/OT: /usr/lib/x86_64-linux-gnu/libGL.so
-build/OT: /usr/lib/x86_64-linux-gnu/libSM.so
-build/OT: /usr/lib/x86_64-linux-gnu/libICE.so
-build/OT: /usr/lib/x86_64-linux-gnu/libX11.so
-build/OT: /usr/lib/x86_64-linux-gnu/libXext.so
-build/OT: /usr/local/lib/libopencv_nonfree.so.2.4.8
-build/OT: /usr/local/lib/libopencv_ocl.so.2.4.8
-build/OT: /usr/local/lib/libopencv_gpu.so.2.4.8
-build/OT: /usr/local/lib/libopencv_photo.so.2.4.8
-build/OT: /usr/local/lib/libopencv_objdetect.so.2.4.8
-build/OT: /usr/local/lib/libopencv_legacy.so.2.4.8
-build/OT: /usr/local/lib/libopencv_video.so.2.4.8
-build/OT: /usr/local/lib/libopencv_ml.so.2.4.8
-build/OT: /usr/local/lib/libopencv_calib3d.so.2.4.8
-build/OT: /usr/local/lib/libopencv_features2d.so.2.4.8
-build/OT: /usr/local/lib/libopencv_highgui.so.2.4.8
-build/OT: /usr/local/lib/libopencv_imgproc.so.2.4.8
-build/OT: /usr/local/lib/libopencv_flann.so.2.4.8
-build/OT: /usr/local/lib/libopencv_core.so.2.4.8
+build/OT: /usr/local/lib/libopencv_superres.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_stitching.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_photo.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_ocl.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_objdetect.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_nonfree.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_ml.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_legacy.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_imgproc.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_highgui.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_gpu.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_flann.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_features2d.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_core.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_contrib.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_calib3d.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_nonfree.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_ocl.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_gpu.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_photo.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_objdetect.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_legacy.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_video.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_ml.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_calib3d.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_features2d.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_highgui.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_imgproc.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_flann.2.4.7.dylib
+build/OT: /usr/local/lib/libopencv_core.2.4.7.dylib
 build/OT: CMakeFiles/OT.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable build/OT"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/OT.dir/link.txt --verbose=$(VERBOSE)
@@ -136,6 +133,6 @@ CMakeFiles/OT.dir/clean:
 .PHONY : CMakeFiles/OT.dir/clean
 
 CMakeFiles/OT.dir/depend:
-	cd /home/psyche/RiseNFall/BTP/Ground_0/3d-mapping && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/psyche/RiseNFall/BTP/Ground_0/3d-mapping /home/psyche/RiseNFall/BTP/Ground_0/3d-mapping /home/psyche/RiseNFall/BTP/Ground_0/3d-mapping /home/psyche/RiseNFall/BTP/Ground_0/3d-mapping /home/psyche/RiseNFall/BTP/Ground_0/3d-mapping/CMakeFiles/OT.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/viharipiratla/repos/btp && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/viharipiratla/repos/btp /Users/viharipiratla/repos/btp /Users/viharipiratla/repos/btp /Users/viharipiratla/repos/btp /Users/viharipiratla/repos/btp/CMakeFiles/OT.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/OT.dir/depend
 

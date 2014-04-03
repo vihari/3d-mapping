@@ -11,9 +11,13 @@
 #include <boost/thread/thread.hpp>
 #include <pcl/io/pcd_io.h>
 #include <pcl/io/ply_io.h>
+#include <pcl/point_types.h>
 #include <pcl/point_cloud.h>
 #include <pcl/console/parse.h>
 #include <pcl/registration/ia_ransac.h>
+#include <pcl/kdtree/kdtree_flann.h>
+#include <pcl/filters/passthrough.h>
+
 //#include <pcl/visualization/pcl_visualizer.h>
 #include <Eigen/Eigen>
 #include <Eigen/Dense>
@@ -42,14 +46,34 @@ main (int argc, char** argv)
 		return 0;
 	}
 
-	const char silhouettes[] = "/home/psyche/RiseNFall/BTP/Ground_0/3d-mapping/data/pig_data/silhouettes/%04d.pgm";
-	const char projection[] = "/home/psyche/RiseNFall/BTP/Ground_0/3d-mapping/data/pig_data/calib/%04d.txt";
+	const char silhouettes[] = "/Users/viharipiratla/repos/btp/data/pig_data/silhouettes/%04d.pgm";
+	const char projection[] = "/Users/viharipiratla/repos/btp/data/pig_data/calib/%04d.txt";
 
-	int i = 1;
-	boost::shared_ptr< pcl::PointCloud<pcl::PointXYZ> > cloud (new pcl::PointCloud<pcl::PointXYZ>());
+	int i = 0;
+	boost::shared_ptr< pcl::PointCloud<pcl::PointXYZI> > cloud (new pcl::PointCloud<pcl::PointXYZI>());
+	float xLims[] =  {-6, 6};
+	float yLims[] = {-6, 6};
+	float zLims[] =  {-6, 0};
+	float step = 0.1;
+
+	for(float x=xLims[0];x<xLims[1];x+=step){
+		for(float y=yLims[0];y<yLims[1];y+=step){
+			for(float z=zLims[0];z<zLims[1];z+=step){
+				pcl::PointXYZI some;
+				some.x = x;
+				some.y = y;
+				some.z = z;
+				some.intensity = 1.0;
+				cloud->push_back(some);
+			}
+		}
+	}
+	pcl::KdTreeFLANN<pcl::PointXYZI> kdtree;
+	kdtree.setInputCloud(cloud);
+
 	//pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>());
 	//36
-	while(i<3){
+	while(i<4){
 		char silhouette_file[100], projection_file[100];
 		printf("Hull: %d\n",i);
 		sprintf(silhouette_file,silhouettes,i);
@@ -80,7 +104,7 @@ main (int argc, char** argv)
 			proj_mat(x,1) = proj(x,1);
 			proj_mat(x,2) = proj(x,2);
 		}
-		std::cout<<proj_mat.inverse()<<std::endl;
+		//std::cout<<proj_mat.inverse()<<std::endl;
 		//Eigen::JacobiSVD<Eigen::MatrixXf> svd(proj);
 		int prev = 1000;
 		int darkPoints = 0;
@@ -92,44 +116,53 @@ main (int argc, char** argv)
 
 		Eigen::MatrixXf invProj;
 		cv::cv2eigen(invProjM, invProj);
-
+		//std::cout<<invProj*proj<<std::endl;
 		for(int y=0;y<silhoeutte.cols;y++){
 			for(int x=0;x<silhoeutte.rows;x++){
 				int rows = silhoeutte.rows;
 				int cols = silhoeutte.cols;
-				int now = silhoeutte.data[x*cols+y];
-				prev=now;
-				if(silhoeutte.data[x*cols+y]<10){
+
+				if(silhoeutte.data[x*cols+y]>100){
 					Eigen::VectorXf pointh(3,1);
 					pointh(0) = (double)x;
 					pointh(1) = (double)y;
 					pointh(2) = (double)1;
 					//std::cerr<<x<<" "<<y<<" "<<std::end;
 					Eigen::VectorXf point_homogeneous = invProj*pointh;
-					if(point_homogeneous.rows()==3){
-						std::cout<<"The difference is: "<<std::endl;
-						std::cout<<(proj_mat*point_homogeneous+(residue-pointh))<<std::endl;
-					}else{
-						Eigen::VectorXf test(3);
-						test(0) = point_homogeneous(0);
-						test(1) = point_homogeneous(1);
-						test(2) = point_homogeneous(2);
-
-						std::cout<<"The difference is: "<<std::endl;
-						std::cout<<(proj_mat*test+(residue-pointh))<<std::endl;
-					}
 					double norm = point_homogeneous(3);
+
+					int K = 5;
+					std::vector<int> pointIdxNKNSearch(K);
+					std::vector<float> pointNKNSquaredDistance(K);
 					//to avoid situations where norm is very close to zero
 					if(norm>0){
-						pcl::PointXYZ some(point_homogeneous(0)/norm,point_homogeneous(1)/norm,point_homogeneous(2)/norm);
-						std::cout<<pointh;
-						std::cout<<some<<std::endl;
-						cloud->push_back(some);
+						pcl::PointXYZI some;
+						some.x = point_homogeneous(0)/norm;
+						some.y = point_homogeneous(1)/norm;
+						some.z = point_homogeneous(2)/norm;
+						some.intensity = 1;
+						//std::cout<<pointh;
+						//std::cout<<some<<std::endl;
+						if(kdtree.nearestKSearch(some,K,pointIdxNKNSearch,pointNKNSquaredDistance)){
+							for(size_t s=0;s<pointIdxNKNSearch.size();s++){
+								cloud->points[pointIdxNKNSearch[i]].intensity = cloud->points[pointIdxNKNSearch[i]].intensity-(1.0/(float)K);
+							}
+						}
 					}
 					darkPoints++;
 				}
 			}
 		}
+		boost::shared_ptr< pcl::PointCloud<pcl::PointXYZI> > cloud_filtered (new pcl::PointCloud<pcl::PointXYZI>());
+		pcl::PassThrough<pcl::PointXYZI> pass;
+		pass.setInputCloud(cloud);
+		pass.setFilterFieldName("intensity");
+		pass.setFilterLimits(0,1.0);
+		pass.filter(*cloud_filtered);
+		pcl::copyPointCloud(*cloud_filtered,*cloud);
+		//TODO: do this only if the cloud size decreased heavily
+		kdtree.setInputCloud(cloud_filtered);
+		//cloud->push_back(some);
 		printf("The number of dark points are: %d\n",darkPoints);
 		i++;
 		fclose(PROJ);
