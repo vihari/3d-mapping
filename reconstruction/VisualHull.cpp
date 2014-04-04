@@ -26,6 +26,10 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include <opencv2/core/eigen.hpp>
 
+#define BGD_PIX 255
+#define SIG(x) (x > 0) ? 1 : ((x < 0) ? -1 : 0)
+
+
 // This function displays the help
 void
 showHelp(char * program_name)
@@ -112,6 +116,8 @@ main (int argc, char** argv)
 		Eigen::MatrixXf invProj;
 		cv::cv2eigen(invProjM, invProj);
 
+		int nVotes = 4;
+
 		for(int ptIdx=0;ptIdx<cloud->size();ptIdx++){
 			Eigen::VectorXf point(4);
 			point(0) = cloud->points[ptIdx].x;
@@ -122,8 +128,11 @@ main (int argc, char** argv)
 			float x = pixel(0)/pixel(2);
 			float y = pixel(1)/pixel(2);
 			if((x>=0)&&(x<silhoeutte.cols)&&(y>=0)&&(y<silhoeutte.rows)){
-				if(silhoeutte.data[silhoeutte.cols*((int)y)+(int)x]==255)
-					cloud->points[ptIdx].intensity-=0.3;
+			  if(silhoeutte.data[silhoeutte.cols*((int)y)+(int)x] == BGD_PIX ) {
+								cloud->points[ptIdx].intensity-=0.3;
+			    //			    float prevIntensity = cloud->points[ptIdx].intensity;
+			    //cloud->points[ptIdx].intensity = SIG(prevIntensity)*(prevIntensity - 1/nVotes);
+			  }
 			}
 		}
 

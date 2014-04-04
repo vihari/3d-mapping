@@ -26,22 +26,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/Cellar/cmake/2.8.12/bin/cmake
+CMAKE_COMMAND = /usr/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/Cellar/cmake/2.8.12/bin/cmake -E remove -f
+RM = /usr/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
-# The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/local/Cellar/cmake/2.8.12/bin/ccmake
-
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/viharipiratla/repos/btp
+CMAKE_SOURCE_DIR = /home/psyche/RiseNFall/BTP/Ground_0/3d-mapping
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/viharipiratla/repos/btp
+CMAKE_BINARY_DIR = /home/psyche/RiseNFall/BTP/Ground_0/3d-mapping
 
 # Include any dependencies generated for this target.
 include CMakeFiles/test.dir/depend.make
@@ -54,17 +51,17 @@ include CMakeFiles/test.dir/flags.make
 
 CMakeFiles/test.dir/reconstruction/VisualHull.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/reconstruction/VisualHull.cpp.o: reconstruction/VisualHull.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/viharipiratla/repos/btp/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/psyche/RiseNFall/BTP/Ground_0/3d-mapping/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/test.dir/reconstruction/VisualHull.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/test.dir/reconstruction/VisualHull.cpp.o -c /Users/viharipiratla/repos/btp/reconstruction/VisualHull.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/test.dir/reconstruction/VisualHull.cpp.o -c /home/psyche/RiseNFall/BTP/Ground_0/3d-mapping/reconstruction/VisualHull.cpp
 
 CMakeFiles/test.dir/reconstruction/VisualHull.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/reconstruction/VisualHull.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/viharipiratla/repos/btp/reconstruction/VisualHull.cpp > CMakeFiles/test.dir/reconstruction/VisualHull.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/psyche/RiseNFall/BTP/Ground_0/3d-mapping/reconstruction/VisualHull.cpp > CMakeFiles/test.dir/reconstruction/VisualHull.cpp.i
 
 CMakeFiles/test.dir/reconstruction/VisualHull.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/reconstruction/VisualHull.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/viharipiratla/repos/btp/reconstruction/VisualHull.cpp -o CMakeFiles/test.dir/reconstruction/VisualHull.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/psyche/RiseNFall/BTP/Ground_0/3d-mapping/reconstruction/VisualHull.cpp -o CMakeFiles/test.dir/reconstruction/VisualHull.cpp.s
 
 CMakeFiles/test.dir/reconstruction/VisualHull.cpp.o.requires:
 .PHONY : CMakeFiles/test.dir/reconstruction/VisualHull.cpp.o.requires
@@ -84,75 +81,76 @@ test_EXTERNAL_OBJECTS =
 
 build/test: CMakeFiles/test.dir/reconstruction/VisualHull.cpp.o
 build/test: CMakeFiles/test.dir/build.make
-build/test: /opt/local/lib/libboost_system-mt.dylib
-build/test: /opt/local/lib/libboost_filesystem-mt.dylib
-build/test: /opt/local/lib/libboost_thread-mt.dylib
-build/test: /opt/local/lib/libboost_date_time-mt.dylib
-build/test: /opt/local/lib/libboost_iostreams-mt.dylib
-build/test: /usr/local/lib/libpcl_common.dylib
-build/test: /usr/local/lib/libpcl_octree.dylib
-build/test: /usr/lib/libOpenNI.dylib
-build/test: /opt/local/lib/vtk-5.10/libvtkCommon.5.10.0.dylib
-build/test: /opt/local/lib/vtk-5.10/libvtkRendering.5.10.0.dylib
-build/test: /opt/local/lib/vtk-5.10/libvtkHybrid.5.10.0.dylib
-build/test: /usr/local/lib/libpcl_io.dylib
-build/test: /opt/local/lib/libflann_cpp_s.a
-build/test: /usr/local/lib/libpcl_kdtree.dylib
-build/test: /usr/local/lib/libpcl_search.dylib
-build/test: /usr/local/lib/libpcl_sample_consensus.dylib
-build/test: /usr/local/lib/libpcl_filters.dylib
-build/test: /usr/local/lib/libpcl_segmentation.dylib
-build/test: /usr/local/lib/libpcl_visualization.dylib
-build/test: /usr/local/lib/libpcl_features.dylib
-build/test: /usr/local/lib/libqhull.dylib
-build/test: /usr/local/lib/libpcl_surface.dylib
-build/test: /usr/local/lib/libpcl_registration.dylib
-build/test: /usr/local/lib/libpcl_keypoints.dylib
-build/test: /usr/local/lib/libpcl_tracking.dylib
-build/test: /usr/local/lib/libpcl_apps.dylib
-build/test: /usr/local/lib/libopencv_videostab.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_video.2.4.7.dylib
+build/test: /usr/lib/libboost_system-mt.so
+build/test: /usr/lib/libboost_filesystem-mt.so
+build/test: /usr/lib/libboost_thread-mt.so
+build/test: /usr/lib/libboost_date_time-mt.so
+build/test: /usr/lib/libboost_iostreams-mt.so
+build/test: /usr/local/lib/libpcl_common.so
+build/test: /usr/lib/libflann_cpp_s.a
+build/test: /usr/local/lib/libpcl_kdtree.so
+build/test: /usr/local/lib/libpcl_octree.so
+build/test: /usr/local/lib/libpcl_search.so
+build/test: /usr/local/lib/libpcl_sample_consensus.so
+build/test: /usr/local/lib/libpcl_filters.so
+build/test: /usr/local/lib/libpcl_tracking.so
+build/test: /usr/lib/libOpenNI.so
+build/test: /usr/lib/libvtkCommon.so.5.8.0
+build/test: /usr/lib/libvtkRendering.so.5.8.0
+build/test: /usr/lib/libvtkHybrid.so.5.8.0
+build/test: /usr/local/lib/libpcl_io.so
+build/test: /usr/local/lib/libpcl_features.so
+build/test: /usr/local/lib/libpcl_keypoints.so
+build/test: /usr/local/lib/libpcl_surface.so
+build/test: /usr/local/lib/libpcl_registration.so
+build/test: /usr/local/lib/libpcl_segmentation.so
+build/test: /usr/local/lib/libopencv_videostab.so.2.4.8
+build/test: /usr/local/lib/libopencv_video.so.2.4.8
 build/test: /usr/local/lib/libopencv_ts.a
-build/test: /usr/local/lib/libopencv_superres.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_stitching.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_photo.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_ocl.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_objdetect.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_nonfree.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_ml.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_legacy.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_imgproc.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_highgui.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_gpu.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_flann.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_features2d.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_core.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_contrib.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_calib3d.2.4.7.dylib
-build/test: /opt/local/lib/vtk-5.10/libvtkRendering.5.10.0.dylib
-build/test: /opt/local/lib/vtk-5.10/libvtkGraphics.5.10.0.dylib
-build/test: /opt/local/lib/vtk-5.10/libvtkImaging.5.10.0.dylib
-build/test: /opt/local/lib/libQtGui.dylib
-build/test: /opt/local/lib/libQtSql.dylib
-build/test: /opt/local/lib/libQtCore.dylib
-build/test: /opt/local/lib/vtk-5.10/libvtkIO.5.10.0.dylib
-build/test: /opt/local/lib/vtk-5.10/libvtkFiltering.5.10.0.dylib
-build/test: /opt/local/lib/vtk-5.10/libvtkCommon.5.10.0.dylib
-build/test: /opt/local/lib/vtk-5.10/libvtksys.5.10.0.dylib
-build/test: /usr/local/lib/libopencv_nonfree.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_ocl.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_gpu.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_photo.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_objdetect.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_legacy.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_video.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_ml.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_calib3d.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_features2d.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_highgui.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_imgproc.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_flann.2.4.7.dylib
-build/test: /usr/local/lib/libopencv_core.2.4.7.dylib
+build/test: /usr/local/lib/libopencv_superres.so.2.4.8
+build/test: /usr/local/lib/libopencv_stitching.so.2.4.8
+build/test: /usr/local/lib/libopencv_photo.so.2.4.8
+build/test: /usr/local/lib/libopencv_ocl.so.2.4.8
+build/test: /usr/local/lib/libopencv_objdetect.so.2.4.8
+build/test: /usr/local/lib/libopencv_nonfree.so.2.4.8
+build/test: /usr/local/lib/libopencv_ml.so.2.4.8
+build/test: /usr/local/lib/libopencv_legacy.so.2.4.8
+build/test: /usr/local/lib/libopencv_imgproc.so.2.4.8
+build/test: /usr/local/lib/libopencv_highgui.so.2.4.8
+build/test: /usr/local/lib/libopencv_gpu.so.2.4.8
+build/test: /usr/local/lib/libopencv_flann.so.2.4.8
+build/test: /usr/local/lib/libopencv_features2d.so.2.4.8
+build/test: /usr/local/lib/libopencv_core.so.2.4.8
+build/test: /usr/local/lib/libopencv_contrib.so.2.4.8
+build/test: /usr/local/lib/libopencv_calib3d.so.2.4.8
+build/test: /usr/lib/libvtkParallel.so.5.8.0
+build/test: /usr/lib/libvtkRendering.so.5.8.0
+build/test: /usr/lib/libvtkGraphics.so.5.8.0
+build/test: /usr/lib/libvtkImaging.so.5.8.0
+build/test: /usr/lib/libvtkIO.so.5.8.0
+build/test: /usr/lib/libvtkFiltering.so.5.8.0
+build/test: /usr/lib/libvtkCommon.so.5.8.0
+build/test: /usr/lib/libvtksys.so.5.8.0
+build/test: /usr/lib/x86_64-linux-gnu/libGLU.so
+build/test: /usr/lib/x86_64-linux-gnu/libGL.so
+build/test: /usr/lib/x86_64-linux-gnu/libSM.so
+build/test: /usr/lib/x86_64-linux-gnu/libICE.so
+build/test: /usr/lib/x86_64-linux-gnu/libX11.so
+build/test: /usr/lib/x86_64-linux-gnu/libXext.so
+build/test: /usr/local/lib/libopencv_nonfree.so.2.4.8
+build/test: /usr/local/lib/libopencv_ocl.so.2.4.8
+build/test: /usr/local/lib/libopencv_gpu.so.2.4.8
+build/test: /usr/local/lib/libopencv_photo.so.2.4.8
+build/test: /usr/local/lib/libopencv_objdetect.so.2.4.8
+build/test: /usr/local/lib/libopencv_legacy.so.2.4.8
+build/test: /usr/local/lib/libopencv_video.so.2.4.8
+build/test: /usr/local/lib/libopencv_ml.so.2.4.8
+build/test: /usr/local/lib/libopencv_calib3d.so.2.4.8
+build/test: /usr/local/lib/libopencv_features2d.so.2.4.8
+build/test: /usr/local/lib/libopencv_highgui.so.2.4.8
+build/test: /usr/local/lib/libopencv_imgproc.so.2.4.8
+build/test: /usr/local/lib/libopencv_flann.so.2.4.8
+build/test: /usr/local/lib/libopencv_core.so.2.4.8
 build/test: CMakeFiles/test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable build/test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test.dir/link.txt --verbose=$(VERBOSE)
@@ -169,6 +167,6 @@ CMakeFiles/test.dir/clean:
 .PHONY : CMakeFiles/test.dir/clean
 
 CMakeFiles/test.dir/depend:
-	cd /Users/viharipiratla/repos/btp && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/viharipiratla/repos/btp /Users/viharipiratla/repos/btp /Users/viharipiratla/repos/btp /Users/viharipiratla/repos/btp /Users/viharipiratla/repos/btp/CMakeFiles/test.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/psyche/RiseNFall/BTP/Ground_0/3d-mapping && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/psyche/RiseNFall/BTP/Ground_0/3d-mapping /home/psyche/RiseNFall/BTP/Ground_0/3d-mapping /home/psyche/RiseNFall/BTP/Ground_0/3d-mapping /home/psyche/RiseNFall/BTP/Ground_0/3d-mapping /home/psyche/RiseNFall/BTP/Ground_0/3d-mapping/CMakeFiles/test.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/test.dir/depend
 
