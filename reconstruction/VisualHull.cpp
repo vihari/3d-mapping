@@ -50,21 +50,21 @@ main (int argc, char** argv)
 		return 0;
 	}
 
-	const char silhouettes[] = "data/bunny_data/silhouettes/%04d.pgm";
-	const char projection[] = "data/bunny_data/calib/%04d.txt";
+	const char silhouettes[] = "data/pig_data/silhouettes/%04d.pgm";
+	const char projection[] = "data/pig_data/calib/%04d.txt";
 
 	int i = 0;
 	boost::shared_ptr< pcl::PointCloud<pcl::PointXYZI> > cloud (new pcl::PointCloud<pcl::PointXYZI>());
 	//for pig_data
-	//float xLims[] =  {-6, 6};
-	//float yLims[] = {-6, 6};
-	//float zLims[] =  {-6, 0};
+	float xLims[] =  {-6, 6};
+	float yLims[] = {-6, 6};
+	float zLims[] =  {-6, 0};
 	//for bunny
-	float xLims[] =  {-7.5, 7.5};
-	float yLims[] = {-10, 10};
-	float zLims[] =  {-7.5, 15};
+	//float xLims[] =  {-7.5, 7.5};
+	//float yLims[] = {-10, 10};
+	//float zLims[] =  {-7.5, 15};
 	
-	float step = 0.5;
+	float step = 0.2;
 
 	for(float x=xLims[0];x<xLims[1];x+=step){
 		for(float y=yLims[0];y<yLims[1];y+=step){
@@ -83,7 +83,7 @@ main (int argc, char** argv)
 
 	//pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>());
 	//36
-	while(i<36){
+	while(i<27){
 		char silhouette_file[100], projection_file[100];
 		printf("Hull: %d\n",i);
 		sprintf(silhouette_file,silhouettes,i);
@@ -129,9 +129,10 @@ main (int argc, char** argv)
 			float y = pixel(1)/pixel(2);
 			if((x>=0)&&(x<silhoeutte.cols)&&(y>=0)&&(y<silhoeutte.rows)){
 			  if(silhoeutte.data[silhoeutte.cols*((int)y)+(int)x] == BGD_PIX ) {
-								//cloud->points[ptIdx].intensity-=0.3;
-								float prevIntensity = cloud->points[ptIdx].intensity;
-								cloud->points[ptIdx].intensity = SIG(prevIntensity)*(prevIntensity - 1/nVotes);
+								cloud->points[ptIdx].intensity-=0.3;
+								//TODO: This method is not working for pig data.
+								//float prevIntensity = cloud->points[ptIdx].intensity;
+								//cloud->points[ptIdx].intensity = SIG(prevIntensity)*(prevIntensity - 1/nVotes);
 			  }
 			}
 		}
