@@ -1,3 +1,0 @@
-/home/psyche/RiseNFall/BTP/Ground_0/3d-mapping/CMakeFiles/OS.dir
-/home/psyche/RiseNFall/BTP/Ground_0/3d-mapping/CMakeFiles/OT.dir
-/home/psyche/RiseNFall/BTP/Ground_0/3d-mapping/CMakeFiles/test.dir

@@ -51,7 +51,7 @@ Thumbs.db
 #####################
 *.git
 *.gitigignore
-data/
-CMakeFiles/
+data
+CMakeFiles
 CMakeCache.txt
 *.pcd

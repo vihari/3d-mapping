@@ -50,8 +50,8 @@ main (int argc, char** argv)
 		return 0;
 	}
 
-	const char silhouettes[] = "/Users/viharipiratla/repos/btp/data/bunny_data/silhouettes/%04d.pgm";
-	const char projection[] = "/Users/viharipiratla/repos/btp/data/bunny_data/calib/%04d.txt";
+	const char silhouettes[] = "data/bunny_data/silhouettes/%04d.pgm";
+	const char projection[] = "data/bunny_data/calib/%04d.txt";
 
 	int i = 0;
 	boost::shared_ptr< pcl::PointCloud<pcl::PointXYZI> > cloud (new pcl::PointCloud<pcl::PointXYZI>());
@@ -64,7 +64,7 @@ main (int argc, char** argv)
 	float yLims[] = {-10, 10};
 	float zLims[] =  {-7.5, 15};
 	
-	float step = 0.1;
+	float step = 0.5;
 
 	for(float x=xLims[0];x<xLims[1];x+=step){
 		for(float y=yLims[0];y<yLims[1];y+=step){
@@ -129,9 +129,9 @@ main (int argc, char** argv)
 			float y = pixel(1)/pixel(2);
 			if((x>=0)&&(x<silhoeutte.cols)&&(y>=0)&&(y<silhoeutte.rows)){
 			  if(silhoeutte.data[silhoeutte.cols*((int)y)+(int)x] == BGD_PIX ) {
-								cloud->points[ptIdx].intensity-=0.3;
-			    //			    float prevIntensity = cloud->points[ptIdx].intensity;
-			    //cloud->points[ptIdx].intensity = SIG(prevIntensity)*(prevIntensity - 1/nVotes);
+								//cloud->points[ptIdx].intensity-=0.3;
+								float prevIntensity = cloud->points[ptIdx].intensity;
+								cloud->points[ptIdx].intensity = SIG(prevIntensity)*(prevIntensity - 1/nVotes);
 			  }
 			}
 		}
