@@ -2,7 +2,9 @@
 #include "System.h"
 #include "OpenGL.h"
 #include <gvars3/instances.h>
+#include <cvd/image_io.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "ATANCamera.h"
 #include "MapMaker.h"
 #include "Tracker.h"
@@ -58,7 +60,8 @@ System::System()
 
 void System::Run()
 {
-  while(!mbDone)
+  int frameCount = 1;
+  while(!mbDone && frameCount <= 238)
     {
       
       // We use two versions of each video frame:
@@ -66,7 +69,22 @@ void System::Run()
       // and one RGB, for drawing.
 
       // Grab new video frame...
-      mVideoSource.GetAndFillFrameBWandRGB(mimFrameBW, mimFrameRGB);  
+      /*EDIT      */
+
+      //      mVideoSource.GetAndFillFrameBWandRGB(mimFrameBW, mimFrameRGB); 
+      
+      
+      ostringstream ss;
+      if(frameCount == 2)
+	frameCount = 15;
+      ss<<setw(3)<<setfill('0')<<frameCount++;  
+      string fileName = "/home/sachin/btpData/frames/image-" + ss.str() + ".png";
+      Image<byte> in;
+      sleep(0.8);
+      mimFrameRGB = CVD::img_load(fileName.c_str());
+      mimFrameBW = CVD::img_load(fileName.c_str());
+
+      /* EDIT */
       static bool bFirstFrame = true;
       if(bFirstFrame)
 	{
@@ -86,14 +104,15 @@ void System::Run()
       
       bool bDrawMap = mpMap->IsGood() && *gvnDrawMap;
       bool bDrawAR = mpMap->IsGood() && *gvnDrawAR;
-      
+      bDrawMap = bDrawAR = false;
+
       mpTracker->TrackFrame(mimFrameBW, !bDrawAR && !bDrawMap);
       
       if(bDrawMap)
 	mpMapViewer->DrawMap(mpTracker->GetCurrentPose());
       else if(bDrawAR)
 	mpARDriver->Render(mimFrameRGB, mpTracker->GetCurrentPose());
-
+      
       //      mGLWindow.GetMousePoseUpdate();
       string sCaption;
       if(bDrawMap)
@@ -112,11 +131,3 @@ void System::GUICommandCallBack(void *ptr, string sCommand, string sParams)
   if(sCommand=="quit" || sCommand == "exit")
     static_cast<System*>(ptr)->mbDone = true;
 }
-
-
-
-
-
-
-
-

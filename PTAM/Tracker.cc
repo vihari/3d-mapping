@@ -15,6 +15,7 @@
 #include <gvars3/instances.h>
 #include <gvars3/GStringUtil.h>
 
+#include<unistd.h>
 #include <fstream>
 #include <fcntl.h>
 
@@ -309,6 +310,9 @@ void Tracker::TrackForInitialMap()
   // What stage of initial tracking are we at?
   if(mnInitialStage == TRAIL_TRACKING_NOT_STARTED) 
     {
+      /*EDIT*/
+      mbUserPressedSpacebar = true;
+      
       if(mbUserPressedSpacebar)  // First spacebar = this is the first keyframe
 	{
 	  mbUserPressedSpacebar = false;
@@ -317,6 +321,7 @@ void Tracker::TrackForInitialMap()
 	}
       else
 	mMessageForUser << "Point camera at planar scene and press spacebar to start tracking for initial map." << endl;
+	
       return;
     };
   
@@ -328,6 +333,9 @@ void Tracker::TrackForInitialMap()
 	  Reset();
 	  return;
 	}
+
+      /*EDIT*/
+      mbUserPressedSpacebar = true;
       
       // If the user pressed spacebar here, use trails to run stereo and make the intial map..
       if(mbUserPressedSpacebar)
@@ -681,6 +689,18 @@ void Tracker::TrackMap()
       v6LastUpdate = v6Update;
     };
   
+  /*EDIT*/
+
+  //      std::cout<<"\n---------------------------------------------\n";
+  std::cout<<"CONTOUR\n";
+  std::cout<<mse3CamFromWorld<<endl;      
+
+  //      std::cout<<mse3StartPos<<endl;
+  //      std::cout<<"\n--------------------------------------------\n";
+
+  /*EDIT*/
+
+  
   if(mbDraw)
     {
       glPointSize(6);
@@ -1012,11 +1032,3 @@ void Tracker::CalcSBIRotation()
 }
 
 ImageRef TrackerData::irImageSize;  // Static member of TrackerData lives here
-
-
-
-
-
-
-
-

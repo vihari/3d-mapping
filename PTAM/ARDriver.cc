@@ -279,10 +279,3 @@ void ARDriver::DrawFadingGrid()
       glEnd();
     };
 };
-
-
-
-
-
-
-
