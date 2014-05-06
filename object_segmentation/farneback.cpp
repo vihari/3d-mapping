@@ -116,6 +116,9 @@ void getFlowVector(Mat& flow, Mat& hist){
 
   /// Compute the histograms
   calcHist( &flow_vector, 1, 0, Mat(), hist, 1, &histSize, &histRange, uniform, accumulate );
+  namedWindow("Flow vector",1);
+  imshow("Flow vector",flow_vector);
+  waitKey(-1);
 }
 
 void print_help(){
@@ -248,6 +251,7 @@ int main(int argc, char** argv)
       imshow("flow", cflow);
     }
 
+  imwrite("flow.png",flow_vector);
   // Draw the histograms for B, G and R
   int hist_w = 512; int hist_h = 400;
   int bin_w = cvRound( (double) hist_w/histSize );

@@ -33,7 +33,6 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/video/tracking.hpp"
 #include "../grabcut/grabcut.cpp"
-#include "../odometry/CameraTrack.cpp"
 
 #define GC_EVAL 2
 #define _USE_MATH_DEFINES
@@ -42,11 +41,11 @@
 #define FRAME_RATE 25
 #define LARGE_NUMBER 1000000
 #define GLOBAL_OPTIMISE LARGE_NUMBER
-#define MASK_TWEAK 3
+#define MASK_TWEAK 10
 #define EROSION_ELEM 0
-#define EROSION_SIZE 25
+#define EROSION_SIZE 250
 #define DILATION_ELEM 0
-#define DILATION_SIZE 25
+#define DILATION_SIZE 250
 #define DILATION_LARGER_SIZE 20
 //The quantum in which images are read.
 #define FRAME_SKIP 1
@@ -54,8 +53,8 @@
 using namespace cv;
 using namespace std;
 
-const char pattern[] = "data/pepsi_data/images/image-%03d.png";
-const char silhouettePattern[] = "data/pepsi_data/silhouettes/image-%03d.png";
+const char pattern[] = "data/dino/dino%04d.png";
+const char silhouettePattern[] = "data/dino/silhouettes/image-%04d.png";
 FILE* orientation_file;
 
 /** @function Erosion*/
@@ -178,14 +177,8 @@ Mat MultiplyAffineTransformation(Mat a, Mat b) {
   It tries to track the object in the mask.
   Output: no sense.
 */
-int object_track(Mat mask, Mat flowImage) {
+int object_track(Mat mask) {
   orientation_file = fopen("data/SensorData/ORIENTATION.txt", "r+");
-  //read in the initial orientation
-  Point3f initialOrientation = readFileTill(0.01);
-  //To maintain time
-  float time = 0;
-
-  //imwrite("mask.png", maskImage);
   Mat maskImage;
   //sometimes when features have to be re-initialised 
   Mat prevMaskImage;
@@ -199,30 +192,12 @@ int object_track(Mat mask, Mat flowImage) {
 
   TermCriteria termcrit(CV_TERMCRIT_ITER | CV_TERMCRIT_EPS, 20, 0.03);
   Size subPixWinSize(10, 10), winsize(31, 31);
-  const int MAX_COUNT = 100;
+  const int MAX_COUNT = 500;
 
   //contains the tracked features
   vector<Point2f> points[2];
   Mat currImage, prevImage, currGray, prevGray;
-  char imageName[] = "data/pepsi_data/images/image-001.png"; //filePrefix + MIN_INDEX + ".png";
-  currImage = imread(imageName, 1);
-  cvtColor(currImage, currGray, CV_BGR2GRAY);
-
-  //currGray = currGray & maskImage;
-  //initialise
-  goodFeaturesToTrack(currGray, points[1], MAX_COUNT, 0.01, 1, maskImage, 3,
-		      0, 0.04);
-
-  cornerSubPix(currGray, points[1], subPixWinSize, Size(-1, -1), termcrit);
-  for (int i = 0; i < points[1].size(); i++)
-    ;//circle(currImage, points[1][i], 1, Scalar(0, 255, 0), -1, 8);
-
-  //The corner points will only be initialised on the masked region, would that affect the accuracy of the position estimate?
-  CameraTrack position(flowImage,points[1]);
-  namedWindow("Mask", 0);
-  imshow("Mask", currImage);
-  //waitKey();
-
+  
   for (int i = MIN_INDEX; i < MAX_INDEX; i += FRAME_SKIP) {
     Mat fgdModel, bgdModel;
     time += 2 * 1 / FRAME_RATE;
@@ -232,27 +207,23 @@ int object_track(Mat mask, Mat flowImage) {
     sprintf(imageName, pattern, i);
     cerr << imageName << endl;
     currImage = imread(imageName, 1);
-    namedWindow("test",1);
-    imshow("test",currImage);
-    //waitKey(-1);
-    //cvtColor(currImage, currGray, CV_BGR2GRAY);
+    cvtColor(currImage, currGray, CV_BGR2GRAY);
 
     //namedWindow("test1", 1);
     //namedWindow("test2", 1);
     //imshow("test1", currImage);
     //imshow("test2", prevImage);
     //Re-initialise the features after 20 frames
-    if ((i - MIN_INDEX) % MASK_TWEAK == 0) {
-     /* goodFeaturesToTrack(currGray, points[1], MAX_COUNT, 0.01, 1,
+    if ((i - MIN_INDEX) % 10 == 0) {
+      goodFeaturesToTrack(currGray, points[1], MAX_COUNT, 0.01, 1,
 			  maskImage, 3, 0, 0.04);
       cornerSubPix(currGray, points[1], subPixWinSize, Size(-1, -1),
-		   termcrit);*/
+		   termcrit);
 
       goodFeaturesToTrack(prevGray, points[0], MAX_COUNT, 0.01, 1,
 			  prevMaskImage, 3, 0, 0.04);
       cornerSubPix(prevGray, points[0], subPixWinSize, Size(-1, -1),
 		   termcrit);
-      position.ReplaceFeatures(points[0]);
     }
 
     //status and err in tracking a point
@@ -261,7 +232,6 @@ int object_track(Mat mask, Mat flowImage) {
     calcOpticalFlowPyrLK(prevGray, currGray, points[0], points[1], status,
 			 err, winsize, 3, termcrit, 0, 0.001);
 
-    position.UpdatePosition(points[1],status);
     //prune badly tracked points
     int k = 0;
     for (int j = 0; j < points[1].size(); j++) {
@@ -343,7 +313,6 @@ int object_track(Mat mask, Mat flowImage) {
       maskImage = ms.clone();
       namedWindow("maskImage",1);
       imshow("maskImage",maskImage);
-      waitKey(-1);
     }
     char writeFile[50];
     printf("Writing to file: %s\n",writeFile);
@@ -355,13 +324,8 @@ int object_track(Mat mask, Mat flowImage) {
   return 0;
 }
   
-/*Main for the sake of debugging else should be called once the segmentation of the object finishes.*/
+/*Main for the sake of debugging else should be called after segmetation of the object finishes.*/
 int main() {
   Mat mask = imread("mask.png", 0);
-  //This is the dense initial flow map.
-  Mat denseMap = imread("flow.png",0);
-  namedWindow("test",1);
-  imshow("test",mask);
-  waitKey(-1);
-  object_track(mask,denseMap);
+  object_track(mask);
 }

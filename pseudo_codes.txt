@@ -1,0 +1,84 @@
+####object_segmentation####
+#Simple grabcut.
+-----------
+rect <- touch.select()
+grabcut(image,rect)
+
+---------------------------------------------------------
+#####object_tracking#####
+###Implemented on grabcut###
+mask<-Get initial mask from GrabCut from user through user-interaction.
+
+ObjectTrack() {
+	      framesCaptured <- 0
+	      bgdGMM <- NULL
+	      fgdGMM <- NULL
+	      mask.features <- InitialiseFeatures(firstImage, mask);
+	      //this will initialise the background(bgdGMM) and fore-ground(fgdGMM) GMM models
+	      grabcut(mask,frame,bgdGMM,fgdGMM);
+	      while(frame.captured)
+	      do
+		//track mask in new frame
+		mask <- track(mask,frame) 
+		#Needs a little tweaking to get away with dead reckoning error.
+		if framesCaptured%MASK_TWEAK = 0
+	   	then
+			erodedImage <- erode(mask,ERODE_SIZE)
+			dilateImage <- dilate(mask,DILATE_SIZE)
+			grabCutMask <- InitialiseGrabCutMask(erodedImage,dilatedImage)
+			//The mask is now tweaked
+			mask <- grabcut(mask,frame,bgdGMM,fgdGMM)
+		end if
+		framesCaptured <- framesCaptured+1
+	      end while
+}
+
+/*Tries to reposition the mask in the new image and 
+returns the repositioned one*/
+track(mask,image){
+	newFeatures <- trackFeaturesOfMaskIn(image,mask)
+	affXn <- computeAffineTransformation(newFeatures,mask.features)
+	mask <- AffineTransform(mask,affXn)
+	mask.features <- mask.newFeatures
+	if mask.features.size < MIN_FEATURES
+	then
+	   features <- ReInitialiseFeatures(frame,mask)
+	end if
+	return mask
+}
+
+---------------------------------------------------------
+###Camera tracking###
+#This is the process of extracting the position of camera or the projection matrix of the camera. 
+-----PTAM demo or some pseudo code can go here. -----
+-----Keep it short and just try explaining how it is a feasible idea and how efficient it is. You can talk about the facts like all the smart-phones todayare dual core... blah blah  ------
+
+---------------------------------------------------------
+###3D reconstruction###
+
+/*Once we have silhoeuttes and projection matrices for every such silhoeuttes, we can try reconstructing the 3D image of the object.*/
+
+Reconstruct3D(){
+	cloud <- SampleNPointsInTheBoundingBox(BOUNDING_X,BOUNDING_Y,BOUNDING_Z)
+
+	//Silhoettes are sampled at a much lower rate than the number of frames
+	while(silhouette.captured())
+	do
+		P <- corresponding projection matrix
+		for p \belongs to cloud
+		do
+			projection <- PX
+			Point2d <- homogeneous(projection)(1,2)
+			if Point2d falls inside silhoutte
+			then
+				if not occupied(silhouette,Point2d)
+				then
+					decreaseTrustValue(cloud,p)
+				fi
+			else
+				cloud.remove(p)
+			end if 
+		end for
+		cloud <- Filter(cloud,trustValues>0)
+	end while
+}
