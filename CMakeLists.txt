@@ -12,10 +12,15 @@ include_directories( ${OpenCV_INCLUDE_DIRS} )
 add_executable( OS ${OS}/farneback.cpp )
 target_link_libraries( OS ${OpenCV_LIBS} )
 
-add_executable( OT ${OT}/lk_based.cpp )
-target_link_libraries( OT ${OpenCV_LIBS} )
-
 find_package(PCL 1.3 REQUIRED)
+
+include_directories(${PCL_INCLUDE_DIRS})
+link_directories(${PCL_LIBRARY_DIRS})
+add_definitions(${PCL_DEFINITIONS})
+
+add_executable( OT ${OT}/lk_based.cpp )
+target_link_libraries (OT ${PCL_LIBRARIES})
+target_link_libraries( OT ${OpenCV_LIBS} )
 
 include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})

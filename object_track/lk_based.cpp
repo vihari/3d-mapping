@@ -33,6 +33,7 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/video/tracking.hpp"
 #include "../grabcut/grabcut.cpp"
+//#include "../odometry/CameraTrack.h"
 #include "../odometry/CameraTrack.cpp"
 
 #define GC_EVAL 2
@@ -42,11 +43,11 @@
 #define FRAME_RATE 25
 #define LARGE_NUMBER 1000000
 #define GLOBAL_OPTIMISE LARGE_NUMBER
-#define MASK_TWEAK 3
+#define MASK_TWEAK 15
 #define EROSION_ELEM 0
-#define EROSION_SIZE 25
+#define EROSION_SIZE 5
 #define DILATION_ELEM 0
-#define DILATION_SIZE 25
+#define DILATION_SIZE 10
 #define DILATION_LARGER_SIZE 20
 //The quantum in which images are read.
 #define FRAME_SKIP 1
@@ -125,25 +126,6 @@ void EdgeDetect(Mat src_gray, Mat dst, int lowThreshold) {
 }
 
 /*
- * Reads the file to a desired time
- * and returns the value at the end of particular time.
- */
-Point3f readFileTill(float time) {
-  float timestamp = 0;
-  float a, p, r;
-  while (timestamp < time) {
-    fscanf(orientation_file, "%f;%f;%f;%f\n", &timestamp, &a, &p, &r);
-    fseek(orientation_file, 32 * 4, SEEK_CUR);
-    printf("%f %f %f %f\n", timestamp, a, p, r);
-  }
-  Point3f pt;
-  pt.x = a;
-  pt.y = p;
-  pt.z = r;
-  return pt;
-}
-
-/*
   Input: two 2*3 matrices of type CV_64F
   Output: matrix that results from fusion of input matrices. that is 
   addition of translation components and multiplication of rotation parts.
@@ -179,7 +161,6 @@ Mat MultiplyAffineTransformation(Mat a, Mat b) {
   Output: no sense.
 */
 int object_track(Mat mask, Mat flowImage) {
-  orientation_file = fopen("data/SensorData/ORIENTATION.txt", "r+");
   //read in the initial orientation
   Point3f initialOrientation = readFileTill(0.01);
   //To maintain time
@@ -235,24 +216,25 @@ int object_track(Mat mask, Mat flowImage) {
     namedWindow("test",1);
     imshow("test",currImage);
     //waitKey(-1);
-    //cvtColor(currImage, currGray, CV_BGR2GRAY);
-
+    cvtColor(currImage, currGray, CV_BGR2GRAY);
+ 
     //namedWindow("test1", 1);
     //namedWindow("test2", 1);
     //imshow("test1", currImage);
     //imshow("test2", prevImage);
     //Re-initialise the features after 20 frames
-    if ((i - MIN_INDEX) % MASK_TWEAK == 0) {
+    if (((i - MIN_INDEX) % MASK_TWEAK == 0)&&(i!=MIN_INDEX)) {
      /* goodFeaturesToTrack(currGray, points[1], MAX_COUNT, 0.01, 1,
 			  maskImage, 3, 0, 0.04);
       cornerSubPix(currGray, points[1], subPixWinSize, Size(-1, -1),
 		   termcrit);*/
 
+      //try having points all over the image.
       goodFeaturesToTrack(prevGray, points[0], MAX_COUNT, 0.01, 1,
-			  prevMaskImage, 3, 0, 0.04);
+    		  prevMaskImage, 3, 0, 0.04);
       cornerSubPix(prevGray, points[0], subPixWinSize, Size(-1, -1),
 		   termcrit);
-      position.ReplaceFeatures(points[0]);
+      //position.ReplaceFeatures(points[0]);
     }
 
     //status and err in tracking a point
@@ -261,7 +243,6 @@ int object_track(Mat mask, Mat flowImage) {
     calcOpticalFlowPyrLK(prevGray, currGray, points[0], points[1], status,
 			 err, winsize, 3, termcrit, 0, 0.001);
 
-    position.UpdatePosition(points[1],status);
     //prune badly tracked points
     int k = 0;
     for (int j = 0; j < points[1].size(); j++) {
@@ -270,11 +251,13 @@ int object_track(Mat mask, Mat flowImage) {
 
       points[0][k] = points[0][j];
       points[1][k++] = points[1][j];
-      //circle(currImage, points[1][j], 1, Scalar(0, 255, 0), 0.5, 8);
+      circle(currImage, points[1][j], 1, Scalar(0, 255, 0), 1, 8);
     }
     points[0].resize(k);
     points[1].resize(k);
+    cerr<<"Number of points: "<<k<<endl;
 
+    position.UpdatePosition(points[0],points[1],status);
     Mat t = estimateRigidTransform(points[0], points[1], false);
     //cout << "**********************" << endl;
     //cout << t << endl;
@@ -349,7 +332,6 @@ int object_track(Mat mask, Mat flowImage) {
     printf("Writing to file: %s\n",writeFile);
     sprintf(writeFile,silhouettePattern,i);
     imwrite(writeFile,maskImage);
-
     waitKey();
   }
   return 0;
