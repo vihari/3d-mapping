@@ -37,15 +37,11 @@ Street, Fifth Floor, Boston, MA 02110-1301, USA
 
 using namespace std;
 
-void drawLine(cv::Mat img, cv::Point start, cv::Point end){
+/*void drawLine(cv::Mat img, cv::Point start, cv::Point end){
   int thickeness=2;
   int linetype=8;
   line(img,start,end,Scalar(255,255,255),thickness,linetype);
-}
-
-void updatePose(cv::Mat pose,cv::Mat arena){
-  
-}
+  }*/
 
 int main (int argc, char** argv) {
 
@@ -69,10 +65,19 @@ int main (int argc, char** argv) {
   //param.base     = 0.5707; // baseline in meters
   
   //imp params for mono
-  param.height = 0.5;
-  param.pitch = 0;
+  param.calib.f  = 614.21994668037830; // focal length in pixels
+  param.calib.cu = 3.4558123240636974e+02; // principal point (u-coordinate) in pixels
+  param.calib.cv = 2.5058513263943294e+02; // principal point (v-coordinate) in pixels
+  param.height = 0.25;
+  param.pitch = -0.26;
   VisualOdometryMono viso(param);
-  
+  cv::Mat cameraMatrix = (cv::Mat_<double>(3,3)<<612.91994668037830, 0, 345.58123240636974,0,614.00708530052441, 250.58513263943294,0, 0, 1);
+  std::vector <double> distCoeffs;
+  distCoeffs.push_back(2.3848783769193385e-01);
+  distCoeffs.push_back(-1.4566591819736021e+00);
+  distCoeffs.push_back(-1.9239952001727575e-03);
+  distCoeffs.push_back(6.3304014166893946e-04);
+  distCoeffs.push_back(2.5757547632849924e+00);
   Matrix pose = Matrix::eye(4);
     
   for (int32_t i=1; i<238; i++) {
@@ -86,16 +91,17 @@ int main (int argc, char** argv) {
     try {
 
       // load left and right input image
-      cv::Mat img = cv::imread(img_file_name);
+      cv::Mat img = cv::imread(img_file_name), imgNew = cv::imread(img_file_name);
       cerr<<"Read image from: "<<img_file_name<<"\n";
-    
+      cv::undistort(img, imgNew, cameraMatrix, distCoeffs);         
+      img = imgNew;
       uint8_t* img_data  = img.data;
-
+      
       // status
-      cout << "Processing: Frame: " << i;
+      //      cout << "Processing: Frame: " << i;
       
       int32_t width = img.cols; int32_t height = img.rows;
-      cout<<"Rows: "<<height<<" Cols: "<<width<<endl;
+      //      cout<<"Rows: "<<height<<" Cols: "<<width<<endl;
       // compute visual odometry
       //TODO: without teh -1's below throws EXEC_BAD_ACCESS l:149 filter.cpp
       int32_t dims[] = {width-1,height-1,width-1};
@@ -107,12 +113,13 @@ int main (int argc, char** argv) {
         // output some statistics
         double num_matches = viso.getNumberOfMatches();
         double num_inliers = viso.getNumberOfInliers();
-        cout << ", Matches: " << num_matches;
-        cout << ", Inliers: " << 100.0*num_inliers/num_matches << " %" << ", Current pose: " << endl;
+	//       cout << ", Matches: " << num_matches;
+	//        cout << ", Inliers: " << 100.0*num_inliers/num_matches << " %" << ", Current pose: " << endl;
+	cout<<base_name<<endl;
         cout << pose << endl << endl;
-	updateGraphic(pose);
+	//	updateGraphic(pose);
       } else {
-        cout << " ... failed!" << endl;
+	//        cout << " ... failed!" << endl;
       }
 
       // release uint8_t buffers
