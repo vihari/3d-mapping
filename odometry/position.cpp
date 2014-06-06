@@ -106,6 +106,7 @@ void calcPos(char *argv[])
   cout<<"Current Position: "<<posX<<"\t"<<posY<<"\t"<<posZ<<endl;
 }
 
+/*
 int main(int argc, char *argv[])
 {
   if(argc < 2)
@@ -117,3 +118,4 @@ int main(int argc, char *argv[])
   calcPos(argv);  
   return 0;
 }
+*/
