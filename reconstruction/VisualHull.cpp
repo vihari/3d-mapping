@@ -15,7 +15,7 @@
 #include <pcl/point_cloud.h>
 #include <pcl/console/parse.h>
 #include <pcl/registration/ia_ransac.h>
-#include <pcl/kdtree/kdtree_flann.h>
+//#include <pcl/kdtree/kdtree_flann.h>
 #include <pcl/filters/passthrough.h>
 
 //#include <pcl/visualization/pcl_visualizer.h>
@@ -51,22 +51,25 @@ main (int argc, char** argv)
 		return 0;
 	}
 
-	const char silhouettes[] = "data/dino/%s";
-	const char projection[] = "data/dino%s";
+	const char silhouettes[] = "data/pepsi_data/silhouettes/image-%03d.png";
+	const char projection[] = "data/pepsi_data/calib/%04d.txt";
 
 	int i = 1;
 	boost::shared_ptr< pcl::PointCloud<pcl::PointXYZI> > cloud (new pcl::PointCloud<pcl::PointXYZI>());
-	//for pig_data
+	float xLims[] =  {-20, 20};
+	float yLims[] = {-20, 20};
+	float zLims[] =  {-20, 20};
 
-	float xLims[] =  {-0.04, 0.04};
-	float yLims[] = {-0.001, 0.08};
-	float zLims[] =  {-0.03, 0.03};
+	//for pig_data
+	//float xLims[] =  {-0.04, 0.04};
+	//float yLims[] = {-0.001, 0.08};
+	//float zLims[] =  {-0.03, 0.03};
 	//for bunny
 	//float xLims[] =  {-7.5, 7.5};
 	//float yLims[] = {-10, 10};
 	//float zLims[] =  {-7.5, 15};
 	
-	float step = 0.01;
+	float step = 1;
 
 	for(float x=xLims[0];x<xLims[1];x+=step){
 		for(float y=yLims[0];y<yLims[1];y+=step){
@@ -80,30 +83,20 @@ main (int argc, char** argv)
 			}
 		}
 	}
-	pcl::KdTreeFLANN<pcl::PointXYZI> kdtree;
-	kdtree.setInputCloud(cloud);
+	//pcl::KdTreeFLANN<pcl::PointXYZI> kdtree;
+	//kdtree.setInputCloud(cloud);
 
 
 	//pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>());
 	//36
-	FILE* PROJ = fopen("data/dino/dino_par.txt","r+");
-	int num;
-	fscanf(PROJ,"%d",&num);
+	//FILE* PROJ = fopen("data/dino/dino_par.txt","r+");
+	int num=100;
+	//fscanf(PROJ,"%d",&num);
 	char sName[40];
+	int STEP=3;
 	//while(i<27){
-	for(i=0;i<num;i++){
-
-		fscanf(PROJ,"%s",sName);
-		double tmp = 0;
-		double calib[3][3];
-		for(int t=0;t<9;t++){
-			fscanf(PROJ,"%lf",&calib[t/3][t%3]);
-		}
-		printf("\n");
-		double matrix[3][4];
-		//for(int t=0;t<12;t++)
-			//fscanf(PROJ,"%lf",&matrix[t/4][t%4]);
-		fscanf(PROJ,"%lf",&matrix[0][0]);
+	for(i=1;i<num;i+=STEP){
+		/*fscanf(PROJ,"%lf",&matrix[0][0]);
 		fscanf(PROJ,"%lf",&matrix[0][1]);
 		fscanf(PROJ,"%lf",&matrix[0][2]);
 		fscanf(PROJ,"%lf",&matrix[1][0]);
@@ -114,15 +107,15 @@ main (int argc, char** argv)
 		fscanf(PROJ,"%lf",&matrix[2][2]);
 		fscanf(PROJ,"%lf",&matrix[0][3]);
 		fscanf(PROJ,"%lf",&matrix[1][3]);
-		fscanf(PROJ,"%lf",&matrix[2][3]);
+		fscanf(PROJ,"%lf",&matrix[2][3]);*/
 
 		if(i>100)
 			break;
 
 		char silhouette_file[100], projection_file[100];
 		printf("Hull: %d\n",i);
-		sprintf(silhouette_file,silhouettes,sName);
-		//sprintf(projection_file,projection,i);
+		sprintf(silhouette_file,silhouettes,i);
+		sprintf(projection_file,projection,i);
 		printf("Reading image from: %s\n",silhouette_file);
 		printf("Reading projection from: %s\n",projection_file);
 		cv::Mat dst = cv::imread(silhouette_file,1);
@@ -130,15 +123,20 @@ main (int argc, char** argv)
 		threshold( dst, thresholded, 0.19*255, 255, 0);
 		cv::Mat silhoeutte (dst.rows,dst.cols,CV_32FC1,cv::Scalar(0));
 
+		FILE* PROJ = fopen(projection_file,"r+");
+		double matrix[3][4];
+		for(int t=0;t<12;t++)
+			fscanf(PROJ,"%lf",&matrix[t/4][t%4]);
+
 		for(int x=0;x<dst.rows;x++)
 			for(int y=0;y<dst.cols;y++){
 				//uchar* d =  &thresholded.data[3*x*thresholded.rows+y];
 				if(thresholded.at<cv::Vec3b>(x,y)[0]==255 || thresholded.at<cv::Vec3b>(x,y)[1]==255 || thresholded.at<cv::Vec3b>(x,y)[2]==255)
 					silhoeutte.data[x*thresholded.rows+y] = 1;
 			}
-				cv::namedWindow("Threshold",0);
-		imshow("Threshold",silhoeutte);
-		cv::waitKey(-1);
+		//cv::namedWindow("Threshold",0);
+		//imshow("Threshold",silhoeutte);
+		//cv::waitKey(-1);
 
 		Eigen::MatrixXf proj(3,4);
 		Eigen::MatrixXf calibM(3,3);
@@ -152,13 +150,13 @@ main (int argc, char** argv)
 			proj(x,2) = matrix[x][2];
 			proj(x,3) = matrix[x][3];
 		}
-		for(int x=0;x<3;x++){
+		/*for(int x=0;x<3;x++){
 			calibM(x,0) = calib[x][0];
 			calibM(x,1) = calib[x][1];
 			calibM(x,2) = calib[x][2];
-		}
+		}*/
 
-		proj = calibM*proj;
+		//proj = calibM*proj;
 		int prev = 1000;
 
 		//cv::Mat invProjM;
@@ -188,6 +186,9 @@ main (int argc, char** argv)
 				  //float prevIntensity = cloud->points[ptIdx].intensity;
 				  //cloud->points[ptIdx].intensity = SIG(prevIntensity)*(prevIntensity - 1/nVotes);
 			  }
+			}
+			else{
+				cloud->points[ptIdx].intensity=0;
 			}
 		}
 

@@ -7,7 +7,7 @@
  */
 
 #include "CameraTrack.h"
-#include ""
+#include "position.cpp"
 #include <iostream>
 
 using namespace cv;
@@ -20,6 +20,11 @@ namespace std {
     muy=0,sigmay=0;
     muz=0,sigmaz=0;
     orientation_file = fopen("data/SensorData/ORIENTATION.txt", "r+");
+    RECORD_START_TIME = 5.2;
+    FRAME_RATE = 25.0;
+    frameNo = 0;
+    //read in the initial orientation
+    initialOrientation = readFileTill(RECORD_START_TIME);
 
     for(size_t i=0;i<features.size();i++){
       float x = features[i].x;
@@ -62,9 +67,10 @@ namespace std {
     cout<<this->features;
   }
 
-  Point3f readFileTill(float time) {
+  Point3f CameraTrack::readFileTill(float time) {
     float timestamp = 0;
     float a, p, r;
+    time+=this->RECORD_START_TIME;
     while (timestamp < time) {
       fscanf(orientation_file, "%f;%f;%f;%f\n", &timestamp, &a, &p, &r);
       fseek(orientation_file, 32 * 4, SEEK_CUR);
@@ -100,10 +106,11 @@ namespace std {
      return r;
    }
 
-  void CameraTrack::UpdatePosition(vector<Point2f> prevFeatures,vector<Point2f> trackedFeatures,vector<uchar> status){
+  void CameraTrack::UpdatePosition(vector<Point2f> prevFeatures,vector<Point2f> trackedFeatures,vector<uchar> status,int frame){
     cerr<<"Call to update position"<<endl;
     //Mat A(4,features.size(),CV_64F);
     //Mat B(3,features.size(),CV_64F);
+    frameNo = frame;
     cerr<<features.size()<<"\n";
     Eigen::MatrixXf A(4,features.size());
     Eigen::MatrixXf B(3,features.size());
@@ -111,15 +118,7 @@ namespace std {
     cerr<<p.rows()<<" "<<p.cols()<<"\n";
     float a = p(2,0); float b = p(2,1); float c = p(2,2);float d = p(2,3);
     cerr<<"l 61"<<endl;
-    //cout<<features;
-    cerr<<"The type of the matrix P is: ";
-    //cerr<<type2str(p.type())<<"\n";
     for(size_t i=0;i<features.size();i++){
-		  //if(status[i]){
-		/*A.at<double>(0,i) = features[i].x;
-		A.at<double>(1,i) = features[i].y;
-		A.at<double>(2,i) = features[i].z;
-		A.at<double>(3,i) = 1;*/
     	A(0,i) = features[i].x;
     	A(1,i) = features[i].y;
     	A(2,i) = features[i].z;
@@ -127,13 +126,10 @@ namespace std {
 
 		double wi = a*features[i].x+b*features[i].y+c*features[i].z+d;
 		wi=1;
-		/*B.at<double>(0,i) = wi*(trackedFeatures[i].x-featurePoints[i].x);
-		B.at<double>(1,i) = wi*(trackedFeatures[i].y-featurePoints[i].y);
-		B.at<double>(2,i) = 0;*/
+
 		B(0,i) = wi*(trackedFeatures[i].x-prevFeatures[i].x);
 		B(1,i) = wi*(trackedFeatures[i].y-prevFeatures[i].y);
-		B(2,i) = wi*sqrt(pow((trackedFeatures[i].x-prevFeatures[i].x),2)+pow((trackedFeatures[i].y-prevFeatures[i].y),2));//0;
-	//}
+		B(2,i) = wi*sqrt(pow((trackedFeatures[i].x-prevFeatures[i].x),2)+pow((trackedFeatures[i].y-prevFeatures[i].y),2));
     }
     cerr<<"l 75"<<endl;
 
@@ -147,14 +143,41 @@ namespace std {
         	for(int j=0;j<4;j++)
         		Ainv(i,j) = AinvM.at<double>(i,j);
     p += B*Ainv;
+    Point3f pt = readFileTill(frameNo/FRAME_RATE);
+    pt -= initialOrientation;
+    cout<<"Diff orientation\n";
+    cout<<pt<<endl;
+    double rotMat[3][3];
+    double orient[] = {pt.x,pt.y,pt.z};
+
+    //This function is in position.cpp file.
+    fillRotationMatrix(rotMat,orient);
+    /**This method doesn't do very well with the angles and hence we rely on sensors for angle updates.*/
+    for(int i=0;i<3;i++){
+    	for(int j=0;j<3;j++){
+    		p(i,j) = rotMat[i][j];
+    	}
+    }
     Eigen::MatrixXf identity = Ainv*A;
     cerr<<"*********Identity******\n";
     cerr<<identity.determinant()<<endl;
-    cerr<<"*********P******\n";
+    cerr<<"*********Current projection******\n";
     cerr<<(B*Ainv)<<endl;
-    cerr<<"*********B******\n";
-    cerr<<B<<endl;
-    //cout<<p;
+    cerr<<"*********Projection******\n";
+    cout<<p<<endl;
+    FILE* file;
+    char name[50];
+    sprintf(name,"data/pepsi_data/calib/%04d.txt",frameNo);
+    cerr<<"The calibratiion file is being written to: "<<name<<endl;
+    file = fopen(name,"w+");
+    for(int i=0;i<3;i++){
+    	for(int j=0;j<4;j++){
+    		fprintf(file,"%f ",p(i,j));
+    	}
+    	fprintf(file,"\n");
+    }
+
+	fclose(file);
 
     featurePoints = trackedFeatures;
     //A.release();

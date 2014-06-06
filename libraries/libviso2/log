@@ -1,0 +1,929 @@
+Processing: Frame: 1Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 2Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 3Rows: 352 Cols: 640
+, Matches: 135, Inliers: 87.4074 %, Current pose: 
+   0.9999772   -0.0000104    0.0067540   -5.0961126 
+   0.0000563    0.9999769   -0.0067923   -5.0667400 
+  -0.0067538    0.0067925    0.9999541    0.0001897 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 4Rows: 352 Cols: 640
+, Matches: 133, Inliers: 84.9624 %, Current pose: 
+   0.9991592    0.0012691   -0.0409793   -4.3374480 
+   0.0004193    0.9991522    0.0411680   -4.3117131 
+   0.0409968   -0.0411505    0.9983115    0.0002180 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 5Rows: 352 Cols: 640
+, Matches: 106, Inliers: 69.8113 %, Current pose: 
+   0.9991592    0.0012691   -0.0409794   -4.3260852 
+   0.0004193    0.9991521    0.0411681   -4.3003600 
+   0.0409969   -0.0411506    0.9983115    0.0002163 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 6Rows: 352 Cols: 640
+, Matches: 118, Inliers: 85.5932 %, Current pose: 
+   0.9986082    0.0018959   -0.0527070   -3.6843679 
+   0.0008956    0.9986000    0.0528893   -3.6584817 
+   0.0527335   -0.0528629    0.9972084    0.0000546 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 7Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 8Rows: 352 Cols: 640
+, Matches: 96, Inliers: 66.6667 %, Current pose: 
+   0.9986082    0.0018960   -0.0527070   -3.6694744 
+   0.0008956    0.9986000    0.0528898   -3.6584683 
+   0.0527335   -0.0528634    0.9972084    0.0008411 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 9Rows: 352 Cols: 640
+, Matches: 107, Inliers: 57.9439 %, Current pose: 
+   0.9986082    0.0018963   -0.0527070   -3.6010093 
+   0.0008956    0.9985996    0.0528964   -3.6584070 
+   0.0527335   -0.0528699    0.9972081    0.0044565 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 10Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 11Rows: 352 Cols: 640
+, Matches: 94, Inliers: 50 %, Current pose: 
+   0.9986082    0.0018965   -0.0527070   -3.6534595 
+   0.0008956    0.9985995    0.0528993   -3.6584539 
+   0.0527335   -0.0528729    0.9972079    0.0016868 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 12Rows: 352 Cols: 640
+, Matches: 86, Inliers: 79.0698 %, Current pose: 
+   0.5796086    0.4211381   -0.6976364   -2.8948450 
+   0.4208133    0.5784392    0.6988020   -2.9010876 
+   0.6978324   -0.6986064    0.1580478    0.0016002 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 13Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 14Rows: 352 Cols: 640
+, Matches: 97, Inliers: 45.3608 %, Current pose: 
+   0.6788023    0.2502233   -0.6903736   -1.7841274 
+   0.3277885    0.7380371    0.5897932   -1.8794755 
+   0.6571013   -0.6266495    0.4189610    0.3975449 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 15Rows: 352 Cols: 640
+, Matches: 104, Inliers: 60.5769 %, Current pose: 
+   0.6788042    0.2502215   -0.6903725   -1.6951743 
+   0.3277869    0.7380386    0.5897921   -1.7774239 
+   0.6571002   -0.6266484    0.4189643    0.4004607 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 16Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 17Rows: 352 Cols: 640
+, Matches: 101, Inliers: 63.3663 %, Current pose: 
+   0.6788026    0.2502230   -0.6903734   -1.6107365 
+   0.3277882    0.7380373    0.5897930   -1.6805527 
+   0.6571011   -0.6266493    0.4189615    0.4032284 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 18Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 19Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 20Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 21Rows: 352 Cols: 640
+, Matches: 43, Inliers: 76.7442 %, Current pose: 
+   0.6788026    0.2502473   -0.6903646   -1.6552446 
+   0.3277883    0.7380165    0.5898190   -1.7020454 
+   0.6571011   -0.6266641    0.4189394    0.3601433 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 22Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 23Rows: 352 Cols: 640
+, Matches: 52, Inliers: 44.2308 %, Current pose: 
+   0.6788026    0.2502505   -0.6903635   -1.7354674 
+   0.3277883    0.7380138    0.5898224   -1.7407843 
+   0.6571011   -0.6266660    0.4189365    0.2824853 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 24Rows: 352 Cols: 640
+, Matches: 70, Inliers: 48.5714 %, Current pose: 
+   0.6788026    0.2502452   -0.6903654   -1.7722419 
+   0.3277883    0.7380183    0.5898168   -1.7585424 
+   0.6571011   -0.6266628    0.4189413    0.2468864 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 25Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 26Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 27Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 28Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 29Rows: 352 Cols: 640
+, Matches: 133, Inliers: 74.4361 %, Current pose: 
+   0.7139779    0.2145565   -0.6664841   -2.9480723 
+   0.2981077    0.7681505    0.5666362   -3.1017027 
+   0.6335356   -0.6032497    0.4844815    0.2002370 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 30Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 31Rows: 352 Cols: 640
+, Matches: 102, Inliers: 52.9412 %, Current pose: 
+   0.9685926   -0.0400582    0.2454052   -2.1757928 
+   0.1008313    0.9654270   -0.2403826   -2.2148756 
+  -0.2272915    0.2575774    0.9391445    0.2254263 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 32Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 33Rows: 352 Cols: 640
+, Matches: 111, Inliers: 79.2793 %, Current pose: 
+   0.9685926   -0.0400620    0.2454046   -2.1240369 
+   0.1008313    0.9654307   -0.2403677   -2.2094878 
+  -0.2272915    0.2575628    0.9391485    0.2132812 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 34Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 35Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 36Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 37Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 38Rows: 352 Cols: 640
+, Matches: 120, Inliers: 70.8333 %, Current pose: 
+   0.9685926   -0.0400617    0.2454046   -2.1104363 
+   0.1008313    0.9654304   -0.2403690   -2.2080720 
+  -0.2272915    0.2575641    0.9391482    0.2100897 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 39Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 40Rows: 352 Cols: 640
+, Matches: 111, Inliers: 54.955 %, Current pose: 
+   0.9685926   -0.0400632    0.2454044   -2.0861770 
+   0.1008313    0.9654318   -0.2403632   -2.2055466 
+  -0.2272915    0.2575585    0.9391497    0.2043969 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 41Rows: 352 Cols: 640
+, Matches: 125, Inliers: 65.6 %, Current pose: 
+   0.9685926   -0.0400638    0.2454043   -2.0431572 
+   0.1008313    0.9654325   -0.2403606   -2.2010682 
+  -0.2272915    0.2575559    0.9391504    0.1943019 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 42Rows: 352 Cols: 640
+, Matches: 115, Inliers: 73.0435 %, Current pose: 
+   0.9685926   -0.0400667    0.2454038   -2.0251178 
+   0.1008313    0.9654353   -0.2403492   -2.1991903 
+  -0.2272915    0.2575448    0.9391535    0.1900687 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 43Rows: 352 Cols: 640
+, Matches: 131, Inliers: 72.5191 %, Current pose: 
+   0.9719676   -0.0433971    0.2310751   -1.3578490 
+   0.0974285    0.9688061   -0.2278651   -1.4433370 
+  -0.2139783    0.2439907    0.9458762    0.2091571 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 44Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 45Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 46Rows: 352 Cols: 640
+, Matches: 120, Inliers: 70 %, Current pose: 
+   0.8285571    0.1000133   -0.5508997   -0.6084906 
+   0.2015964    0.8646381    0.4601736   -0.5828830 
+   0.5223524   -0.4923395    0.6962398    0.2333773 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 47Rows: 352 Cols: 640
+, Matches: 68, Inliers: 39.7059 %, Current pose: 
+  -0.4813572    0.4105174   -0.7744486   -0.3345916 
+   0.5422846    0.8336293    0.1048316    0.0824107 
+   0.6886382   -0.3695101   -0.6238907    0.0083283 
+   0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 48Rows: 352 Cols: 640
+, Matches: 118, Inliers: 74.5763 %, Current pose: 
+  -0.4900576    0.4192064   -0.7642705   -0.3858225 
+   0.5434386    0.8324534    0.1081470    1.0492909 
+   0.6815555   -0.3623359   -0.6357631    0.2343971 
+   0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 49Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 50Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 51Rows: 352 Cols: 640
+, Matches: 29, Inliers: 51.7241 %, Current pose: 
+   0.1164188   -0.7260477   -0.6777178   -0.7325330 
+   0.6976394    0.5454582   -0.4645154    2.3398088 
+   0.7069271   -0.4187243    0.5700211    0.8723504 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 52Rows: 352 Cols: 640
+, Matches: 25, Inliers: 72 %, Current pose: 
+   0.1164188   -0.7260663   -0.6776978   -0.7236497 
+   0.6976394    0.5454455   -0.4645304    2.3930423 
+   0.7069271   -0.4187086    0.5700326    0.9262924 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 53Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 54Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 55Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 56Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 57Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 58Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 59Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 60Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 61Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 62Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 63Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 64Rows: 352 Cols: 640
+, Matches: 87, Inliers: 74.7126 %, Current pose: 
+   0.1164188   -0.7260724   -0.6776913   -0.7280842 
+   0.6976394    0.5454413   -0.4645353    2.3664689 
+   0.7069271   -0.4187035    0.5700364    0.8993652 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 65Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 66Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 67Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 68Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 69Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 70Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 71Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 72Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 73Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 74Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 75Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 76Rows: 352 Cols: 640
+, Matches: 120, Inliers: 80 %, Current pose: 
+   0.1164188   -0.7260763   -0.6776871   -0.7350237 
+   0.6976394    0.5454386   -0.4645384    2.3248840 
+   0.7069271   -0.4187003    0.5700388    0.8572266 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 77Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 78Rows: 352 Cols: 640
+, Matches: 78, Inliers: 51.2821 %, Current pose: 
+   0.1164188   -0.7260798   -0.6776834   -0.7309813 
+   0.6976394    0.5454362   -0.4645412    2.3491083 
+   0.7069271   -0.4186973    0.5700409    0.8817735 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 79Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 80Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 81Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 82Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 83Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 84Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 85Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 86Rows: 352 Cols: 640
+, Matches: 91, Inliers: 60.4396 %, Current pose: 
+   0.1164188   -0.7260818   -0.6776812   -0.7367699 
+   0.6976394    0.5454348   -0.4645429    2.3144201 
+   0.7069271   -0.4186956    0.5700422    0.8466235 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 87Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 88Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 89Rows: 352 Cols: 640
+, Matches: 64, Inliers: 34.375 %, Current pose: 
+  -0.1454442   -0.7524402   -0.6424016   -1.3064140 
+  -0.0191565    0.6513260   -0.7585562    2.8285546 
+   0.9891810   -0.0980214   -0.1091457    0.6005107 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 90Rows: 352 Cols: 640
+, Matches: 55, Inliers: 56.3636 %, Current pose: 
+  -0.1454442   -0.7524473   -0.6423933   -1.2806156 
+  -0.0191565    0.6513177   -0.7585633    2.8319526 
+   0.9891810   -0.0980226   -0.1091447    0.4250529 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 91Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 92Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 93Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 94Rows: 352 Cols: 640
+, Matches: 64, Inliers: 34.375 %, Current pose: 
+   0.2037053    0.5061479   -0.8380444   -1.4017289 
+   0.0765286    0.8451414    0.5290362    3.4004605 
+   0.9760366   -0.1719019    0.1334250   -2.6919494 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 95Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 96Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 97Rows: 352 Cols: 640
+, Matches: 34, Inliers: 64.7059 %, Current pose: 
+   0.2037053    0.5061309   -0.8380547   -1.4250162 
+   0.0765286    0.8451522    0.5290191    3.3917120 
+   0.9760366   -0.1718991    0.1334285   -2.8035288 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 98Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 99Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 100Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 101Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 102Rows: 352 Cols: 640
+, Matches: 64, Inliers: 48.4375 %, Current pose: 
+   0.2037053    0.5061328   -0.8380536   -1.4204823 
+   0.0765286    0.8451510    0.5290209    3.3934153 
+   0.9760367   -0.1718994    0.1334281   -2.7818051 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 103Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 104Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 105Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 106Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 107Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 108Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 109Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 110Rows: 352 Cols: 640
+, Matches: 52, Inliers: 57.6923 %, Current pose: 
+   0.2037204    0.5061177   -0.8380590   -1.4453922 
+   0.0765192    0.8451605    0.5290072    3.3610713 
+   0.9760342   -0.1718971    0.1334487   -2.8100242 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 111Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 112Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 113Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 114Rows: 352 Cols: 640
+, Matches: 40, Inliers: 65 %, Current pose: 
+   0.2037203    0.5061177   -0.8380590   -1.4544704 
+   0.0765192    0.8451605    0.5290072    3.3576615 
+   0.9760342   -0.1718971    0.1334487   -2.8535184 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 115Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 116Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 117Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 118Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 119Rows: 352 Cols: 640
+, Matches: 45, Inliers: 86.6667 %, Current pose: 
+   0.2037203    0.5061730   -0.8380256   -1.4426271 
+   0.0765192    0.8451256    0.5290629    3.3621098 
+   0.9760342   -0.1719059    0.1334373   -2.7967759 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 120Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 121Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 122Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 123Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 124Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 125Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 126Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 127Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 128Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 129Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 130Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 131Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 132Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 133Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 134Rows: 352 Cols: 640
+, Matches: 20, Inliers: 65 %, Current pose: 
+   0.2283020    0.3666349   -0.9019186   -0.2420157 
+   0.0762240    0.9168094    0.3919826    4.2335726 
+   0.9706019   -0.1582382    0.1813630    1.2874888 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 135Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 136Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 137Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 138Rows: 352 Cols: 640
+, Matches: 26, Inliers: 76.9231 %, Current pose: 
+   0.2283020    0.3666545   -0.9019106   -0.2947719 
+   0.0762240    0.9168009    0.3920026    4.2159587 
+   0.9706019   -0.1582422    0.1813596    1.0632015 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 139Rows: 352 Cols: 640
+, Matches: 44, Inliers: 50 %, Current pose: 
+   0.2497316    0.3265580   -0.9115887    0.5825603 
+   0.0697546    0.9329046    0.3533033    5.3759656 
+   0.9657994   -0.1518185    0.2101968    2.9137831 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 140Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 141Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 142Rows: 352 Cols: 640
+, Matches: 44, Inliers: 65.9091 %, Current pose: 
+   0.2497316    0.3265609   -0.9115877    0.6015883 
+   0.0697546    0.9329035    0.3533063    5.3812805 
+   0.9657994   -0.1518191    0.2101963    2.9873710 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 143Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 144Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 145Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 146Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 147Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 148Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 149Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 150Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 151Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 152Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 153Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 154Rows: 352 Cols: 640
+, Matches: 69, Inliers: 53.6232 %, Current pose: 
+   0.2497255    0.3265670   -0.9115872    0.6179973 
+   0.0697569    0.9329011    0.3533121    5.4098294 
+   0.9658008   -0.1518205    0.2101889    3.0105477 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 155Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 156Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 157Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 158Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 159Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 160Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 161Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 162Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 163Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 164Rows: 352 Cols: 640
+, Matches: 35, Inliers: 51.4286 %, Current pose: 
+  -0.0066563    0.9957354    0.0920152    1.5924911 
+   0.4606840   -0.0786172    0.8840756    6.5298433 
+   0.8875393    0.0482746   -0.4581960    5.3629900 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 165Rows: 352 Cols: 640
+, Matches: 30, Inliers: 56.6667 %, Current pose: 
+   0.5264874    0.4368257    0.7293794    2.8127035 
+   0.7980222   -0.5497875   -0.2467677    7.0313380 
+   0.2932092    0.7119811   -0.6380528    6.5535604 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 166Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 167Rows: 352 Cols: 640
+, Matches: 34, Inliers: 50 %, Current pose: 
+   0.8382013   -0.4314006    0.3336348    4.3762933 
+   0.4791936    0.2905278   -0.8282313    8.3486375 
+   0.2603693    0.8541002    0.4502451    7.8258525 
+   0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 168Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 169Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 170Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 171Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 172Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 173Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 174Rows: 352 Cols: 640
+, Matches: 36, Inliers: 77.7778 %, Current pose: 
+   0.8382012   -0.4313985    0.3336375    4.2375549 
+   0.4791936    0.2905225   -0.8282332    8.2693217 
+   0.2603694    0.8541030    0.4502397    7.7827563 
+   0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 175Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 176Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 177Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 178Rows: 352 Cols: 640
+, Matches: 85, Inliers: 62.3529 %, Current pose: 
+   0.8382012   -0.4313987    0.3336373    4.0602086 
+   0.4791936    0.2905229   -0.8282330    8.1679341 
+   0.2603694    0.8541028    0.4502401    7.7276674 
+   0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 179Rows: 352 Cols: 640
+, Matches: 68, Inliers: 58.8235 %, Current pose: 
+   0.5349986   -0.1281962   -0.8350702    4.3832112 
+  -0.1790486    0.9487646   -0.2603599    8.7790920 
+   0.8256622    0.2888104    0.4846344    8.6125630 
+   0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 180Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 181Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 182Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 183Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 184Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 185Rows: 352 Cols: 640
+, Matches: 85, Inliers: 68.2353 %, Current pose: 
+   0.5349986   -0.1281905   -0.8350710    4.3276117 
+  -0.1790486    0.9487664   -0.2603535    8.7976996 
+   0.8256622    0.2888071    0.4846364    8.5267565 
+   0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 186Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 187Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 188Rows: 352 Cols: 640
+, Matches: 75, Inliers: 62.6667 %, Current pose: 
+   0.5349986   -0.1281853   -0.8350719    4.3586973 
+  -0.1790487    0.9487680   -0.2603475    8.7872961 
+   0.8256622    0.2888041    0.4846382    8.5747307 
+   0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 189Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 190Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 191Rows: 352 Cols: 640
+, Matches: 104, Inliers: 63.4615 %, Current pose: 
+   0.5349986   -0.1281866   -0.8350717    4.3268416 
+  -0.1790487    0.9487676   -0.2603490    8.7979573 
+   0.8256622    0.2888048    0.4846377    8.5255679 
+   0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 192Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 193Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 194Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 195Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 196Rows: 352 Cols: 640
+, Matches: 105, Inliers: 75.2381 %, Current pose: 
+   0.8372110   -0.4139164    0.3574226    4.6267575 
+   0.4998225    0.3139038   -0.8072434    9.4285282 
+   0.2219349    0.8544809    0.4696884    9.3807782 
+   0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 197Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 198Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 199Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 200Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 201Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 202Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 203Rows: 352 Cols: 640
+, Matches: 118, Inliers: 73.7288 %, Current pose: 
+   0.8372111   -0.4139170    0.3574219    4.6837469 
+   0.4998225    0.3139052   -0.8072428    9.4625513 
+   0.2219349    0.8544801    0.4696899    9.3958854 
+   0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 204Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 205Rows: 352 Cols: 640
+, Matches: 124, Inliers: 54.8387 %, Current pose: 
+   0.7942793   -0.3717816    0.4805193    5.0345916 
+   0.5808070    0.2325657   -0.7801130   10.1354017 
+   0.1782794    0.8987167    0.4006555   10.2856107 
+   0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 206Rows: 352 Cols: 640
+, Matches: 112, Inliers: 50.8929 %, Current pose: 
+   0.7942786   -0.3717808    0.4805212    5.0978765 
+   0.5808083    0.2325645   -0.7801125   10.2572347 
+   0.1782787    0.8987173    0.4006544   10.4469311 
+   0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 207Rows: 352 Cols: 640
+, Matches: 123, Inliers: 64.2276 %, Current pose: 
+   0.7942786   -0.3717802    0.4805216    5.1208748 
+   0.5808083    0.2325635   -0.7801128   10.2740520 
+   0.1782787    0.8987178    0.4006532   10.4520932 
+   0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 208Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 209Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 210Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 211Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 212Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 213Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 214Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 215Rows: 352 Cols: 640
+, Matches: 129, Inliers: 72.8682 %, Current pose: 
+   0.7780533   -0.3559782    0.5176027    3.4521309 
+   0.6058649    0.2074761   -0.7680374    7.0472089 
+   0.1660144    0.9111713    0.3771021    6.1705453 
+   0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 216Rows: 352 Cols: 640
+, Matches: 117, Inliers: 77.7778 %, Current pose: 
+   0.7780541   -0.3559789    0.5176010    3.4816009 
+   0.6058638    0.2074772   -0.7680380    7.1039978 
+   0.1660149    0.9111708    0.3771032    6.2457563 
+   0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 217Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 218Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 219Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 220Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 221Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 222Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 223Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 224Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 225Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 226Rows: 352 Cols: 640
+, Matches: 28, Inliers: 42.8571 %, Current pose: 
+   0.6234575   -0.2176367   -0.7509561    3.8076507 
+  -0.0441654    0.9491405   -0.3117400    7.6810103 
+   0.7806089    0.2275229    0.5821367    6.9800010 
+   0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 227Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 228Rows: 352 Cols: 640
+, Matches: 56, Inliers: 78.5714 %, Current pose: 
+   0.6234575   -0.2176377   -0.7509558    3.8153802 
+  -0.0441655    0.9491400   -0.3117413    7.6804627 
+   0.7806089    0.2275238    0.5821364    6.9896788 
+   0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 229Rows: 352 Cols: 640
+, Matches: 44, Inliers: 70.4545 %, Current pose: 
+   0.8625449   -0.4567250    0.2177581    4.1396367 
+   0.4401045    0.4648704   -0.7682471    8.4035528 
+   0.2496484    0.7584839    0.6019783    7.7951935 
+   0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 230Rows: 352 Cols: 640
+, Matches: 36, Inliers: 63.8889 %, Current pose: 
+   0.6692578   -0.1714035   -0.7229902    4.7687343 
+   0.0868487    0.9844049   -0.1529844    9.2639692 
+   0.7379372    0.0395953    0.6737068    8.6661242 
+   0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 231Rows: 352 Cols: 640
+, Matches: 20, Inliers: 85 %, Current pose: 
+   0.6692513   -0.1713969   -0.7229978    4.8755891 
+   0.0868473    0.9844063   -0.1529763    9.4938929 
+   0.7379433    0.0395892    0.6737005    8.8330065 
+   0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 232Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 233Rows: 352 Cols: 640
+, Matches: 28, Inliers: 78.5714 %, Current pose: 
+   0.8813413   -0.4694846    0.0531196    5.4791430 
+   0.3516307    0.5766625   -0.7374389   10.2929574 
+   0.3155841    0.6686139    0.6733217    9.6721803 
+   0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 234Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 235Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 236Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 237Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 238Rows: 352 Cols: 640
+ ... failed!
+Processing: Frame: 239Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 240Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 241Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 242Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 243Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 244Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 245Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 246Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 247Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 248Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 249Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 250Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 251Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 252Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 253Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 254Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 255Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 256Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 257Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 258Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 259Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 260Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 261Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 262Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 263Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 264Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 265Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 266Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 267Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 268Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 269Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 270Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 271Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 272Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 273Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 274Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 275Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 276Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 277Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 278Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 279Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 280Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 281Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 282Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 283Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 284Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 285Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 286Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 287Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 288Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 289Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 290Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 291Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 292Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 293Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 294Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 295Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 296Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 297Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 298Rows: 0 Cols: 0
+ ... failed!
+Processing: Frame: 299Rows: 0 Cols: 0
+ ... failed!
+Demo complete! Exiting ...

@@ -25,6 +25,10 @@ public:
 	vector<Point3f> features;
 	vector<Point2f> featurePoints;
 	FILE* orientation_file;
+	double RECORD_START_TIME;
+	double FRAME_RATE;
+	int frameNo;
+	Point3f initialOrientation;
 
 	//Normalisation parameters for X,Y,Z
 	float mux,sigmax;
@@ -36,7 +40,7 @@ public:
 	CameraTrack(Mat flowImage, vector<Point2f> features);
 	/**
 	 * update features and track teh poistion with tracked features*/
-	void UpdatePosition(vector<Point2f> prevFeatures,vector<Point2f> trackedFeatures, vector<uchar> status);
+	void UpdatePosition(vector<Point2f> prevFeatures,vector<Point2f> trackedFeatures, vector<uchar> status, int frame);
 	/**
 	 * Features are no longer visible and replace them with these!*/
 	void ReplaceFeatures(vector<Point2f> newFeatures);
@@ -44,12 +48,14 @@ public:
 	 * @return the current projection matrix*/
 	Eigen::MatrixXf GetProjectionMatrix();
 
-	 /*
+	 /**
 	  * Reads the file to a desired time
 	  * and returns the value at the end of particular time.
 	  */
 	Point3f readFileTill(float time);
 
+	/**
+	 * Literally translates the type of the matrix in to readable format.*/
 	string type2str(int type);
 
 	/**

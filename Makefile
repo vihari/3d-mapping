@@ -127,19 +127,6 @@ OT/fast:
 	$(MAKE) -f CMakeFiles/OT.dir/build.make CMakeFiles/OT.dir/build
 .PHONY : OT/fast
 
-#=============================================================================
-# Target rules for targets named test
-
-# Build rule for target.
-test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test
-.PHONY : test
-
-# fast build rule for target.
-test/fast:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-.PHONY : test/fast
-
 object_segmentation/farneback.o: object_segmentation/farneback.cpp.o
 .PHONY : object_segmentation/farneback.o
 
@@ -188,30 +175,6 @@ object_track/lk_based.cpp.s:
 	$(MAKE) -f CMakeFiles/OT.dir/build.make CMakeFiles/OT.dir/object_track/lk_based.cpp.s
 .PHONY : object_track/lk_based.cpp.s
 
-reconstruction/VisualHull.o: reconstruction/VisualHull.cpp.o
-.PHONY : reconstruction/VisualHull.o
-
-# target to build an object file
-reconstruction/VisualHull.cpp.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/reconstruction/VisualHull.cpp.o
-.PHONY : reconstruction/VisualHull.cpp.o
-
-reconstruction/VisualHull.i: reconstruction/VisualHull.cpp.i
-.PHONY : reconstruction/VisualHull.i
-
-# target to preprocess a source file
-reconstruction/VisualHull.cpp.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/reconstruction/VisualHull.cpp.i
-.PHONY : reconstruction/VisualHull.cpp.i
-
-reconstruction/VisualHull.s: reconstruction/VisualHull.cpp.s
-.PHONY : reconstruction/VisualHull.s
-
-# target to generate assembly for a file
-reconstruction/VisualHull.cpp.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/reconstruction/VisualHull.cpp.s
-.PHONY : reconstruction/VisualHull.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -222,16 +185,12 @@ help:
 	@echo "... OT"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... test"
 	@echo "... object_segmentation/farneback.o"
 	@echo "... object_segmentation/farneback.i"
 	@echo "... object_segmentation/farneback.s"
 	@echo "... object_track/lk_based.o"
 	@echo "... object_track/lk_based.i"
 	@echo "... object_track/lk_based.s"
-	@echo "... reconstruction/VisualHull.o"
-	@echo "... reconstruction/VisualHull.i"
-	@echo "... reconstruction/VisualHull.s"
 .PHONY : help
 
 
