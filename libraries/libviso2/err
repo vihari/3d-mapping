@@ -1,0 +1,1600 @@
+Read image from: ../../data/pepsi_data/images/image-001.png
+Processing: Frame: 1Rempty empty transform as the number of matches are less than 10
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-002.png
+Processing: Frame: 2Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-003.png
+Processing: Frame: 3Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-004.png
+Processing: Frame: 4Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-005.png
+Processing: Frame: 5Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-006.png
+Processing: Frame: 6Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-007.png
+Processing: Frame: 7Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-008.png
+Processing: Frame: 8d.val[0][bst_idx]: 16.6231
+, Matches: 75, Inliers: 84 %, Current pose: 
+image-008.png
+   1.0000000    0.0000000    0.0000000    0.0000000 
+   0.0000000    1.0000000    0.0000000    0.0000000 
+   0.0000000    0.0000000    1.0000000    0.0000000 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-009.png
+Processing: Frame: 9Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-010.png
+Processing: Frame: 10Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-011.png
+Processing: Frame: 11Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-012.png
+Processing: Frame: 12Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-013.png
+Processing: Frame: 13d.val[0][bst_idx]: 12.3945
+, Matches: 113, Inliers: 60.177 %, Current pose: 
+image-013.png
+   1.0000000   -0.0000000    0.0000000    0.0150394 
+   0.0000000    1.0000000   -0.0000000   -0.0000000 
+  -0.0000000    0.0000000    1.0000000    0.0000000 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-014.png
+Processing: Frame: 14Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-015.png
+Processing: Frame: 15d.val[0][bst_idx]: 4.35861
+, Matches: 82, Inliers: 57.3171 %, Current pose: 
+image-015.png
+   0.9998597   -0.0084458   -0.0144635    0.0277741 
+   0.0084465    0.9999643   -0.0000126    0.0114606 
+   0.0144631   -0.0001095    0.9998954   -0.0106451 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-016.png
+Processing: Frame: 16d.val[0][bst_idx]: 7.03566
+, Matches: 90, Inliers: 60 %, Current pose: 
+image-016.png
+   0.9998597   -0.0084458   -0.0144635    0.0679839 
+   0.0084465    0.9999643   -0.0000125    0.0523598 
+   0.0144631   -0.0001096    0.9998954   -0.0100630 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-017.png
+Processing: Frame: 17Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-018.png
+Processing: Frame: 18Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-019.png
+Processing: Frame: 19Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-020.png
+Processing: Frame: 20d.val[0][bst_idx]: 5.95157
+, Matches: 51, Inliers: 45.098 %, Current pose: 
+image-020.png
+   0.9998214   -0.0084075   -0.0169258    0.0928939 
+   0.0084494    0.9999614    0.0024089    0.0776969 
+   0.0169049   -0.0025515    0.9998538   -0.0097024 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-021.png
+Processing: Frame: 21d.val[0][bst_idx]: 2.16929
+, Matches: 57, Inliers: 57.8947 %, Current pose: 
+image-021.png
+   0.9998214   -0.0082417   -0.0170071    0.0508957 
+   0.0084494    0.9998902    0.0121765    0.0773420 
+   0.0169049   -0.0123180    0.9997812   -0.0104125 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-022.png
+Processing: Frame: 22d.val[0][bst_idx]: 2.49614
+, Matches: 71, Inliers: 73.2394 %, Current pose: 
+image-022.png
+   0.9998214   -0.0082417   -0.0170071   -0.0643287 
+   0.0084494    0.9998902    0.0121764    0.0763683 
+   0.0169049   -0.0123180    0.9997812   -0.0123605 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-023.png
+Processing: Frame: 23d.val[0][bst_idx]: 3.07693
+, Matches: 45, Inliers: 37.7778 %, Current pose: 
+image-023.png
+   0.9998214   -0.0081585   -0.0170472   -0.1644653 
+   0.0084494    0.9998188    0.0170599    0.0755220 
+   0.0169049   -0.0172009    0.9997091   -0.0140533 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-024.png
+Processing: Frame: 24d.val[0][bst_idx]: 1.73978
+, Matches: 61, Inliers: 57.377 %, Current pose: 
+image-024.png
+   0.9990277    0.0075227   -0.0434407   -0.2193037 
+  -0.0055501    0.9989557    0.0453513    0.0320580 
+   0.0437365   -0.0450661    0.9980261    0.0272404 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-025.png
+Processing: Frame: 25d.val[0][bst_idx]: 3.63802
+, Matches: 88, Inliers: 56.8182 %, Current pose: 
+image-025.png
+   0.9990277    0.0075226   -0.0434405   -0.3628601 
+  -0.0055501    0.9989557    0.0453513    0.0328555 
+   0.0437363   -0.0450662    0.9980261    0.0209559 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-026.png
+Processing: Frame: 26d.val[0][bst_idx]: 8.67614
+, Matches: 88, Inliers: 56.8182 %, Current pose: 
+image-026.png
+   0.9990277    0.0073104   -0.0434767   -0.4315120 
+  -0.0055501    0.9991653    0.0404718    0.0332369 
+   0.0437363   -0.0401911    0.9982343    0.0179501 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-027.png
+Processing: Frame: 27Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-028.png
+Processing: Frame: 28Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-029.png
+Processing: Frame: 29Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-030.png
+Processing: Frame: 30Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-031.png
+Processing: Frame: 31d.val[0][bst_idx]: 5.50833
+, Matches: 109, Inliers: 58.7156 %, Current pose: 
+image-031.png
+   0.9986826    0.0076555   -0.0507397   -0.4520162 
+  -0.0052266    0.9988418    0.0478301    0.0129919 
+   0.0510470   -0.0475019    0.9975659    0.0178779 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-032.png
+Processing: Frame: 32d.val[0][bst_idx]: 9.01304
+, Matches: 90, Inliers: 47.7778 %, Current pose: 
+image-032.png
+   0.9986826    0.0074076   -0.0507765   -0.4066902 
+  -0.0052266    0.9990635    0.0429512    0.0127547 
+   0.0510471   -0.0426292    0.9977860    0.0201947 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-033.png
+Processing: Frame: 33d.val[0][bst_idx]: 7.32144
+, Matches: 104, Inliers: 69.2308 %, Current pose: 
+image-033.png
+   0.9986826    0.0074076   -0.0507765   -0.3789891 
+  -0.0052266    0.9990635    0.0429513    0.0126097 
+   0.0510471   -0.0426293    0.9977860    0.0216104 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-034.png
+Processing: Frame: 34d.val[0][bst_idx]: 6.75038
+, Matches: 130, Inliers: 65.3846 %, Current pose: 
+image-034.png
+   0.9995039    0.0038300   -0.0312609   -0.3582935 
+  -0.0025371    0.9991439    0.0412929    0.0194280 
+   0.0313923   -0.0411931    0.9986579   -0.0046798 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-035.png
+Processing: Frame: 35Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-036.png
+Processing: Frame: 36Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-037.png
+Processing: Frame: 37d.val[0][bst_idx]: 7.97997
+, Matches: 114, Inliers: 61.4035 %, Current pose: 
+image-037.png
+   0.9995039    0.0039826   -0.0312418   -0.3212770 
+  -0.0025371    0.9989303    0.0461724    0.0193340 
+   0.0313923   -0.0460702    0.9984448   -0.0035172 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-038.png
+Processing: Frame: 38Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-039.png
+Processing: Frame: 39Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-040.png
+Processing: Frame: 40Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-041.png
+Processing: Frame: 41d.val[0][bst_idx]: 8.50584
+, Matches: 126, Inliers: 60.3175 %, Current pose: 
+image-041.png
+   0.9995039    0.0038300   -0.0312608   -0.3525899 
+  -0.0025371    0.9991439    0.0412929    0.0194135 
+   0.0313922   -0.0411931    0.9986579   -0.0045008 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-042.png
+Processing: Frame: 42Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-043.png
+Processing: Frame: 43Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-044.png
+Processing: Frame: 44Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-045.png
+Processing: Frame: 45Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-046.png
+Processing: Frame: 46Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-047.png
+Processing: Frame: 47d.val[0][bst_idx]: 7.86588
+, Matches: 74, Inliers: 40.5405 %, Current pose: 
+image-047.png
+   0.9995039    0.0038300   -0.0312609   -0.3232129 
+  -0.0025371    0.9991439    0.0412928    0.0193389 
+   0.0313923   -0.0411930    0.9986579   -0.0035781 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-048.png
+Processing: Frame: 48d.val[0][bst_idx]: 9.65921
+, Matches: 113, Inliers: 69.9115 %, Current pose: 
+image-048.png
+   0.9992888    0.0047766   -0.0374053   -0.3416000 
+  -0.0029779    0.9988430    0.0479974   -0.0044925 
+   0.0375913   -0.0478518    0.9981468    0.0066261 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-049.png
+Processing: Frame: 49Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-050.png
+Processing: Frame: 50Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-051.png
+Processing: Frame: 51d.val[0][bst_idx]: 4.91728
+, Matches: 16, Inliers: 75 %, Current pose: 
+image-051.png
+   0.9992888    0.0047766   -0.0374052   -0.3232242 
+  -0.0029779    0.9988430    0.0479975    0.0137332 
+   0.0375912   -0.0478519    0.9981468    0.0064383 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-052.png
+Processing: Frame: 52d.val[0][bst_idx]: 6.53834
+, Matches: 26, Inliers: 80.7692 %, Current pose: 
+image-052.png
+   0.9996944   -0.0005312   -0.0247157   -0.2895608 
+   0.0009506    0.9998557    0.0169584    0.0485638 
+   0.0247031   -0.0169767    0.9995507   -0.0090025 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-053.png
+Processing: Frame: 53Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-054.png
+Processing: Frame: 54d.val[0][bst_idx]: 6.48454
+, Matches: 72, Inliers: 79.1667 %, Current pose: 
+image-054.png
+   0.9996944   -0.0005312   -0.0247157   -0.2513365 
+   0.0009506    0.9998557    0.0169585    0.0486002 
+   0.0247032   -0.0169768    0.9995507   -0.0080581 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-055.png
+Processing: Frame: 55Returning empty transform as the inliers size < 10.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-056.png
+Processing: Frame: 56Returning empty transform as num points to the side of image plane is <10.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-057.png
+Processing: Frame: 57Returning empty transform as the inliers size < 10.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-058.png
+Processing: Frame: 58Rempty empty transform as the number of matches are less than 10
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-059.png
+Processing: Frame: 59d.val[0][bst_idx]: 3.07734
+, Matches: 24, Inliers: 66.6667 %, Current pose: 
+image-059.png
+   0.9996944   -0.0005312   -0.0247158   -0.2240980 
+   0.0009506    0.9998557    0.0169584    0.0758835 
+   0.0247032   -0.0169767    0.9995507   -0.0078475 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-060.png
+Processing: Frame: 60d.val[0][bst_idx]: 3.99473
+, Matches: 37, Inliers: 56.7568 %, Current pose: 
+image-060.png
+   0.9986671    0.0246611   -0.0453407   -0.2992172 
+  -0.0222163    0.9983122    0.0536575    0.0893327 
+   0.0465874   -0.0525787    0.9975295   -0.0357044 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-061.png
+Processing: Frame: 61d.val[0][bst_idx]: 9.70068
+, Matches: 20, Inliers: 65 %, Current pose: 
+image-061.png
+   0.9981184    0.0195339   -0.0581211   -0.2456150 
+  -0.0170088    0.9989031    0.0436273    0.0932897 
+   0.0589096   -0.0425566    0.9973558   -0.0036464 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-062.png
+Processing: Frame: 62d.val[0][bst_idx]: 0.158263
+, Matches: 25, Inliers: 48 %, Current pose: 
+image-062.png
+   0.9981184    0.0206654   -0.0577283   -0.2713379 
+  -0.0170088    0.9978603    0.0631306    0.0937280 
+   0.0589094   -0.0620299    0.9963343   -0.0051646 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-063.png
+Processing: Frame: 63d.val[0][bst_idx]: 8.10945
+, Matches: 77, Inliers: 74.026 %, Current pose: 
+image-063.png
+   0.8541531    0.4294512    0.2932476   -1.2383022 
+  -0.5193609    0.6760740    0.5226740   -0.6081893 
+   0.0262059   -0.5987450    0.8005109   -1.0383963 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-064.png
+Processing: Frame: 64Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-065.png
+Processing: Frame: 65d.val[0][bst_idx]: 4.43453
+, Matches: 83, Inliers: 65.0602 %, Current pose: 
+image-065.png
+   0.8482986    0.4434559    0.2893723   -1.2198859 
+  -0.5283074    0.6718672    0.5191202   -0.6301278 
+   0.0357872   -0.5932465    0.8042250   -1.0497944 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-066.png
+Processing: Frame: 66d.val[0][bst_idx]: 2.94166
+, Matches: 73, Inliers: 41.0959 %, Current pose: 
+image-066.png
+   0.8482986    0.4434559    0.2893722   -1.2713799 
+  -0.5283074    0.6718672    0.5191202   -0.6358506 
+   0.0357872   -0.5932464    0.8042250   -1.0275721 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-067.png
+Processing: Frame: 67d.val[0][bst_idx]: 8.38843
+, Matches: 96, Inliers: 48.9583 %, Current pose: 
+image-067.png
+   0.8482986    0.4490236    0.2806550   -1.3434735 
+  -0.5283075    0.6818791    0.5058973   -0.5909518 
+   0.0357870   -0.5774241    0.8156597   -1.0306134 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-068.png
+Processing: Frame: 68d.val[0][bst_idx]: 7.35329
+, Matches: 18, Inliers: 66.6667 %, Current pose: 
+image-068.png
+   0.8482986    0.4517437    0.2762556   -1.3687554 
+  -0.5283075    0.6867882    0.4992125   -0.5752067 
+   0.0357870   -0.5694292    0.8212610   -1.0316800 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-069.png
+Processing: Frame: 69d.val[0][bst_idx]: 2.4628
+, Matches: 25, Inliers: 68 %, Current pose: 
+image-069.png
+   0.8512214    0.4828385    0.2056432   -1.3521805 
+  -0.5116160    0.6761650    0.5301414   -0.6039322 
+   0.1169240   -0.5564780    0.8225941   -1.0391639 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-070.png
+Processing: Frame: 70d.val[0][bst_idx]: 0.826151
+, Matches: 23, Inliers: 56.5217 %, Current pose: 
+image-070.png
+   0.8811916    0.4565529    0.1227224   -1.2741286 
+  -0.4319272    0.6719504    0.6015992   -0.5885906 
+   0.1921985   -0.5831313    0.7893147   -0.9761008 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-071.png
+Processing: Frame: 71Returning empty transform as the inliers size < 10.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-072.png
+Processing: Frame: 72d.val[0][bst_idx]: 2.62182
+, Matches: 42, Inliers: 88.0952 %, Current pose: 
+image-072.png
+   0.8865400    0.4238739    0.1854121   -1.5262190 
+  -0.4515780    0.7056341    0.5460383   -0.5400930 
+   0.1006184   -0.5678129    0.8169850   -1.1363198 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-073.png
+Processing: Frame: 73d.val[0][bst_idx]: 3.98699
+, Matches: 64, Inliers: 79.6875 %, Current pose: 
+image-073.png
+   0.8865401    0.4229633    0.1874800   -1.6107539 
+  -0.4515780    0.7029587    0.5494784   -0.4970333 
+   0.1006185   -0.5717964    0.8142019   -1.1459140 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-074.png
+Processing: Frame: 74Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-075.png
+Processing: Frame: 75Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-076.png
+Processing: Frame: 76d.val[0][bst_idx]: 5.19759
+, Matches: 101, Inliers: 76.2376 %, Current pose: 
+image-076.png
+   0.8851466    0.4310537    0.1752373   -1.6604165 
+  -0.4517281    0.7057068    0.5458202   -0.4598554 
+   0.1116117   -0.5622905    0.8193730   -1.1367917 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-077.png
+Processing: Frame: 77Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-078.png
+Processing: Frame: 78Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-079.png
+Processing: Frame: 79d.val[0][bst_idx]: 3.70549
+, Matches: 86, Inliers: 60.4651 %, Current pose: 
+image-079.png
+   0.8851466    0.4310537    0.1752373   -1.7029913 
+  -0.4517281    0.7057069    0.5458200   -0.4381276 
+   0.1116116   -0.5622904    0.8193732   -1.1421601 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-080.png
+Processing: Frame: 80d.val[0][bst_idx]: 1.56717
+, Matches: 48, Inliers: 62.5 %, Current pose: 
+image-080.png
+   0.8851466    0.4327449    0.1710183   -1.7627100 
+  -0.4517281    0.7110048    0.5389007   -0.4076507 
+   0.1116117   -0.5542599    0.8248265   -1.1496904 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-081.png
+Processing: Frame: 81d.val[0][bst_idx]: 3.10476
+, Matches: 47, Inliers: 59.5745 %, Current pose: 
+image-081.png
+   0.8851467    0.4360028    0.1625327   -1.9039116 
+  -0.4517280    0.7213956    0.5249097   -0.3355892 
+   0.1116118   -0.5380426    0.8354956   -1.1674947 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-082.png
+Processing: Frame: 82Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-083.png
+Processing: Frame: 83d.val[0][bst_idx]: 3.41654
+, Matches: 48, Inliers: 39.5833 %, Current pose: 
+image-083.png
+   0.8851467    0.4375696    0.1582661   -1.9751851 
+  -0.4517280    0.7264885    0.5178380   -0.2992153 
+   0.1116117   -0.5298558    0.8407114   -1.1764819 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-084.png
+Processing: Frame: 84Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-085.png
+Processing: Frame: 85d.val[0][bst_idx]: 2.7309
+, Matches: 46, Inliers: 60.8696 %, Current pose: 
+image-085.png
+   0.8890265    0.4289312    0.1601556   -1.9470763 
+  -0.4421900    0.7136491    0.5432983   -0.3373911 
+   0.1187427   -0.5538258    0.8241221   -1.2322212 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-086.png
+Processing: Frame: 86d.val[0][bst_idx]: 4.13092
+, Matches: 89, Inliers: 66.2921 %, Current pose: 
+image-086.png
+   0.8890266    0.4265387    0.1664223   -2.0284622 
+  -0.4421896    0.7056123    0.5536963   -0.2969110 
+   0.1187433   -0.5658409    0.8159192   -1.2430918 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-087.png
+Processing: Frame: 87d.val[0][bst_idx]: 0.934463
+, Matches: 38, Inliers: 55.2632 %, Current pose: 
+image-087.png
+   0.8890266    0.4265387    0.1664222   -2.0822655 
+  -0.4421896    0.7056123    0.5536963   -0.2701501 
+   0.1187433   -0.5658410    0.8159191   -1.2502782 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-088.png
+Processing: Frame: 88d.val[0][bst_idx]: 1.10952
+, Matches: 46, Inliers: 47.8261 %, Current pose: 
+image-088.png
+   0.8890267    0.4265387    0.1664221   -2.3201097 
+  -0.4421895    0.7056124    0.5536963   -0.1518499 
+   0.1187434   -0.5658409    0.8159192   -1.2820464 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-089.png
+Processing: Frame: 89d.val[0][bst_idx]: 0.907354
+, Matches: 60, Inliers: 35 %, Current pose: 
+image-089.png
+   0.8860380    0.4288660    0.1760986   -2.4938420 
+  -0.4479739    0.6941593    0.5634379   -0.0133494 
+   0.1193989   -0.5781150    0.8071722   -1.2445646 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-090.png
+Processing: Frame: 90d.val[0][bst_idx]: 1.44523
+, Matches: 46, Inliers: 60.8696 %, Current pose: 
+image-090.png
+   0.8976197    0.3980482    0.1893055   -2.4453808 
+  -0.4311589    0.7037350    0.5646760    0.1067996 
+   0.0915474   -0.5884850    0.8033084   -1.0013967 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-091.png
+Processing: Frame: 91d.val[0][bst_idx]: 5.62767
+, Matches: 79, Inliers: 53.1646 %, Current pose: 
+image-091.png
+   0.8976197    0.3980482    0.1893054   -2.6006539 
+  -0.4311589    0.7037350    0.5646760    0.1813830 
+   0.0915474   -0.5884850    0.8033084   -1.0172327 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-092.png
+Processing: Frame: 92d.val[0][bst_idx]: 13.5595
+, Matches: 41, Inliers: 68.2927 %, Current pose: 
+image-092.png
+   0.8976197    0.3961800    0.1931846   -2.5607787 
+  -0.4311589    0.6981857    0.5715232    0.1622294 
+   0.0915474   -0.5963037    0.7975217   -1.0131658 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-093.png
+Processing: Frame: 93d.val[0][bst_idx]: 9.18921
+, Matches: 74, Inliers: 81.0811 %, Current pose: 
+image-093.png
+   0.8976197    0.3971189    0.1912471   -2.5773283 
+  -0.4311588    0.7009688    0.5681064    0.1701788 
+   0.0915475   -0.5924013    0.8004247   -1.0148537 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-094.png
+Processing: Frame: 94d.val[0][bst_idx]: 3.78019
+, Matches: 53, Inliers: 50.9434 %, Current pose: 
+image-094.png
+   0.8976197    0.3942743    0.1970448   -2.5529078 
+  -0.4311588    0.6925702    0.5783153    0.1584488 
+   0.0915475   -0.6040648    0.7916595   -1.0123631 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-095.png
+Processing: Frame: 95Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-096.png
+Processing: Frame: 96d.val[0][bst_idx]: 6.33367
+, Matches: 67, Inliers: 59.7015 %, Current pose: 
+image-096.png
+   0.8976197    0.3913451    0.2028002   -2.4935444 
+  -0.4311589    0.6840229    0.5884001    0.1299344 
+   0.0915475   -0.6155986    0.7827243   -1.0063087 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-097.png
+Processing: Frame: 97d.val[0][bst_idx]: 4.14937
+, Matches: 48, Inliers: 75 %, Current pose: 
+image-097.png
+   0.8976197    0.3903499    0.2047092   -2.5289749 
+  -0.4311589    0.6811409    0.5917340    0.1469529 
+   0.0915475   -0.6194143    0.7797083   -1.0099223 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-098.png
+Processing: Frame: 98d.val[0][bst_idx]: 1.1515
+, Matches: 64, Inliers: 57.8125 %, Current pose: 
+image-098.png
+   0.8976197    0.3903499    0.2047093   -2.5830565 
+  -0.4311589    0.6811409    0.5917340    0.1729302 
+   0.0915474   -0.6194143    0.7797083   -1.0154380 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-099.png
+Processing: Frame: 99d.val[0][bst_idx]: 0.55114
+, Matches: 49, Inliers: 48.9796 %, Current pose: 
+image-099.png
+   0.8976197    0.3923309    0.2008865   -2.7779364 
+  -0.4311588    0.6868884    0.5850525    0.2665379 
+   0.0915476   -0.6117686    0.7857215   -1.0353139 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-100.png
+Processing: Frame: 100d.val[0][bst_idx]: 4.73549
+, Matches: 46, Inliers: 69.5652 %, Current pose: 
+image-100.png
+   0.8949996    0.4025858    0.1920949   -3.0055040 
+  -0.4366432    0.7026414    0.5618165    0.5707115 
+   0.0912055   -0.5867025    0.8046501   -0.7874244 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-101.png
+Processing: Frame: 101d.val[0][bst_idx]: 5.37157
+, Matches: 66, Inliers: 39.3939 %, Current pose: 
+image-101.png
+   0.8968179    0.4148605    0.1536503   -2.9917668 
+  -0.4235922    0.7050473    0.5687512    0.5367585 
+   0.1276217   -0.5751513    0.8080307   -0.8254450 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-102.png
+Processing: Frame: 102d.val[0][bst_idx]: 15.0888
+, Matches: 53, Inliers: 54.717 %, Current pose: 
+image-102.png
+   0.8968179    0.4156060    0.1516223   -3.0335059 
+  -0.4235923    0.7078168    0.5653008    0.5564730 
+   0.1276216   -0.5711979    0.8108303   -0.8313848 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-103.png
+Processing: Frame: 103d.val[0][bst_idx]: 10.3751
+, Matches: 69, Inliers: 43.4783 %, Current pose: 
+image-103.png
+   0.9006071    0.4058939    0.1554252   -3.0207314 
+  -0.4170973    0.7065650    0.5716604    0.5468900 
+   0.1222155   -0.5796689    0.8056348   -0.8358005 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-104.png
+Processing: Frame: 104Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-105.png
+Processing: Frame: 105Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-106.png
+Processing: Frame: 106Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-107.png
+Processing: Frame: 107Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-108.png
+Processing: Frame: 108Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-109.png
+Processing: Frame: 109d.val[0][bst_idx]: 3.16239
+, Matches: 47, Inliers: 68.0851 %, Current pose: 
+image-109.png
+   0.9006071    0.4051299    0.1574058   -2.9990302 
+  -0.4170974    0.7037646    0.5751045    0.5368395 
+   0.1222155   -0.5835968    0.8027940   -0.8328555 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-110.png
+Processing: Frame: 110d.val[0][bst_idx]: 12.3485
+, Matches: 33, Inliers: 60.6061 %, Current pose: 
+image-110.png
+   0.8967061    0.4139316    0.1567763   -3.0196116 
+  -0.4244956    0.7038883    0.5695128    0.5805921 
+   0.1253863   -0.5772364    0.8068931   -0.7703122 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-111.png
+Processing: Frame: 111Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-112.png
+Processing: Frame: 112d.val[0][bst_idx]: 3.30589
+, Matches: 57, Inliers: 43.8596 %, Current pose: 
+image-112.png
+   0.8967060    0.4146924    0.1547530   -3.0377657 
+  -0.4244957    0.7066615    0.5660680    0.5891862 
+   0.1253861   -0.5732885    0.8097028   -0.7728507 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-113.png
+Processing: Frame: 113d.val[0][bst_idx]: 2.8693
+, Matches: 44, Inliers: 54.5455 %, Current pose: 
+image-113.png
+   0.8941537    0.4340108    0.1101083   -2.9716530 
+  -0.4076787    0.6874199    0.6010424    0.5609766 
+   0.1851682   -0.5823131    0.7915960   -0.7493538 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-114.png
+Processing: Frame: 114d.val[0][bst_idx]: 6.10826
+, Matches: 47, Inliers: 68.0851 %, Current pose: 
+image-114.png
+   0.8950862    0.4360456    0.0931931   -3.0444744 
+  -0.3989858    0.6899232    0.6040003    0.5631211 
+   0.1990756   -0.5778151    0.7915167   -0.7971449 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-115.png
+Processing: Frame: 115d.val[0][bst_idx]: 3.85599
+, Matches: 74, Inliers: 55.4054 %, Current pose: 
+image-115.png
+   0.8950862    0.4360456    0.0931931   -3.0811087 
+  -0.3989858    0.6899232    0.6040003    0.5794509 
+   0.1990756   -0.5778150    0.7915167   -0.8052927 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-116.png
+Processing: Frame: 116d.val[0][bst_idx]: 0.832353
+, Matches: 49, Inliers: 63.2653 %, Current pose: 
+image-116.png
+   0.8934593    0.4386987    0.0963012   -3.0894888 
+  -0.4009162    0.6823174    0.6113176    0.5618046 
+   0.2024762   -0.5847961    0.7855042   -0.8671138 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-117.png
+Processing: Frame: 117Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-118.png
+Processing: Frame: 118d.val[0][bst_idx]: 17.3653
+, Matches: 97, Inliers: 48.4536 %, Current pose: 
+image-118.png
+   0.9129266    0.4035320    0.0610480   -2.9275350 
+  -0.3539732    0.7084348    0.6105924    0.6442261 
+   0.2031451   -0.5790354    0.7895885   -0.6279702 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-119.png
+Processing: Frame: 119d.val[0][bst_idx]: 6.37876
+, Matches: 78, Inliers: 83.3333 %, Current pose: 
+image-119.png
+   0.9129266    0.4035320    0.0610479   -2.9409364 
+  -0.3539732    0.7084348    0.6105924    0.6406178 
+   0.2031452   -0.5790354    0.7895885   -0.6241437 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-120.png
+Processing: Frame: 120d.val[0][bst_idx]: 2.6421
+, Matches: 33, Inliers: 48.4848 %, Current pose: 
+image-120.png
+   0.9129266    0.4035320    0.0610480   -2.9051564 
+  -0.3539732    0.7084348    0.6105924    0.6267446 
+   0.2031451   -0.5790354    0.7895885   -0.6161818 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-121.png
+Processing: Frame: 121Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-122.png
+Processing: Frame: 122d.val[0][bst_idx]: 2.18255
+, Matches: 42, Inliers: 59.5238 %, Current pose: 
+image-122.png
+   0.9129266    0.4029166    0.0649865   -2.8187738 
+  -0.3539731    0.7024368    0.6174832    0.5932508 
+   0.2031453   -0.5867204    0.7838949   -0.5969604 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-123.png
+Processing: Frame: 123d.val[0][bst_idx]: 5.12868
+, Matches: 41, Inliers: 63.4146 %, Current pose: 
+image-123.png
+   0.8972020    0.4333684    0.0849728   -2.8219590 
+  -0.3877555    0.6809601    0.6212399    0.6673091 
+   0.2113626   -0.5903264    0.7789997   -0.5096351 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-124.png
+Processing: Frame: 124d.val[0][bst_idx]: 5.78731
+, Matches: 67, Inliers: 71.6418 %, Current pose: 
+image-124.png
+   0.8964760    0.4353235    0.0826087   -2.8212194 
+  -0.3869904    0.6784413    0.6244644    0.6971638 
+   0.2157989   -0.5917861    0.7766724   -0.5481614 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-125.png
+Processing: Frame: 125Returning empty transform as num points to the side of image plane is <10.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-126.png
+Processing: Frame: 126d.val[0][bst_idx]: 1.64091
+, Matches: 17, Inliers: 64.7059 %, Current pose: 
+image-126.png
+   0.8989039    0.4314266    0.0764385   -2.8591899 
+  -0.3811768    0.6840085    0.6219619    0.7048022 
+   0.2160463   -0.5882206    0.7793077   -0.5672914 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-127.png
+Processing: Frame: 127d.val[0][bst_idx]: 1.16926
+, Matches: 22, Inliers: 59.0909 %, Current pose: 
+image-127.png
+   0.8760505    0.4818519   -0.0188236   -2.8307364 
+  -0.3466126    0.6563516    0.6701211    0.7780876 
+   0.3352540   -0.5805354    0.7420131   -0.4367863 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-128.png
+Processing: Frame: 128d.val[0][bst_idx]: 0.415368
+, Matches: 40, Inliers: 55 %, Current pose: 
+image-128.png
+   0.9074956    0.4199568    0.0093862   -2.9513241 
+  -0.2951970    0.6216834    0.7255126    0.9185776 
+   0.2988487   -0.6611702    0.6881449   -0.3298483 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-129.png
+Processing: Frame: 129Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-130.png
+Processing: Frame: 130d.val[0][bst_idx]: 0.589843
+, Matches: 26, Inliers: 65.3846 %, Current pose: 
+image-130.png
+   0.9049521    0.4243784   -0.0310604   -2.4741364 
+  -0.2809318    0.6506968    0.7054580    0.7801269 
+   0.3195920   -0.6296798    0.7080708   -0.6695212 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-131.png
+Processing: Frame: 131d.val[0][bst_idx]: 0.528396
+, Matches: 33, Inliers: 66.6667 %, Current pose: 
+image-131.png
+   0.8319223    0.5534785   -0.0395842   -2.5402686 
+  -0.3768226    0.6158770    0.6918817    1.0870396 
+   0.4073206   -0.5606756    0.7209250   -0.3847879 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-132.png
+Processing: Frame: 132d.val[0][bst_idx]: 5.94903
+, Matches: 50, Inliers: 50 %, Current pose: 
+image-132.png
+   0.8340306    0.5503150   -0.0393235   -2.6864189 
+  -0.3743367    0.6168032    0.6924059    1.4172571 
+   0.4052962   -0.5627675    0.7204358   -0.0790945 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-133.png
+Processing: Frame: 133d.val[0][bst_idx]: 0.758134
+, Matches: 48, Inliers: 58.3333 %, Current pose: 
+image-133.png
+   0.8627893    0.5055178   -0.0068114   -2.7057390 
+  -0.3691803    0.6391865    0.6746455    1.3878520 
+   0.3453991   -0.5795623    0.7381105   -0.1020739 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-134.png
+Processing: Frame: 134d.val[0][bst_idx]: 2.05792
+, Matches: 48, Inliers: 68.75 %, Current pose: 
+image-134.png
+   0.8622539    0.5064531   -0.0048399   -2.5236660 
+  -0.3710326    0.6381430    0.6746172    1.2138507 
+   0.3447505   -0.5798955    0.7381519   -0.3149417 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-135.png
+Processing: Frame: 135d.val[0][bst_idx]: 0.882007
+, Matches: 42, Inliers: 66.6667 %, Current pose: 
+image-135.png
+   0.8551255    0.5183191   -0.0102765   -2.5178565 
+  -0.3768637    0.6351194    0.6742382    1.3080877 
+   0.3559973   -0.5726855    0.7384425   -0.2384991 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-136.png
+Processing: Frame: 136Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-137.png
+Processing: Frame: 137Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-138.png
+Processing: Frame: 138d.val[0][bst_idx]: 1.89795
+, Matches: 47, Inliers: 68.0851 %, Current pose: 
+image-138.png
+   0.8653270    0.5003119   -0.0299525   -2.2747420 
+  -0.3407821    0.6311249    0.6968134    1.2112712 
+   0.3675278   -0.5927642    0.7166268   -0.3474152 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-139.png
+Processing: Frame: 139d.val[0][bst_idx]: 16.4027
+, Matches: 59, Inliers: 57.6271 %, Current pose: 
+image-139.png
+   0.8653271    0.5003118   -0.0299526   -2.3887240 
+  -0.3407821    0.6311250    0.6968133    1.2561595 
+   0.3675277   -0.5927641    0.7166269   -0.3958264 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-140.png
+Processing: Frame: 140d.val[0][bst_idx]: 5.10262
+, Matches: 37, Inliers: 64.8649 %, Current pose: 
+image-140.png
+   0.8653220    0.4996859   -0.0391377   -2.4031560 
+  -0.3348484    0.6344350    0.6966841    1.2533147 
+   0.3729536   -0.5897509    0.7163096   -0.3998171 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-141.png
+Processing: Frame: 141d.val[0][bst_idx]: 0.824359
+, Matches: 26, Inliers: 53.8462 %, Current pose: 
+image-141.png
+   0.8639113    0.5014179   -0.0473011   -2.3558940 
+  -0.3433034    0.6549913    0.6731487    1.2575639 
+   0.3685106   -0.5653021    0.7379929   -0.4120114 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-142.png
+Processing: Frame: 142Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-143.png
+Processing: Frame: 143Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-144.png
+Processing: Frame: 144d.val[0][bst_idx]: 6.70907
+, Matches: 46, Inliers: 60.8696 %, Current pose: 
+image-144.png
+   0.8644651    0.5011047   -0.0399265   -2.4785849 
+  -0.3473100    0.6527920    0.6732298    1.0919259 
+   0.3634223   -0.5681168    0.7383546   -0.1895678 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-145.png
+Processing: Frame: 145d.val[0][bst_idx]: 2.30518
+, Matches: 22, Inliers: 72.7273 %, Current pose: 
+image-145.png
+   0.8587873    0.5096325   -0.0525281   -2.4688439 
+  -0.3405406    0.6444170    0.6846597    1.1009166 
+   0.3827748   -0.5700891    0.7269676   -0.1547424 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-146.png
+Processing: Frame: 146d.val[0][bst_idx]: 0.407094
+, Matches: 39, Inliers: 58.9744 %, Current pose: 
+image-146.png
+   0.8462900    0.5260986   -0.0837471   -2.5127497 
+  -0.3311879    0.6427211    0.6908142    1.0673318 
+   0.4172624   -0.5568931    0.7181659   -0.2480485 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-147.png
+Processing: Frame: 147Returning empty transform as num points to the side of image plane is <10.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-148.png
+Processing: Frame: 148Rempty empty transform as the number of matches are less than 10
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-149.png
+Processing: Frame: 149Rempty empty transform as the number of matches are less than 10
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-150.png
+Processing: Frame: 150d.val[0][bst_idx]: 0.204325
+, Matches: 30, Inliers: 60 %, Current pose: 
+image-150.png
+   0.8438714    0.5316305   -0.0724569   -2.3371535 
+  -0.3406034    0.6351332    0.6932497    0.6467898 
+   0.4145725   -0.5603346    0.7170459   -0.6596791 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-151.png
+Processing: Frame: 151d.val[0][bst_idx]: 0.0750209
+, Matches: 17, Inliers: 70.5882 %, Current pose: 
+image-151.png
+   0.8407011    0.5322274   -0.0997778   -1.3665038 
+  -0.3134150    0.6285197    0.7118526   -0.0180986 
+   0.4415798   -0.5671834    0.6952052   -0.9955530 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-152.png
+Processing: Frame: 152d.val[0][bst_idx]: 0.22763
+, Matches: 28, Inliers: 71.4286 %, Current pose: 
+image-152.png
+   0.8892251    0.4499391   -0.0826657   -3.9802317 
+  -0.2068958    0.5567068    0.8045320    1.0705610 
+   0.4080109   -0.6983068    0.5881281    0.7617618 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-153.png
+Processing: Frame: 153d.val[0][bst_idx]: 8.17731
+, Matches: 28, Inliers: 64.2857 %, Current pose: 
+image-153.png
+   0.8693535    0.4396429   -0.2256960   -3.7045310 
+  -0.1210397    0.6322121    0.7652825    2.0460428 
+   0.4791388   -0.6379828    0.6028300    1.1844073 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-154.png
+Processing: Frame: 154d.val[0][bst_idx]: 10.1981
+, Matches: 86, Inliers: 70.9302 %, Current pose: 
+image-154.png
+   0.8720952    0.4263844   -0.2400965   -3.6920076 
+  -0.1098780    0.6487602    0.7530186    2.0197513 
+   0.4768404   -0.6303226    0.6126310    1.1751018 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-155.png
+Processing: Frame: 155d.val[0][bst_idx]: 0.507572
+, Matches: 32, Inliers: 53.125 %, Current pose: 
+image-155.png
+   0.8720953    0.4263844   -0.2400962   -3.6694993 
+  -0.1098781    0.6487600    0.7530187    2.0290924 
+   0.4768403   -0.6303228    0.6126309    1.1724413 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-156.png
+Processing: Frame: 156Rempty empty transform as the number of matches are less than 10
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-157.png
+Processing: Frame: 157Returning empty transform as num points to the side of image plane is <10.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-158.png
+Processing: Frame: 158d.val[0][bst_idx]: 0.477094
+, Matches: 27, Inliers: 85.1852 %, Current pose: 
+image-158.png
+   0.8677753    0.4275906   -0.2532434   -3.2257204 
+  -0.0875660    0.6331782    0.7690368    2.0993919 
+   0.4891811   -0.6451756    0.5868989    0.9706618 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-159.png
+Processing: Frame: 159Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-160.png
+Processing: Frame: 160d.val[0][bst_idx]: 3.18092
+, Matches: 36, Inliers: 61.1111 %, Current pose: 
+image-160.png
+   0.8677753    0.4275906   -0.2532434   -2.7710006 
+  -0.0875660    0.6331783    0.7690367    2.0535066 
+   0.4891811   -0.6451756    0.5868989    1.2269955 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-161.png
+Processing: Frame: 161d.val[0][bst_idx]: 0.286113
+, Matches: 20, Inliers: 85 %, Current pose: 
+image-161.png
+   0.8717826    0.4284340   -0.2375698   -2.6931261 
+  -0.1039896    0.6357286    0.7648760    2.0621915 
+   0.4787288   -0.6421008    0.5987698    1.2330859 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-162.png
+Processing: Frame: 162d.val[0][bst_idx]: 0.766418
+, Matches: 33, Inliers: 51.5152 %, Current pose: 
+image-162.png
+   0.8796563    0.4369768   -0.1877658   -3.3573057 
+  -0.1192378    0.5848019    0.8023647    1.7610919 
+   0.4604205   -0.6834164    0.5665288    1.7144354 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-163.png
+Processing: Frame: 163d.val[0][bst_idx]: 6.84745
+, Matches: 64, Inliers: 43.75 %, Current pose: 
+image-163.png
+   0.8567457    0.4140818   -0.3074461   -3.3116333 
+  -0.0400728    0.6477724    0.7607793    2.0098640 
+   0.5141800   -0.6394742    0.5715696    1.9204165 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-164.png
+Processing: Frame: 164d.val[0][bst_idx]: 1.47566
+, Matches: 32, Inliers: 50 %, Current pose: 
+image-164.png
+   0.8567457    0.4185418   -0.3013463   -3.2803535 
+  -0.0400728    0.6365566    0.7701882    2.0084010 
+   0.5141800   -0.6477796    0.5621393    1.9391892 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-165.png
+Processing: Frame: 165d.val[0][bst_idx]: 1.4985
+, Matches: 31, Inliers: 54.8387 %, Current pose: 
+image-165.png
+   0.8276914    0.4548950   -0.3286298   -3.1913545 
+  -0.0428658    0.6351389    0.7712076    1.8922006 
+   0.5595440   -0.6242349    0.5451984    1.8538757 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-166.png
+Processing: Frame: 166d.val[0][bst_idx]: 0.584583
+, Matches: 30, Inliers: 56.6667 %, Current pose: 
+image-166.png
+   0.7654355    0.4441401   -0.4656695   -3.1010579 
+   0.0395913    0.6897638    0.7229512    1.7923194 
+   0.6422936   -0.5718089    0.5103856    1.7553690 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-167.png
+Processing: Frame: 167d.val[0][bst_idx]: 3.14124
+, Matches: 64, Inliers: 28.125 %, Current pose: 
+image-167.png
+   0.7411325    0.5971889   -0.3067377   -3.2473939 
+  -0.0329681    0.4887135    0.8718212    1.4285341 
+   0.6705488   -0.6360225    0.3818896    1.5846790 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-168.png
+Processing: Frame: 168d.val[0][bst_idx]: 0.943113
+, Matches: 28, Inliers: 57.1429 %, Current pose: 
+image-168.png
+   0.7486414    0.5862168   -0.3096546   -3.1905050 
+  -0.0142050    0.4811443    0.8765263    1.3751564 
+   0.6628230   -0.6518053    0.3685317    1.5689159 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-169.png
+Processing: Frame: 169d.val[0][bst_idx]: 5.13271
+, Matches: 32, Inliers: 62.5 %, Current pose: 
+image-169.png
+   0.7555352    0.6183228   -0.2164336   -3.4456727 
+  -0.0698616    0.4045417    0.9118472    1.3034899 
+   0.6513724   -0.6738122    0.3488425    1.5734428 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-170.png
+Processing: Frame: 170d.val[0][bst_idx]: 0.823856
+, Matches: 21, Inliers: 66.6667 %, Current pose: 
+image-170.png
+   0.7550511    0.6270852   -0.1914734   -3.4612417 
+  -0.0816848    0.3797198    0.9214882    1.2573441 
+   0.6505578   -0.6801302    0.3379312    1.5741951 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-171.png
+Processing: Frame: 171Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-172.png
+Processing: Frame: 172d.val[0][bst_idx]: 3.21759
+, Matches: 30, Inliers: 46.6667 %, Current pose: 
+image-172.png
+   0.7048862    0.6795569   -0.2033171   -3.2632967 
+  -0.0979656    0.3771577    0.9209532    1.0289494 
+   0.7025227   -0.6292491    0.3324265    1.5470629 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-173.png
+Processing: Frame: 173d.val[0][bst_idx]: 0.703606
+, Matches: 49, Inliers: 61.2245 %, Current pose: 
+image-173.png
+   0.6776734    0.6761487   -0.2891050   -3.1955134 
+  -0.0306256    0.4187553    0.9075826    1.0046247 
+   0.7347250   -0.6061906    0.3044868    1.5762300 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-174.png
+Processing: Frame: 174d.val[0][bst_idx]: 6.24589
+, Matches: 64, Inliers: 43.75 %, Current pose: 
+image-174.png
+   0.6780959    0.6768815   -0.2863867   -3.5504637 
+  -0.0432121    0.4256987    0.9038326    1.0120774 
+   0.7337021   -0.6005098    0.3179140    1.5620212 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-175.png
+Processing: Frame: 175d.val[0][bst_idx]: 0.0876532
+, Matches: 59, Inliers: 32.2034 %, Current pose: 
+image-175.png
+   0.6780958    0.6768816   -0.2863868   -3.5776053 
+  -0.0432120    0.4256986    0.9038326    1.0138070 
+   0.7337021   -0.6005098    0.3179139    1.5326538 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-176.png
+Processing: Frame: 176d.val[0][bst_idx]: 2.432
+, Matches: 65, Inliers: 52.3077 %, Current pose: 
+image-176.png
+   0.6254534    0.7012430   -0.3421496   -2.7676233 
+   0.0734496    0.3836449    0.9205551    2.5787396 
+   0.7767968   -0.6008951    0.1884460    3.7753484 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-177.png
+Processing: Frame: 177d.val[0][bst_idx]: 0.54847
+, Matches: 84, Inliers: 60.7143 %, Current pose: 
+image-177.png
+   0.6254534    0.7012430   -0.3421497   -2.6955382 
+   0.0734496    0.3836449    0.9205551    2.6181765 
+   0.7767968   -0.6008951    0.1884460    3.7135787 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-178.png
+Processing: Frame: 178d.val[0][bst_idx]: 0.637553
+, Matches: 86, Inliers: 66.2791 %, Current pose: 
+image-178.png
+   0.6254533    0.7012429   -0.3421498   -2.9806278 
+   0.0734496    0.3836451    0.9205550    2.5846968 
+   0.7767968   -0.6008950    0.1884461    3.3595043 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-179.png
+Processing: Frame: 179d.val[0][bst_idx]: 6.80825
+, Matches: 91, Inliers: 57.1429 %, Current pose: 
+image-179.png
+   0.6254534    0.7012429   -0.3421499   -3.2258831 
+   0.0734496    0.3836452    0.9205550    2.5558954 
+   0.7767968   -0.6008950    0.1884461    3.0549035 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-180.png
+Processing: Frame: 180d.val[0][bst_idx]: 8.57106
+, Matches: 56, Inliers: 64.2857 %, Current pose: 
+image-180.png
+   0.6254533    0.7012428   -0.3421499   -3.2488499 
+   0.0734496    0.3836453    0.9205550    2.5531984 
+   0.7767968   -0.6008950    0.1884462    3.0263794 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-181.png
+Processing: Frame: 181Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-182.png
+Processing: Frame: 182d.val[0][bst_idx]: 6.535
+, Matches: 67, Inliers: 49.2537 %, Current pose: 
+image-182.png
+   0.6254533    0.7029055   -0.3387211   -3.2670932 
+   0.0734496    0.3791448    0.9224177    2.5510562 
+   0.7767968   -0.6018081    0.1855093    3.0037219 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-183.png
+Processing: Frame: 183d.val[0][bst_idx]: 1.73508
+, Matches: 67, Inliers: 49.2537 %, Current pose: 
+image-183.png
+   0.6254533    0.7061807   -0.3318388   -3.2431661 
+   0.0734497    0.3701164    0.9260772    2.5538660 
+   0.7767968   -0.6035915    0.1796218    3.0334387 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-184.png
+Processing: Frame: 184d.val[0][bst_idx]: 2.35177
+, Matches: 37, Inliers: 45.9459 %, Current pose: 
+image-184.png
+   0.6254533    0.7045515   -0.3352839   -3.3332852 
+   0.0734496    0.3746351    0.9242585    2.5432830 
+   0.7767968   -0.6027070    0.1825677    2.9215132 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-185.png
+Processing: Frame: 185Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-186.png
+Processing: Frame: 186Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-187.png
+Processing: Frame: 187d.val[0][bst_idx]: 3.4014
+, Matches: 74, Inliers: 72.973 %, Current pose: 
+image-187.png
+   0.5896471    0.7417866   -0.3194824   -3.3686443 
+   0.0379556    0.3696778    0.9283845    2.5955342 
+   0.8067687   -0.5595453    0.1898245    2.8359573 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-188.png
+Processing: Frame: 188d.val[0][bst_idx]: 2.19105
+, Matches: 73, Inliers: 67.1233 %, Current pose: 
+image-188.png
+   0.5896471    0.7433381   -0.3158555   -3.4119829 
+   0.0379556    0.3651390    0.9301789    2.5927446 
+   0.8067687   -0.5604658    0.1870894    2.7766605 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-189.png
+Processing: Frame: 189d.val[0][bst_idx]: 4.17886
+, Matches: 87, Inliers: 43.6782 %, Current pose: 
+image-189.png
+   0.5896471    0.7433381   -0.3158556   -3.4792620 
+   0.0379555    0.3651391    0.9301789    2.5884139 
+   0.8067687   -0.5604658    0.1870894    2.6846077 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-190.png
+Processing: Frame: 190Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-191.png
+Processing: Frame: 191d.val[0][bst_idx]: 4.16073
+, Matches: 102, Inliers: 74.5098 %, Current pose: 
+image-191.png
+   0.5896471    0.7433381   -0.3158555   -3.5145376 
+   0.0379555    0.3651391    0.9301789    2.5861432 
+   0.8067686   -0.5604658    0.1870895    2.6363429 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-192.png
+Processing: Frame: 192d.val[0][bst_idx]: 0.92379
+, Matches: 96, Inliers: 37.5 %, Current pose: 
+image-192.png
+   0.5896471    0.7433381   -0.3158556   -3.5499669 
+   0.0379555    0.3651391    0.9301789    2.5838626 
+   0.8067686   -0.5604658    0.1870894    2.5878677 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-193.png
+Processing: Frame: 193Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-194.png
+Processing: Frame: 194Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-195.png
+Processing: Frame: 195d.val[0][bst_idx]: 3.24882
+, Matches: 127, Inliers: 74.8031 %, Current pose: 
+image-195.png
+   0.5896471    0.7386307   -0.3267124   -3.7095397 
+   0.0379555    0.3787281    0.9247294    2.5735909 
+   0.8067686   -0.5576646    0.1952808    2.3695365 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-196.png
+Processing: Frame: 196d.val[0][bst_idx]: 2.70039
+, Matches: 95, Inliers: 73.6842 %, Current pose: 
+image-196.png
+   0.5896471    0.7354041   -0.3339118   -3.7549136 
+   0.0379555    0.3877428    0.9209858    2.5706702 
+   0.8067686   -0.5557304    0.2007188    2.3074548 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-197.png
+Processing: Frame: 197d.val[0][bst_idx]: 0.97605
+, Matches: 54, Inliers: 46.2963 %, Current pose: 
+image-197.png
+   0.5920973    0.7329539   -0.3349617   -3.6681712 
+   0.0312178    0.3944806    0.9183738    2.5985378 
+   0.8052616   -0.5542234    0.2106897    2.3238887 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-198.png
+Processing: Frame: 198d.val[0][bst_idx]: 0.562266
+, Matches: 73, Inliers: 58.9041 %, Current pose: 
+image-198.png
+   0.5890800    0.7636921   -0.2641195   -3.4791850 
+  -0.0028547    0.3288151    0.9443900    2.7293324 
+   0.8080697   -0.5555672    0.1958785    2.4369454 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-199.png
+Processing: Frame: 199Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-200.png
+Processing: Frame: 200d.val[0][bst_idx]: 5.17386
+, Matches: 106, Inliers: 81.1321 %, Current pose: 
+image-200.png
+   0.5890799    0.7662357   -0.2566471   -3.2172617 
+  -0.0028548    0.3195745    0.9475568    2.7280609 
+   0.8080697   -0.5574541    0.1904424    2.7962363 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-201.png
+Processing: Frame: 201Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-202.png
+Processing: Frame: 202Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-203.png
+Processing: Frame: 203Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-204.png
+Processing: Frame: 204Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-205.png
+Processing: Frame: 205Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-206.png
+Processing: Frame: 206d.val[0][bst_idx]: 4.61963
+, Matches: 116, Inliers: 56.0345 %, Current pose: 
+image-206.png
+   0.5903356    0.7649801   -0.2575061   -3.2635691 
+  -0.0074789    0.3241985    0.9459595    2.7172396 
+   0.8071233   -0.5565077    0.1971072    2.7876735 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-207.png
+Processing: Frame: 207Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-208.png
+Processing: Frame: 208d.val[0][bst_idx]: 2.30024
+, Matches: 115, Inliers: 73.0435 %, Current pose: 
+image-208.png
+   0.5903356    0.7649801   -0.2575060   -3.2117061 
+  -0.0074790    0.3241984    0.9459595    2.7293592 
+   0.8071232   -0.5565077    0.1971072    2.7972636 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-209.png
+Processing: Frame: 209d.val[0][bst_idx]: 1.01152
+, Matches: 115, Inliers: 80 %, Current pose: 
+image-209.png
+   0.5903356    0.7637133   -0.2612392   -3.2758663 
+  -0.0074790    0.3288147    0.9443648    2.7301722 
+   0.8071233   -0.5555384    0.1998229    2.7095420 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-210.png
+Processing: Frame: 210d.val[0][bst_idx]: 9.19392
+, Matches: 106, Inliers: 56.6038 %, Current pose: 
+image-210.png
+   0.5903357    0.7584647   -0.2761071   -3.4217694 
+  -0.0074790    0.3471985    0.9377618    2.7320214 
+   0.8071232   -0.5515292    0.2106362    2.5100601 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-211.png
+Processing: Frame: 211d.val[0][bst_idx]: 0.213385
+, Matches: 73, Inliers: 60.274 %, Current pose: 
+image-211.png
+   0.5903357    0.7598042   -0.2723994   -3.4057170 
+  -0.0074790    0.3426143    0.9394464    2.7318180 
+   0.8071232   -0.5525514    0.2079400    2.5320073 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-212.png
+Processing: Frame: 212d.val[0][bst_idx]: 5.06249
+, Matches: 114, Inliers: 63.1579 %, Current pose: 
+image-212.png
+   0.5903356    0.7686683   -0.2462780   -2.7140846 
+  -0.0074791    0.3103136    0.9506048    2.7230541 
+   0.8071232   -0.5593340    0.1889381    3.4776249 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-213.png
+Processing: Frame: 213Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-214.png
+Processing: Frame: 214d.val[0][bst_idx]: 5.26315
+, Matches: 123, Inliers: 78.0488 %, Current pose: 
+image-214.png
+   0.5903357    0.7686683   -0.2462779   -2.6666296 
+  -0.0074792    0.3103136    0.9506048    2.7336286 
+   0.8071232   -0.5593340    0.1889382    3.4862774 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-215.png
+Processing: Frame: 215Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-216.png
+Processing: Frame: 216Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-217.png
+Processing: Frame: 217d.val[0][bst_idx]: 2.9656
+, Matches: 38, Inliers: 52.6316 %, Current pose: 
+image-217.png
+   0.5903357    0.7698620   -0.2425206   -2.6385886 
+  -0.0074792    0.3056669    0.9521091    2.7332734 
+   0.8071232   -0.5602501    0.1862040    3.5246158 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-218.png
+Processing: Frame: 218Rempty empty transform as the number of matches are less than 10
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-219.png
+Processing: Frame: 219Rempty empty transform as the number of matches are less than 10
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-220.png
+Processing: Frame: 220d.val[0][bst_idx]: 2.68178
+, Matches: 14, Inliers: 78.5714 %, Current pose: 
+image-220.png
+   0.6012148    0.7801278   -0.1730357   -2.5941389 
+  -0.0537954    0.2555645    0.9652942    2.7986637 
+   0.7972747   -0.5710406    0.1956165    3.5538529 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-221.png
+Processing: Frame: 221d.val[0][bst_idx]: 1.95689
+, Matches: 10, Inliers: 100 %, Current pose: 
+image-221.png
+   0.6933823    0.7159624   -0.0813561   -2.6655807 
+   0.0014571    0.1115117    0.9937620    2.8584848 
+   0.7205684   -0.6891756    0.0762770    3.5566492 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-222.png
+Processing: Frame: 222d.val[0][bst_idx]: 0.222353
+, Matches: 15, Inliers: 73.3333 %, Current pose: 
+image-222.png
+   0.6730812    0.7381685    0.0454849   -2.7872606 
+  -0.0430223   -0.0223173    0.9988248    2.8198999 
+   0.7383161   -0.6742471    0.0167364    3.5617661 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-223.png
+Processing: Frame: 223d.val[0][bst_idx]: 1.40297
+, Matches: 33, Inliers: 57.5758 %, Current pose: 
+image-223.png
+   0.6730813    0.7381685    0.0454844   -3.9092448 
+  -0.0430218   -0.0223171    0.9988248    2.8718449 
+   0.7383161   -0.6742471    0.0167361    3.5108294 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-224.png
+Processing: Frame: 224Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-225.png
+Processing: Frame: 225d.val[0][bst_idx]: 5.52232
+, Matches: 54, Inliers: 64.8148 %, Current pose: 
+image-225.png
+   0.6730829    0.7381218    0.0462124   -4.0859690 
+  -0.0439072   -0.0224935    0.9987824    2.8773190 
+   0.7382625   -0.6742924    0.0172689    3.4886565 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-226.png
+Processing: Frame: 226d.val[0][bst_idx]: 0.165354
+, Matches: 23, Inliers: 69.5652 %, Current pose: 
+image-226.png
+   0.6730829    0.7383387    0.0426068   -4.1164401 
+  -0.0439073   -0.0176150    0.9988803    2.8793069 
+   0.7382625   -0.6742000    0.0205621    3.4552347 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-227.png
+Processing: Frame: 227d.val[0][bst_idx]: 0.653973
+, Matches: 30, Inliers: 70 %, Current pose: 
+image-227.png
+   0.7954959    0.5624938   -0.2253596   -2.7649947 
+   0.3486392   -0.1206756    0.9294558    2.2014954 
+   0.4956178   -0.8179475   -0.2921044    3.4603038 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-228.png
+Processing: Frame: 228Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-229.png
+Processing: Frame: 229d.val[0][bst_idx]: 2.55886
+, Matches: 49, Inliers: 59.1837 %, Current pose: 
+image-229.png
+   0.7956477    0.5629236   -0.2237450   -3.0407475 
+   0.3478016   -0.1221092    0.9295824    2.4549162 
+   0.4959626   -0.8174389   -0.2929416    3.3836521 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-230.png
+Processing: Frame: 230d.val[0][bst_idx]: 2.07313
+, Matches: 35, Inliers: 62.8571 %, Current pose: 
+image-230.png
+   0.7959270    0.5620577   -0.2249252   -2.9453756 
+   0.3461868   -0.1177665    0.9307447    2.4758538 
+   0.4966436   -0.8186710   -0.2883105    3.3803239 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-231.png
+Processing: Frame: 231d.val[0][bst_idx]: 26.9594
+, Matches: 29, Inliers: 62.069 %, Current pose: 
+image-231.png
+   0.7959270    0.5620579   -0.2249248   -2.8295794 
+   0.3461868   -0.1177671    0.9307446    2.4953313 
+   0.4966436   -0.8186708   -0.2883110    3.3528645 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-232.png
+Processing: Frame: 232d.val[0][bst_idx]: 0.538566
+, Matches: 34, Inliers: 55.8824 %, Current pose: 
+image-232.png
+   0.7961416    0.5675523   -0.2098642   -2.8383148 
+   0.3385236   -0.1302810    0.9318952    2.4932485 
+   0.5015579   -0.8129645   -0.2958520    3.3551766 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-233.png
+Processing: Frame: 233d.val[0][bst_idx]: 0.787618
+, Matches: 33, Inliers: 54.5455 %, Current pose: 
+image-233.png
+   0.7941921    0.5661918   -0.2206487   -2.3975571 
+   0.3487937   -0.1274075    0.9284989    2.5862008 
+   0.4975962   -0.8143674   -0.2986701    3.2430586 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Read image from: ../../data/pepsi_data/images/image-234.png
+Processing: Frame: 234Returning empty transform as the inliers size < 10.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-235.png
+Processing: Frame: 235Returning empty transform as median>motion threshold i.e. there's too much option.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-236.png
+Processing: Frame: 236Returning empty transform as the inliers size < 10.
+ ... failed!
+Read image from: ../../data/pepsi_data/images/image-237.png
+Processing: Frame: 237d.val[0][bst_idx]: 4.70086
+, Matches: 15, Inliers: 73.3333 %, Current pose: 
+image-237.png
+   0.7951637    0.5659115   -0.2178506   -2.0893287 
+   0.3452263   -0.1271198    0.9298706    2.6573323 
+   0.4985314   -0.8146071   -0.2964486    3.2692576 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Demo complete! Exiting ...

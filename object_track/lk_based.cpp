@@ -38,10 +38,13 @@
 #include "opencv2/video/tracking.hpp"
 #include "opencv2/core/core.hpp"
 #include "../grabcut/grabcut.cpp"
-//#include "../odometry/CameraTrack.h"
+#include "../odometry/ProjectionFromEssentialMatrix.cpp"
 #include "../odometry/CameraTrack.cpp"
 #include "opencv2/features2d/features2d.hpp"
 #include "opencv2/nonfree/nonfree.hpp"
+#include "opencv2/calib3d/calib3d.hpp"
+
+#include <Eigen/Eigen>
 
 #define GC_EVAL 2
 #define _USE_MATH_DEFINES
@@ -65,6 +68,10 @@ using namespace std;
 const char pattern[] = "data/pepsi_data/images/image-%03d.png";
 const char silhouettePattern[] = "data/pepsi_data/silhouettes/image-%03d.png";
 FILE* orientation_file;
+
+//The calibration matrix;
+Matx33d K( 6.1291994668037830e+02, 0., 3.4558123240636974e+02, 0.,
+       6.1400708530052441e+02, 2.5058513263943294e+02, 0., 0., 1.);
 
 /** @function Erosion*/
 Mat Erosion(Mat src, int erosion_size) {
@@ -172,8 +179,8 @@ void inline getAffineTransformation(Mat img1,Mat img2, Mat t){
 	}
 
 	Mat temp = estimateRigidTransform(points[0],points[1],true);
-	std::cerr<<temp<<"\n";
-	std::cerr<<points[0]<<" "<<points[1]<<"\n";
+	//std::cerr<<temp<<"\n";
+	//std::cerr<<points[0]<<" "<<points[1]<<"\n";
 	t = temp.clone();
 }
 
@@ -276,6 +283,7 @@ int object_track(Mat mask, Mat flowImage) {
   imshow("Mask", currImage);
   //waitKey();
 
+  vector<Point3d> prevCloud;
   for (int i = MIN_INDEX; i < MAX_INDEX; i += FRAME_SKIP) {
     Mat fgdModel, bgdModel;
     time += 2 * 1 / FRAME_RATE;
@@ -327,7 +335,7 @@ int object_track(Mat mask, Mat flowImage) {
     }
     points[0].resize(k);
     points[1].resize(k);
-    cerr<<"Number of points: "<<k<<endl;
+    //cerr<<"Number of points: "<<k<<endl;
 
     position.UpdatePosition(points[0],points[1],status,i);
     Mat t = estimateRigidTransform(points[0], points[1], false);
@@ -342,11 +350,11 @@ int object_track(Mat mask, Mat flowImage) {
     Mat tmpUnscaled = Mat::zeros(maskImage.rows, maskImage.cols, maskImage.type());
     transformation = MultiplyAffineTransformation(transformation, t);
     
-    cout<<"Transformation: "<<transformation<<"\n";
-    unScaleAndUnMove(transformation,scaledTransformation);
-    
-    cout<<"Unscaled: ";
-    cout<<scaledTransformation<<"\n";
+    //cout<<"Transformation: "<<transformation<<"\n";
+    //unScaleAndUnMove(transformation,scaledTransformation);
+    getCameraMotion(points,status,K,prevCloud);
+    //cout<<"Unscaled: ";
+    //cout<<scaledTransformation<<"\n";
 
     warpAffine(maskImage, tmp, t, tmp.size());
     warpAffine(maskImage, tmpUnscaled, scaledTransformation, tmpUnscaled.size());
@@ -387,7 +395,7 @@ int object_track(Mat mask, Mat flowImage) {
     		  }
     	  }
 
-      std::cout << bgd << " " << fgd << std::endl;
+      //std::cout << bgd << " " << fgd << std::endl;
       Rect rect;
 
       GrabCut segment(currImage, result, rect, bgdModel, fgdModel, 2, GC_INIT_WITH_MASK);
@@ -409,7 +417,6 @@ int object_track(Mat mask, Mat flowImage) {
       Mat mt = estimateRigidTransform(ms,maskImage,false);
       //getAffineTransformation(ms,maskImage,mt);
       std::cerr<<"Done computing of estimate transform\n";
-      std::cerr<<"Transform: "<<mt<<"\n";
 
       if(mt.rows==2 && mt.cols==3)
     	  transformation = MultiplyAffineTransformation(transformation, mt);

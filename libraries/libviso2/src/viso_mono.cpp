@@ -42,9 +42,10 @@ vector<double> VisualOdometryMono::estimateMotion (vector<Matcher::p_match> p_ma
 
   // get number of matches
   int32_t N = p_matched.size();
-  if (N<10)
+  if (N<10){
+    cerr<<"Rempty empty transform as the number of matches are less than 10\n";
     return vector<double>();
-   
+  }
   // create calibration matrix
   double K_data[9] = {param.calib.f,0,param.calib.cu,0,param.calib.f,param.calib.cv,0,0,1};
   Matrix K(3,3,K_data);
@@ -52,8 +53,10 @@ vector<double> VisualOdometryMono::estimateMotion (vector<Matcher::p_match> p_ma
   // normalize feature points and return on errors
   Matrix Tp,Tc;
   vector<Matcher::p_match> p_matched_normalized = p_matched;
-  if (!normalizeFeaturePoints(p_matched_normalized,Tp,Tc))
+  if (!normalizeFeaturePoints(p_matched_normalized,Tp,Tc)){
+    cerr<<"Returning empty transform as the points cannot be normalised.\n";
     return vector<double>();
+  }
 
   // initial RANSAC estimate of F
   Matrix E,F;
@@ -73,9 +76,10 @@ vector<double> VisualOdometryMono::estimateMotion (vector<Matcher::p_match> p_ma
   }
   
   // are there enough inliers?
-  if (inliers.size()<10)
+  if (inliers.size()<10){
+    cerr<<"Returning empty transform as the inliers size < 10.\n";
     return vector<double>();
-  
+  }
   // refine F using all inliers
   fundamentalMatrix(p_matched_normalized,inliers,F); 
   
@@ -93,13 +97,13 @@ vector<double> VisualOdometryMono::estimateMotion (vector<Matcher::p_match> p_ma
   Matrix X,R,t;
   int num_inliers = EtoRt(E,K,p_matched,X,R,t);
   //@vihari
-  if(num_inliers<=0)
+  if(num_inliers<=0){
+    cerr<<"Returning empty transform as none of the inliers could be transformed to 3d.\n";
     return vector<double>();
-  
+  }
   // normalize 3d points and remove points behind image plane
   X = X/X.getMat(3,0,3,-1);
-  std::cerr<<"L96 ends\n";
-  
+
   vector<int32_t> pos_idx;
   for (int32_t i=0; i<X.n; i++)
     if (X.val[2][i]>0)
@@ -107,16 +111,19 @@ vector<double> VisualOdometryMono::estimateMotion (vector<Matcher::p_match> p_ma
   Matrix X_plane = X.extractCols(pos_idx);
   
   // we need at least 10 points to proceed
-  if (X_plane.n<10)
+  if (X_plane.n<10){
+    cerr<<"Returning empty transform as num points to the side of image plane is <10.\n";
     return vector<double>();
-  
+  }
   // get elements closer than median
   double median;
   smallerThanMedian(X_plane,median);
   
   // return error on large median (litte motion)
-  if (median>param.motion_threshold)
+  if (median>param.motion_threshold){
+    cerr<<"Returning empty transform as median>motion threshold i.e. there's too much option.\n";
     return vector<double>();
+  }
   
   // project features to 2d
   Matrix x_plane(2,X_plane.n);
@@ -132,6 +139,8 @@ vector<double> VisualOdometryMono::estimateMotion (vector<Matcher::p_match> p_ma
   int32_t  best_idx = 0;
 
   // find best plane
+  // bst_idx corrsponds to the center of the points in the plane.
+  // not sure why the author hasn't just taken the mean of the points.
   for (int32_t i=0; i<x_plane.n; i++) {
     if (d.val[0][i]>median/param.motion_threshold) {
       double sum = 0;
@@ -145,6 +154,8 @@ vector<double> VisualOdometryMono::estimateMotion (vector<Matcher::p_match> p_ma
       }
     }
   }
+  // TODO: bst_idx corresponds and supposed to be the mean of all the points on ground. This can be very small owing to bad features and making t to be very sensitive.
+  cerr<<"d.val[0][bst_idx]: "<<d.val[0][best_idx]<<"\n";
   t = t*param.height/d.val[0][best_idx];
   
   // compute rotation angles

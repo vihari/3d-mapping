@@ -20,7 +20,7 @@ Street, Fifth Floor, Boston, MA 02110-1301, USA
 */
 
 /*
-  Documented C++ sample code of stereo visual odometry (modify to your needs)
+  Documented C++ sample code of mono visual odometry (modify to your needs)
   To run this demonstration, download the Karlsruhe dataset sequence
   '2010_03_09_drive_0019' from: www.cvlibs.net!
   Usage: ./viso2 path/to/sequence/2010_03_09_drive_0019
@@ -70,6 +70,7 @@ int main (int argc, char** argv) {
   param.calib.cv = 2.5058513263943294e+02; // principal point (v-coordinate) in pixels
   param.height = 0.25;
   param.pitch = -0.26;
+  param.motion_threshold = 100;
   VisualOdometryMono viso(param);
   cv::Mat cameraMatrix = (cv::Mat_<double>(3,3)<<612.91994668037830, 0, 345.58123240636974,0,614.00708530052441, 250.58513263943294,0, 0, 1);
   std::vector <double> distCoeffs;
@@ -94,11 +95,10 @@ int main (int argc, char** argv) {
       cv::Mat img = cv::imread(img_file_name), imgNew = cv::imread(img_file_name);
       cerr<<"Read image from: "<<img_file_name<<"\n";
       cv::undistort(img, imgNew, cameraMatrix, distCoeffs);         
-      img = imgNew;
-      uint8_t* img_data  = img.data;
+      uint8_t* img_data  = imgNew.data;
       
       // status
-      //      cout << "Processing: Frame: " << i;
+      cerr << "Processing: Frame: " << i;
       
       int32_t width = img.cols; int32_t height = img.rows;
       //      cout<<"Rows: "<<height<<" Cols: "<<width<<endl;
@@ -106,20 +106,24 @@ int main (int argc, char** argv) {
       //TODO: without teh -1's below throws EXEC_BAD_ACCESS l:149 filter.cpp
       int32_t dims[] = {width-1,height-1,width-1};
       if (viso.process(img_data,dims)) {
-      
-        // on success, update current pose
-        pose = pose * Matrix::inv(viso.getMotion());
-      
+            
         // output some statistics
         double num_matches = viso.getNumberOfMatches();
         double num_inliers = viso.getNumberOfInliers();
-	//       cout << ", Matches: " << num_matches;
-	//        cout << ", Inliers: " << 100.0*num_inliers/num_matches << " %" << ", Current pose: " << endl;
-	cout<<base_name<<endl;
-        cout << pose << endl << endl;
+        cerr << ", Matches: " << num_matches;
+	double prop = num_inliers/num_matches;
+	
+        cerr << ", Inliers: " << 100.0*num_inliers/num_matches << " %" << ", Current pose: " << endl;
+	cerr<<base_name<<endl;
+        cerr << pose << endl << endl;
+
+	// on success, update current pose
+        pose = pose * Matrix::inv(viso.getMotion());
+
+	cout<<pose.val[0][3] <<" "<<pose.val[1][3] <<" "<< pose.val[2][3]<<"\n";	
 	//	updateGraphic(pose);
       } else {
-	//        cout << " ... failed!" << endl;
+	cerr << " ... failed!" << endl;
       }
 
       // release uint8_t buffers
@@ -133,9 +137,8 @@ int main (int argc, char** argv) {
   }
   
   // output
-  cout << "Demo complete! Exiting ..." << endl;
+  cerr << "Demo complete! Exiting ..." << endl;
 
   // exit
   return 0;
 }
-

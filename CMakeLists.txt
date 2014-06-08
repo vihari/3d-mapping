@@ -13,10 +13,6 @@ add_executable( OS ${OS}/farneback.cpp )
 target_link_libraries( OS ${OpenCV_LIBS} )
 
 find_package(PCL REQUIRED)
-#find_package(PCL REQUIRED COMPONENTS COMMON KDTREE IO)
-#include_directories(${PCL_INCLUDE_DIRS})
-#link_directories(${PCL_LIBRARY_DIRS})
-#add_definitions(${PCL_DEFINITIONS})
 
 add_executable( OT ${OT}/lk_based.cpp )
 #target_link_libraries (OT ${PCL_LIBRARIES})
@@ -27,5 +23,6 @@ link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
 
 #add_executable (test ${RECON}/VisualHull.cpp)
-#target_link_libraries (test ${PCL_COMMON_LIBRARIES} ${PCL_IO_LIBRARIES} ${PCL_FILTERS_LIBRARIES})
 #target_link_libraries( test ${OpenCV_LIBS} )
+#target_link_libraries (test ${PCL_LIBRARIES})
+
